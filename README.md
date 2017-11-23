@@ -1,6 +1,6 @@
-# stsz-vuekit
+# SLJS Website
 
-> Simple Starterkit featuring the Vue CLI Webpack SPA and the Kirby CMS 
+> Website for artist Simon Lars Julius Skatka Lindell 
 
 ## Build Setup
 
