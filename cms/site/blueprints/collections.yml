@@ -1,0 +1,15 @@
+title: Collections
+pages: 
+  template: collection
+files: false
+fields:
+  title:
+    label: Title
+    type:  text
+    readonly: true
+options:
+  template: false
+  url: false
+  preview: false
+  delete: false
+  status: false

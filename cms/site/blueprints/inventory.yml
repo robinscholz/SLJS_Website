@@ -1,0 +1,15 @@
+title: Inventory
+pages: false
+files: 
+  type: image
+fields:
+  title:
+    label: Title
+    type:  text
+    readonly: true
+options:
+  template: false
+  url: false
+  preview: false
+  delete: false
+  status: false

@@ -1,0 +1,31 @@
+Title: Collection A
+
+----
+
+Text: 
+
+----
+
+Imageselection: 
+
+- 
+  image: '<img style="height: 200px; margin: 0 auto;" src="http://188.226.167.119/cms/content/inventory/33-tumblrle5kdtoabc1qfj1jdo1500.jpg">'
+- 
+  image: '<img style="height: 200px" src="http://188.226.167.119/cms/content/inventory/homemade-88vwp6ol-id-user-portfolio.jpg">'
+- 
+  image: '<img style="height: 200px" src="http://188.226.167.119/cms/content/inventory/jpn-post-2.jpg">'
+- 
+  image: '<img style="height: 200px" src="http://188.226.167.119/cms/content/inventory/kasper-florio-thesis-01-2048-1.jpg">'
+- 
+  image: '<img style="height: 200px" src="http://188.226.167.119/cms/content/inventory/museum_of_non_06_1000.jpg">'
+
+----
+
+Imgselection: 
+
+- 33-tumblrle5kdtoabc1qfj1jdo1500.jpg
+- homemade-88vwp6ol-id-user-portfolio.jpg
+- jpn-post-2.jpg
+- kasper-florio-thesis-01-2048-1.jpg
+- paul-rand-logos.jpg
+- museum_of_non_06_1000.jpg

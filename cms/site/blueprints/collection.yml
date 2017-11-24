@@ -1,0 +1,14 @@
+title: Collection
+pages: false
+files: false
+fields:
+  title:
+    label: Title
+    type:  text
+  imgselection:
+    label: Selected Images
+    type: gallery
+    displayFilename: false
+options:
+  template: false
+  preview: false
