@@ -26,6 +26,12 @@ const store = new Vuex.Store({
   mutations: {
     SET_DATASET: (state, { list }) => {
       state.apidata = list
+
+      // Set Initial Collection
+      var rightNow = new Date()
+      var formatted = rightNow.toISOString().slice(0, 10).replace(/-/g, '')
+      var curr = formatted % state.apidata['3-misc'].total + 1
+      state.picked = curr
     },
     // Filter
     SET_PICKED (state, picked) {
