@@ -5,7 +5,8 @@ import axios from 'axios'
 Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
-    apidata: []
+    apidata: [],
+    picked: 1
   },
   actions: {
     // Get API Data
@@ -15,12 +16,20 @@ const store = new Vuex.Store({
       }, (err) => {
         console.log(err)
       })
+    },
+    // Picked
+    UPDATE_PICKED ({ commit }, picked) {
+      commit('SET_PICKED', picked)
     }
   },
   // Set API Data
   mutations: {
     SET_DATASET: (state, { list }) => {
       state.apidata = list
+    },
+    // Filter
+    SET_PICKED (state, picked) {
+      state.picked = picked
     }
   }
 })

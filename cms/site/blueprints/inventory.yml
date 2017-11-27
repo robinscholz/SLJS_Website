@@ -2,6 +2,13 @@ title: Inventory
 pages: false
 files: 
   type: image
+  fields:
+    imgtitle: 
+      type: text
+      label: Title
+    caption:
+      type: textarea
+      label: Additional Info
 fields:
   title:
     label: Title
