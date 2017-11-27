@@ -6,10 +6,18 @@ import router from './router'
 import store from './store'
 import { sync } from 'vuex-router-sync'
 import Meta from 'vue-meta'
+import IdleVue from 'idle-vue'
 
 Vue.config.productionTip = false
 sync(store, router) // router sync
 Vue.use(Meta)
+
+// Idle
+const eventsHub = new Vue()
+Vue.use(IdleVue, {
+  eventEmitter: eventsHub,
+  idleTime: 10000
+})
 
 /* eslint-disable no-new */
 new Vue({

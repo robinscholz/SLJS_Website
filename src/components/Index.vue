@@ -1,7 +1,7 @@
 <template>
   <div class="main_wrapper" v-if="apidata.length !== 0">
     <ButtonMenu></ButtonMenu>
-    <!-- <CycleScreensaver></CycleScreensaver> -->
+    <CycleScreensaver></CycleScreensaver>
     <div class="collection_img" :class="image.orientation" v-for="image in collections[$store.state.picked].images" :style="{ 'background-image': 'url(' + image.url + ')' }"></div>
   </div>
 </template>
