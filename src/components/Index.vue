@@ -35,17 +35,17 @@
 
   .collection {
     &_img {
-      float: left;
-      width: calc(~"100vw");
-      height: calc(~"100vh");
-      // margin: 20px 40px;
+      // float: left;
+      width: calc(~"100vw - 80px");
+      height: calc(~"100vh - 40px");
+      margin: 20px auto;
       padding: 0;
-      background-size: cover;
+      background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
       &.portrait {
-        height: calc(~"150vh");
-        background-size: cover
+        // height: calc(~"150vh - 20px");
+        background-size: contain
       }
     }
   }

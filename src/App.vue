@@ -23,6 +23,6 @@ export default {
   @import "less/global.less";
 
   body {
-    background: #eee;
+    background: @blue;
   }
 </style>

@@ -1,6 +1,7 @@
 <template>
   <ul class="menu_wrapper">
-    <li class="menu_input">Simon Lars Julius Skatka Lindell</li>
+    <!-- <li class="menu_input">Simon Lars Julius Skatka Lindell</li> -->
+    <NameWidget></NameWidget>
     <li v-for="collection in collections" class="menu_input">
       <input 
         type="radio" 
@@ -17,9 +18,13 @@
 <script>
   import _ from 'underscore'
   import { mapActions } from 'vuex'
+  import NameWidget from '../library/NameWidget.vue'
 
   export default {
-    name: 'Button',
+    name: 'ButtonMenu',
+    components: {
+      NameWidget
+    },
     computed: {
       apidata () {
         return this.$store.state.apidata
@@ -48,7 +53,7 @@
     &_wrapper {
       position: fixed;
       width: 100vw;
-      top: @mp-b;
+      top: @mp-c;
       left: 0;
       list-style-type:none;
       white-space:nowrap;
@@ -56,19 +61,30 @@
     }
     &_input {
       display: inline-block;
-      margin: 0 @mp-a/2;
-      padding: 8px 10px 8px 5px;
-      border: solid 2px @black;
-      border-radius: 10px;
+      margin: 0 @mp-a;
+      cursor: pointer;
+      border: solid 2px @yellow;
+      padding: @mp-a 14px @mp-a 0;
+      background-color: @lightgrey;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       &:first-child {
-        margin-left: @mp-b
+        margin-left: @mp-b;
+        color: @lightgrey;
+        // width: 120px;
+        border: none;
+        background: none;
       }
       &:last-child {
         margin-right: @mp-b;
       }
       input {
         appearance: none;
-
+      }
+      label {
+        cursor: pointer;
+        display: inline;
       }
     }
   }
