@@ -1,17 +1,20 @@
 <template>
   <div class="main_wrapper" v-if="apidata.length !== 0">
     <ButtonMenu></ButtonMenu>
+    <CycleScreensaver></CycleScreensaver>
     <div class="collection_img" :class="image.orientation" v-for="image in collections[$store.state.picked].images" :style="{ 'background-image': 'url(' + image.url + ')' }"></div>
   </div>
 </template>
 
 <script>
   import ButtonMenu from './library/ButtonMenu.vue'
+  import CycleScreensaver from './library/CycleScreensaver.vue'
 
   export default {
     name: 'Index',
     components: {
-      ButtonMenu
+      ButtonMenu,
+      CycleScreensaver
     },
     computed: {
       apidata () {
