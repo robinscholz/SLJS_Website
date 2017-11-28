@@ -1,20 +1,25 @@
 <template>
   <div class="main_wrapper" v-if="apidata.length !== 0">
+    <NameWidget></NameWidget>
     <ButtonMenu></ButtonMenu>
+    <IndexMasonry></IndexMasonry>
     <!-- <CycleScreensaver></CycleScreensaver> -->
-    <div class="collection_img" :class="image.orientation" v-for="image in collections[$store.state.picked].images" :style="{ 'background-image': 'url(' + image.url + ')' }"></div>
   </div>
 </template>
 
 <script>
   import ButtonMenu from './library/ButtonMenu.vue'
   import CycleScreensaver from './library/CycleScreensaver.vue'
+  import IndexMasonry from './library/IndexMasonry.vue'
+  import NameWidget from './library/NameWidget.vue'
 
   export default {
     name: 'Index',
     components: {
       ButtonMenu,
-      CycleScreensaver
+      CycleScreensaver,
+      IndexMasonry,
+      NameWidget
     },
     computed: {
       apidata () {
@@ -32,21 +37,4 @@
 
 <style lang="less">
   @import "../less/global.less";
-
-  .collection {
-    &_img {
-      // float: left;
-      width: calc(~"100vw - 80px");
-      height: calc(~"100vh - 40px");
-      margin: 20px auto;
-      padding: 0;
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      &.portrait {
-        // height: calc(~"150vh - 20px");
-        background-size: contain
-      }
-    }
-  }
 </style>

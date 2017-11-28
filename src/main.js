@@ -6,10 +6,14 @@ import router from './router'
 import store from './store'
 import { sync } from 'vuex-router-sync'
 import Meta from 'vue-meta'
+import VueMasonry from 'vue-masonry-css'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 Vue.config.productionTip = false
 sync(store, router) // router sync
 Vue.use(Meta)
+Vue.use(VueMasonry)
+Vue.use(VueAwesomeSwiper)
 
 /* eslint-disable no-new */
 new Vue({
