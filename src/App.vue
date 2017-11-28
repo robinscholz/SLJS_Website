@@ -21,8 +21,4 @@ export default {
 
 <style lang="less">
   @import "less/global.less";
-
-  body {
-    // background: @blue;
-  }
 </style>

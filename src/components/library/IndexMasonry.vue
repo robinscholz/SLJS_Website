@@ -1,15 +1,4 @@
 <template>
-  <!-- <div 
-    class="collection_wrapper" 
-    v-if="apidata.length !== 0" 
-    v-masonry 
-    transition-duration="1s" 
-    item-selector=".item"
-  >
-    <div class="item" :class="image.orientation" v-for="image in collections[$store.state.picked].images">
-       <img class="collection_img" :src="image.url">
-    </div>
-  </div> -->
   <masonry
   class="collection_wrapper"
   :cols="{default: 2, 768: 2, 600: 1}"

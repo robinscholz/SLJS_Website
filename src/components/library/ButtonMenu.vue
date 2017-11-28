@@ -3,32 +3,8 @@
     <swiper-slide class="menu_btn">
       <NameWidget class="menu_input"></NameWidget>    
     </swiper-slide>
-    <swiper-slide class="menu_btn" v-for="collection in collections">
-      <span class="menu_input">
-        <input 
-          type="radio" 
-          :name="collection.title"
-          :id="collection.title"
-          :value="collection.number" 
-          v-model="$store.state.picked"
-        >
-        <label :for="collection.title" v-on:click="scrollTop">{{ collection.title }}</label>
-      </span>
-    </swiper-slide>
-    <swiper-slide class="menu_btn" v-for="collection in collections">
-      <span class="menu_input">
-        <input 
-          type="radio" 
-          :name="collection.title"
-          :id="collection.title"
-          :value="collection.number" 
-          v-model="$store.state.picked"
-        >
-        <label :for="collection.title" v-on:click="scrollTop">{{ collection.title }}</label>
-      </span>
-    </swiper-slide>
-    <swiper-slide class="menu_btn" v-for="collection in collections">
-      <span class="menu_input">
+    <swiper-slide class="menu_btn" v-for="collection in collections" :key="collection.title">
+      <span class="menu_input md-primary" :class="{active: collection.number == $store.state.picked}">
         <input 
           type="radio" 
           :name="collection.title"
@@ -51,7 +27,6 @@
     name: 'ButtonMenu',
     data () {
       return {
-        // notNextTick: true,
         swiperOption: {
           freeMode: true,
           slidesPerView: 'auto',
@@ -91,6 +66,7 @@
   
 <style lang="less">
   @import "../../less/global.less";
+  // @import 'vue-material/dist/vue-material.min.css'
 
   .menu {
     &_slider {
@@ -106,8 +82,11 @@
     &_btn {
       display: inline-block;
       margin: 0 @mp-a;
+      background: @secondary;
+      border-radius: 3px;
       &:first-child {
         margin-left: @mp-b;
+        background: @tertiary;
       }
       &:last-child {
         margin-right: @mp-b;
@@ -116,17 +95,20 @@
     &_input {
       display: inline-block;
       cursor: pointer;
-      padding: 6px 12px 5px 5px;
-      background: @midgrey;
-      border-radius: 5px;
-      border: solid 2px @lightgrey;
+      padding: 10px 3px 9px 8px;
       .fs-m;
+      color: @primary;
       input {
         appearance: none;
       }
       label {
         cursor: pointer;
         display: inline;
+        padding-right: 9px;
+      }
+      &.active {
+        color: @black;
+        background: @primary;
       }
     }
   }
