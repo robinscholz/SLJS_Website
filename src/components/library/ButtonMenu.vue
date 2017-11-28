@@ -117,11 +117,10 @@
       display: inline-block;
       cursor: pointer;
       padding: 6px 12px 5px 5px;
-      background: @white;
+      background: @midgrey;
       border-radius: 5px;
-      border: solid 1px @midgrey;
+      border: solid 2px @lightgrey;
       .fs-m;
-      letter-spacing: 1px;
       input {
         appearance: none;
       }

@@ -7,8 +7,8 @@
     name: 'NameWidget',
     data () {
       return {
-        fullname: ['Simon Lars Julius Skatka Lindell'],
-        // fullname: ['Simon Skatka Lindell'],
+        // fullname: ['Simon Lars Julius', 'Skatka Lindell'],
+        fullname: ['Simon Skatka Lindell'],
         // fullname: ['Simon', 'Lars', 'Julius', 'Skatka', 'Lindell'],
         index: 0
       }
@@ -28,10 +28,7 @@
   @import "../../less/global.less";
 
   span {
-    padding: 6px 12px 5px 5px;
-    // font-family: 'Clip-Regular';
-    // font-size: 6vw;
-    // bottom: -3vw;
-    // z-index: -1;
+    padding: 6px 12px 5px 12px;
+    text-transform: uppercase; 
   }
 </style>
