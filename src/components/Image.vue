@@ -1,21 +1,14 @@
 <template>
-  <div class="main_wrapper" v-if="apidata.length !== 0">
-    <ButtonMenu :index=index></ButtonMenu>
-    <IndexMasonry :index=index></IndexMasonry>
+  <div class="img_wrapper" v-if="apidata.length !== 0">
+    <div class="img_inner"></div>
   </div>
 </template>
 
 <script>
-  import ButtonMenu from './library/ButtonMenu.vue'
-  import IndexMasonry from './library/IndexMasonry.vue'
+
 
   export default {
-    name: 'Index',
-    components: {
-      ButtonMenu,
-      IndexMasonry
-    },
-    props: ['index'],
+    name: 'Image',
     computed: {
       apidata () {
         return this.$store.state.apidata

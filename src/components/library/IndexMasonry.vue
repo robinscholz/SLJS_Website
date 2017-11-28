@@ -4,13 +4,14 @@
   :cols="{default: 2, 768: 2, 600: 1}"
   :gutter="0"
   >
-    <img class="collection_img" v-for="image in collections[$store.state.picked].images" :key="image.url" :src="image.url">
+    <img class="collection_img" v-for="image in collections[index].images" :key="image.url" :src="image.url">
   </masonry>
 </template>
 
 <script>
   export default {
     name: 'IndexMasonry',
+    props: ['index'],
     computed: {
       apidata () {
         return this.$store.state.apidata

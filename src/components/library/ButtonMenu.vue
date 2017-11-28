@@ -3,34 +3,26 @@
     <swiper-slide class="menu_btn">
       <NameWidget class="menu_input"></NameWidget>    
     </swiper-slide>
-    <swiper-slide class="menu_btn" v-for="collection in collections" :key="collection.title">
-      <span class="menu_input md-primary" :class="{active: collection.number == $store.state.picked}">
-        <input 
-          type="radio" 
-          :name="collection.title"
-          :id="collection.title"
-          :value="collection.number" 
-          v-model="$store.state.picked"
-        >
-        <label :for="collection.title" v-on:click="scrollTop">{{ collection.title }}</label>
-      </span>
+    <swiper-slide class="menu_btn" v-for="collection in collections" :key="collection.uid">
+      <router-link :to="{ path: collection.uid }" class="menu_input">
+        {{ collection.title }}
+      </router-link>
     </swiper-slide>
   </swiper>
 </template>
 
 <script>
-  import _ from 'underscore'
-  import { mapActions } from 'vuex'
   import NameWidget from '../library/NameWidget.vue'
 
   export default {
     name: 'ButtonMenu',
+    props: ['index'],
     data () {
       return {
         swiperOption: {
           freeMode: true,
           slidesPerView: 'auto',
-          initialSlide: this.$store.state.picked,
+          initialSlide: this.initialSlideNumber,
           grabCursor: true,
           // loop: true,
           mousewheelControl: true,
@@ -50,15 +42,8 @@
       collections () {
         return this.apidata['2-collections']
       },
-      titles () {
-        var titles = _.pluck(this.collections, 'title')
-        return titles
-      }
-    },
-    methods: {
-      ...mapActions(['UPDATE_PICKED']),
-      scrollTop: function () {
-        scroll(0, 0)
+      initialSlideNumber () {
+        return parseInt(this.collections[this.index].number)
       }
     }
   }
@@ -66,7 +51,6 @@
   
 <style lang="less">
   @import "../../less/global.less";
-  // @import 'vue-material/dist/vue-material.min.css'
 
   .menu {
     &_slider {
@@ -95,20 +79,22 @@
     &_input {
       display: inline-block;
       cursor: pointer;
-      padding: 10px 3px 9px 8px;
+      padding: 10px 10px 9px 10px;
       .fs-m;
       color: @primary;
-      input {
-        appearance: none;
-      }
-      label {
-        cursor: pointer;
-        display: inline;
-        padding-right: 9px;
-      }
-      &.active {
+      text-decoration: none;
+      // input {
+      //   appearance: none;
+      // }
+      // label {
+      //   cursor: pointer;
+      //   display: inline;
+      //   padding-right: 9px;
+      // }
+      &.router-link-active {
         color: @black;
         background: @primary;
+        border-radius: 3px;
       }
     }
   }

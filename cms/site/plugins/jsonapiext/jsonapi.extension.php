@@ -28,6 +28,7 @@ jsonapi()->register([
 						$images[$n] = array(
 							"url" => $image->url(), 
 							"num" => (string)$n,
+							"uri" => $image->uri(),
 							"orientation" => $image->orientation(),
 							"imgtitle" => (string)$image->imgtitle(),
 							"caption" => (string)$image->caption()
@@ -50,9 +51,10 @@ jsonapi()->register([
 					};
 				};
 
-				$json['2-collections'][$collection->num()] = array(
+				$json['2-collections'][$collection->uid()] = array(
 					'url' => (string)$collection->url(),
 					'uri' => (string)$collection->uri(),
+					'uid' => (string)$collection->uid(),
 					'number' => (string)$collection->num(),
 					'title' => (string)$collection->title(),
 					'images' => $images,
