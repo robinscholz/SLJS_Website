@@ -11,15 +11,13 @@
   import ButtonMenu from './library/ButtonMenu.vue'
   import CycleScreensaver from './library/CycleScreensaver.vue'
   import IndexMasonry from './library/IndexMasonry.vue'
-  import NameWidget from './library/NameWidget.vue'
 
   export default {
     name: 'Index',
     components: {
       ButtonMenu,
       CycleScreensaver,
-      IndexMasonry,
-      NameWidget
+      IndexMasonry
     },
     computed: {
       apidata () {

@@ -1,5 +1,5 @@
 <template>
-    <!-- <div class="name">{{ fullname[index] }}</div> -->
+    <span>{{ fullname[index] }}</span>
 </template>
 
 <script>
@@ -27,16 +27,10 @@
 <style lang="less" scoped>
   @import "../../less/global.less";
 
-  .name {
+  span {
+    padding: 6px 12px 5px 5px;
     // font-family: 'Clip-Regular';
     // font-size: 6vw;
-    line-height: 1;
-    color: @lightgrey;
-    // text-align: center;
-    width: 100vw;
-    position: fixed;
-    top: @mp-a;
-    left: @mp-a;
     // bottom: -3vw;
     // z-index: -1;
   }

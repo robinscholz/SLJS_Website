@@ -1,5 +1,8 @@
 <template>
   <swiper class="menu_slider" :options="swiperOption" :not-next-tick="notNextTick" ref="mySwiper">
+    <swiper-slide class="menu_btn">
+      <NameWidget class="menu_input"></NameWidget>    
+    </swiper-slide>
     <swiper-slide class="menu_btn" v-for="collection in collections">
       <span class="menu_input">
         <input 
@@ -42,6 +45,7 @@
 <script>
   import _ from 'underscore'
   import { mapActions } from 'vuex'
+  import NameWidget from '../library/NameWidget.vue'
 
   export default {
     name: 'ButtonMenu',
@@ -60,6 +64,9 @@
           }
         }
       }
+    },
+    components: {
+      NameWidget
     },
     computed: {
       apidata () {
@@ -94,15 +101,16 @@
       list-style-type: none;
       white-space: nowrap;
       overflow: hidden;
+      font-size: 0;
     }
     &_btn {
-      display: inline;
+      display: inline-block;
       margin: 0 @mp-a;
       &:first-child {
         margin-left: @mp-b;
       }
       &:last-child {
-        margin-right: @mp-c;
+        margin-right: @mp-b;
       }
     }
     &_input {
