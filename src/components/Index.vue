@@ -2,8 +2,13 @@
   <div class="main_wrapper" v-if="apidata.length !== 0">
     <NameWidget></NameWidget>
     <ButtonMenu></ButtonMenu>
+<<<<<<< HEAD
     <IndexMasonry></IndexMasonry>
     <!-- <CycleScreensaver></CycleScreensaver> -->
+=======
+    <CycleScreensaver></CycleScreensaver>
+    <div class="collection_img" :class="image.orientation" v-for="image in collections[$store.state.picked].images" :style="{ 'background-image': 'url(' + image.url + ')' }"></div>
+>>>>>>> origin/master
   </div>
 </template>
 

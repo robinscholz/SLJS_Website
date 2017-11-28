@@ -1,10 +1,7 @@
 <template>
-  <div class="screensaver_wrapper">
-    <div v-for="collection in collections" class="screensaver_element">
-      <div>{{ collection.title }}</div>
-      <img v-for="thumb in collection.thumbs" :src="thumb.url" >
-    </div>
-  </div>
+  <div class="screensaver_wrapper" v-on:click="increment">
+      <img v-for="thumb in collections[counter].thumbs" :src="thumb.url">
+  </div>    
 </template>
 
 <script>
@@ -19,6 +16,30 @@
       },
       misc () {
         return this.apidata['3-misc']
+      },
+      collectionsLength () {
+        return Object.keys(this.collections).length
+      }
+    },
+    data () {
+      return {
+        counter: this.$store.state.picked,
+        idleStatus: 'idle'
+      }
+    },
+    onIdle () {
+      this.idleStatus = 'idle'
+    },
+    onActive () {
+      this.idleStatus = 'active'
+    },
+    methods: {
+      increment () {
+        if (this.counter < this.collectionsLength) {
+          this.counter += 1
+        } else {
+          this.counter = 0
+        }
       }
     }
   }
@@ -27,11 +48,14 @@
 <style lang="less">
   @import "../../less/global.less";
 
-  .screensaver_element {
+  .screensaver_wrapper {
     width: 100vw;
     height: 100vh;
-    background: red;
-    margin-bottom: 50px;
+    overflow: hidden;
+    img {
+      width: calc(~"100% / 7");
+      vertical-align: top;
+    }
   }
 
 </style>

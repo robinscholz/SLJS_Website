@@ -6,14 +6,25 @@ import router from './router'
 import store from './store'
 import { sync } from 'vuex-router-sync'
 import Meta from 'vue-meta'
+<<<<<<< HEAD
 import VueMasonry from 'vue-masonry-css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+=======
+import IdleVue from 'idle-vue'
+>>>>>>> origin/master
 
 Vue.config.productionTip = false
 sync(store, router) // router sync
 Vue.use(Meta)
 Vue.use(VueMasonry)
 Vue.use(VueAwesomeSwiper)
+
+// Idle
+const eventsHub = new Vue()
+Vue.use(IdleVue, {
+  eventEmitter: eventsHub,
+  idleTime: 10000
+})
 
 /* eslint-disable no-new */
 new Vue({
