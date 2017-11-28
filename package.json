@@ -22,6 +22,7 @@
     "vue": "^2.3.3",
     "vue-awesome-swiper": "^2.6.7",
     "vue-enhanced-check": "^1.5.1",
+    "vue-idle": "^2.0.5",
     "vue-masonry-css": "^1.0.0",
     "vue-meta": "^1.0.5",
     "vue-multiselect": "^2.0.2",

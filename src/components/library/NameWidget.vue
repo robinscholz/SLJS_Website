@@ -1,5 +1,5 @@
 <template>
-    <div class="name">{{ fullname[index] }}</div>
+    <!-- <div class="name">{{ fullname[index] }}</div> -->
 </template>
 
 <script>
