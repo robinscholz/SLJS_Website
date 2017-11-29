@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/Index'
+import Image from '@/components/Image'
+import Home from '@/components/Home'
+// import { store } from '../store'
 
 Vue.use(Router)
 
@@ -8,15 +11,25 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      // redirect: { name: 'Index' }
-      redirect: to => {
-        // var rightNow = new Date()
-        // var formatted = rightNow.toISOString().slice(0, 15).replace(/-/g, '').replace(/T/g, '').replace(/:/g, '')
-        // var curr = formatted % this.$store.state.apidata['3-misc'].total + 1
-        // var collection = this.$store.state.apidata['2-collections'][curr].title
-        return '/collection-1'
-      }
-    }, {
+      name: 'Home',
+      component: Home,
+      props: true
+    },
+    {
+      path: '/',
+      redirect: { name: 'Index' }
+      // redirect: to => {
+      //   store.dispatch('LOAD_DATASET').then(() => {
+      //     var rightNow = new Date()
+      //     var formatted = rightNow.toISOString().slice(0, 15).replace(/-/g, '').replace(/T/g, '').replace(/:/g, '')
+      //     var curr = formatted % store.state.apidata['3-misc'].total + 1
+      //     console.log(curr)
+      //     return '/' + curr
+      //   })
+      //   // return '/' + curr
+      // }
+    },
+    {
       path: '/:index',
       name: 'Index',
       component: Index,
@@ -46,5 +59,10 @@ const router = new Router({
     }
   }
 })
+
+// router.beforeEach((to, from, next) => {
+//   if (store.state.apidata.length === 0) {
+//   }
+// })
 
 export default router

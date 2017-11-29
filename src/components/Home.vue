@@ -1,12 +1,17 @@
 <template>
-  <div class="img_wrapper" v-if="apidata.length !== 0">
-    <div class="img_inner"></div>
+  <div>
+    <ButtonMenu></ButtonMenu>
   </div>
 </template>
 
 <script>
+  import ButtonMenu from './library/ButtonMenu.vue'
+
   export default {
-    name: 'Image',
+    name: 'Home',
+    components: {
+      ButtonMenu
+    },
     computed: {
       apidata () {
         return this.$store.state.apidata

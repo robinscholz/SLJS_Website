@@ -1,5 +1,5 @@
 <template>
-  <swiper class="menu_slider" :options="swiperOption" :not-next-tick="notNextTick" ref="mySwiper">
+  <swiper class="menu_slider" :options="swiperOption" ref="mySwiper">
     <swiper-slide class="menu_btn">
       <NameWidget class="menu_input"></NameWidget>    
     </swiper-slide>
