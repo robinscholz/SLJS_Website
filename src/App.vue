@@ -12,15 +12,23 @@ import _ from 'underscore'
 export default {
   name: 'App',
   created () {
-    // Load API Data and forward to random collection
+    // Load API Data
     this.$store.dispatch('LOAD_DATASET').then(() => {
-      var rightNow = new Date() // Date
-      var formatted = rightNow.toISOString().slice(0, 15).replace(/-/g, '').replace(/T/g, '').replace(/:/g, '') // Format (10 min)
-      var rand = formatted % this.$store.state.apidata['3-misc'].total // math is fun
-      var collections = _.values(this.$store.state.apidata['2-collections']) // Create Array of Collections
-      var gotourl = collections[rand].uid // get uid for url
-      this.$router.push('/' + gotourl) // forward app
+      this.urlForward()
     })
+  },
+  methods: {
+    // Forward to random collection
+    urlForward () {
+      if (this.$route.name === 'Home') {
+        var rightNow = new Date() // Date
+        var formatted = rightNow.toISOString().slice(0, 15).replace(/-/g, '').replace(/T/g, '').replace(/:/g, '') // Format (10 min)
+        var rand = formatted % this.$store.state.apidata['3-misc'].total // math is fun
+        var collections = _.values(this.$store.state.apidata['2-collections']) // Create Array of Collections
+        var gotourl = collections[rand].uid // get uid for url
+        this.$router.push('/' + gotourl) // forward app
+      }
+    }
   }
   // components: {
   //   SiteHead

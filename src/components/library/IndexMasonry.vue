@@ -4,7 +4,9 @@
   :cols="{default: 2, 768: 2, 600: 1}"
   :gutter="0"
   >
-    <img class="collection_img" v-for="image in collections[index].images" :key="image.url" :src="image.url">
+    <router-link v-for="image in collections[index].images" :key="image.url" :to="index + '/' + image.num">
+      <img class="collection_img" :src="image.url">
+    </router-link>
   </masonry>
 </template>
 
