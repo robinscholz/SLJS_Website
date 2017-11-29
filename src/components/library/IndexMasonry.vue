@@ -4,7 +4,7 @@
   :cols="{default: 2, 768: 2, 600: 1}"
   :gutter="0"
   >
-    <img class="collection_img" v-for="image in collections[index].images" :key="image.url" :src="image.url">
+    <progressive-img class="collection_img" v-for="image in collections[index].images" :key="image.url" :src="image.url" />
   </masonry>
 </template>
 
@@ -31,6 +31,7 @@
 
   .collection {
     &_wrapper {
+      position: relative;
       z-index: -1;
       width: 100%;
       font-size: 0;

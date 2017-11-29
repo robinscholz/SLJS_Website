@@ -9,12 +9,14 @@ import Meta from 'vue-meta'
 import VueMasonry from 'vue-masonry-css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import IdleVue from 'idle-vue'
+import VueProgressiveImage from 'vue-progressive-image'
 
 Vue.config.productionTip = false
 sync(store, router) // router sync
 Vue.use(Meta)
 Vue.use(VueMasonry)
 Vue.use(VueAwesomeSwiper)
+Vue.use(VueProgressiveImage)
 
 // Idle
 const eventsHub = new Vue()
