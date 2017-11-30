@@ -78,13 +78,8 @@
     &_input {
       display: inline-block;
       cursor: pointer;
-<<<<<<< HEAD
       padding: 10px 10px 9px 10px;
       .fs-s;
-=======
-      padding: 10px 10px 10px 10px;
-      .fs-m;
->>>>>>> origin/master
       color: @primary;
       text-decoration: none;
       // input {
