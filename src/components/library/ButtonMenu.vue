@@ -24,7 +24,6 @@
           slidesPerView: 'auto',
           initialSlide: this.initialSlideNumber,
           grabCursor: true,
-          // loop: true,
           mousewheelControl: true,
           onTransitionStart (swiper) {
             console.log(swiper)
@@ -79,7 +78,7 @@
     &_input {
       display: inline-block;
       cursor: pointer;
-      padding: 10px 10px 9px 10px;
+      padding: 10px 10px 10px 10px;
       .fs-m;
       color: @primary;
       text-decoration: none;

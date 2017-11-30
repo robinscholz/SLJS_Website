@@ -1,5 +1,5 @@
 <template>
-    <span>{{ fullname[index] }}</span>
+    <span>{{ fullname }}</span>
 </template>
 
 <script>
@@ -7,19 +7,13 @@
     name: 'NameWidget',
     data () {
       return {
-        // fullname: ['Simon Lars Julius', 'Skatka Lindell'],
-        fullname: ['Simon Skatka Lindell'],
-        // fullname: ['Simon', 'Lars', 'Julius', 'Skatka', 'Lindell'],
-        index: 0
+        fullname: 'Simon Skatka Lindell'
       }
     },
     methods: {
       updateName () {
         this.index = (this.index + 1) % (this.fullname.length)
       }
-    },
-    mounted () {
-      // setInterval(this.updateName, 1200)
     }
   }
 </script>
@@ -28,7 +22,7 @@
   @import "../../less/global.less";
 
   span {
-    padding: 10px 12px 9px 12px;
+    padding: 10px 10px 10px 10px;
     text-transform: uppercase; 
     color: @black;
   }
