@@ -80,7 +80,7 @@
       display: inline-block;
       cursor: pointer;
       padding: 10px 10px 9px 10px;
-      .fs-m;
+      .fs-s;
       color: @primary;
       text-decoration: none;
       // input {

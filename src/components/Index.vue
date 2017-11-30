@@ -26,6 +26,14 @@
       misc () {
         return this.apidata['3-misc']
       }
+    },
+    data () {
+      return {
+        idleStatus: 'idleActive'
+      }
+    },
+    onIdle () {
+      console.log('idle')
     }
   }
 </script>
