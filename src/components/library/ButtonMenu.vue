@@ -78,18 +78,10 @@
     &_input {
       display: inline-block;
       cursor: pointer;
-      padding: 10px 10px 9px 10px;
-      .fs-s;
+      padding: 10px 10px 10px 10px;
+      .fs-m;
       color: @primary;
       text-decoration: none;
-      // input {
-      //   appearance: none;
-      // }
-      // label {
-      //   cursor: pointer;
-      //   display: inline;
-      //   padding-right: 9px;
-      // }
       &.router-link-active {
         color: @black;
         background: @primary;

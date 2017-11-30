@@ -4,7 +4,9 @@
   :cols="{default: 2, 768: 2, 600: 1}"
   :gutter="0"
   >
-    <progressive-img class="collection_img" v-for="image in collections[index].images" :key="image.url" :src="image.url" />
+    <router-link class="collection_link" v-for="image in collections[index].images" :to="'/' + index + '/' + image.num" :key="image.url">
+      <img class="collection_img" :src="image.url"></img>
+    </router-link>
   </masonry>
 </template>
 
@@ -36,12 +38,15 @@
       width: 100%;
       font-size: 0;
     }
+    &_link {
+      display: block;
+    }
     &_img {
-      float: right;
       display: block;
       width: 100%;
       padding: 0;
       margin: 0;
+      cursor: pointer;
     }
   }
 </style>
