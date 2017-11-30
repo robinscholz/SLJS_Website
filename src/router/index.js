@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import Index from '@/components/Index'
 import Image from '@/components/Image'
 import Home from '@/components/Home'
+import store from '../store'
+// import _ from 'underscore'
 
 Vue.use(Router)
 
@@ -16,20 +18,36 @@ const router = new Router({
       path: '/:index',
       name: 'Index',
       component: Index,
-      props: true
-      // children: [
-      //   {
-      //     path: ':num(\\d+)',
-      //     component: Image,
-      //     props: true,
-      //     name: 'Image'
-      //   }
-      // ]
+      props: true,
+      beforeEnter: (to, from, next) => {
+        store.dispatch('LOAD_DATASET').then(() => {
+          var index = to.params.index
+          var collections = store.state.apidata['2-collections']
+          console.log(index in collections)
+          if (index in collections) {
+            next()
+          } else {
+            router.push('/')
+          }
+        })
+      }
     }, {
       path: '/:index/:num(\\d+)',
       name: 'Image',
       component: Image,
-      props: true
+      props: true,
+      beforeEnter: (to, from, next) => {
+        store.dispatch('LOAD_DATASET').then(() => {
+          var index = to.params.index
+          var num = String(to.params.num)
+          var images = store.state.apidata['2-collections'][index]['images']
+          if (num in images) {
+            next()
+          } else {
+            router.push('/' + index)
+          }
+        })
+      }
     },
     { path: '*', redirect: '/' }
   ],
@@ -42,10 +60,5 @@ const router = new Router({
     }
   }
 })
-
-// router.beforeEach((to, from, next) => {
-//   if (store.state.apidata.length === 0) {
-//   }
-// })
 
 export default router

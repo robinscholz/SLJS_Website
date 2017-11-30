@@ -11,11 +11,17 @@ import _ from 'underscore'
 
 export default {
   name: 'App',
+    // components: {
+  //   SiteHead
+  // }
   created () {
     // Load API Data
     this.$store.dispatch('LOAD_DATASET').then(() => {
       this.urlForward()
     })
+  },
+  updated () {
+    this.urlForward()
   },
   methods: {
     // Forward to random collection
@@ -30,9 +36,6 @@ export default {
       }
     }
   }
-  // components: {
-  //   SiteHead
-  // }
 }
 </script>
 

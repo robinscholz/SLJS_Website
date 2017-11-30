@@ -27,7 +27,7 @@
     },
     methods: {
       goBack: function () {
-        this.$router.go(-1)
+        this.$router.push('/' + this.index)
       }
     }
   }
