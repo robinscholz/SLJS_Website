@@ -61,6 +61,7 @@
       white-space: nowrap;
       overflow: hidden;
       font-size: 0;
+      z-index: 90;
     }
     &_btn {
       display: inline-block;

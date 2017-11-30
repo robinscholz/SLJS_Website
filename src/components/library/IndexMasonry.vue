@@ -5,7 +5,7 @@
   :gutter="0"
   >
     <router-link v-for="image in collections[index].images" class="collection_link" :to="index + '/' + image.num" :key="image.url">
-      <img class="collection_img" :src="image.url" v-on:click="log()"></img>
+      <progressive-img class="collection_img" :src="image.url" v-on:click="log()"></progressive-img>
     </router-link>
   </masonry>
 </template>
@@ -39,19 +39,17 @@
   .collection {
     &_wrapper {
       position: relative;
-      z-index: -1;
       width: 100%;
       font-size: 0;
     }
     &_link {
-      display: block;
+      cursor: pointer;
     }
     &_img {
       display: block;
       width: 100%;
       padding: 0;
       margin: 0;
-      cursor: pointer;
     }
   }
 </style>
