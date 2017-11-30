@@ -23,7 +23,6 @@ const router = new Router({
         store.dispatch('LOAD_DATASET').then(() => {
           var index = to.params.index
           var collections = store.state.apidata['2-collections']
-          console.log(index in collections)
           if (index in collections) {
             next()
           } else {

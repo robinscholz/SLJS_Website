@@ -52,10 +52,6 @@ module.exports = {
         loader: "less-loader"
       },
       {
-        test: /\.(sass|scss)$/,
-        loader: "sass-loader"
-      },
-      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {

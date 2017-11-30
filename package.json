@@ -17,7 +17,6 @@
     "idle-vue": "^2.0.5",
     "less": "^2.7.2",
     "less-loader": "^4.0.4",
-    "sass-loader": "^6.0.6",
     "underscore": "^1.8.3",
     "vue": "^2.3.3",
     "vue-awesome-swiper": "^2.6.7",
