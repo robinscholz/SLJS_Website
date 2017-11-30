@@ -4,8 +4,8 @@
   :cols="{default: 2, 768: 2, 600: 1}"
   :gutter="0"
   >
-    <router-link class="collection_link" v-for="image in collections[index].images" :to="'/' + index + '/' + image.num" :key="image.url">
-      <img class="collection_img" :src="image.url"></img>
+    <router-link v-for="image in collections[index].images" class="collection_link" :to="index + '/' + image.num" :key="image.url">
+      <img class="collection_img" :src="image.url" v-on:click="log()"></img>
     </router-link>
   </masonry>
 </template>
@@ -23,6 +23,11 @@
       },
       misc () {
         return this.apidata['3-misc']
+      }
+    },
+    methods: {
+      log () {
+        console.log('clicked')
       }
     }
   }

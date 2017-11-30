@@ -21,10 +21,6 @@ export const store = new Vuex.Store({
   mutations: {
     SET_DATASET: (state, { list }) => {
       state.apidata = list
-    },
-    // Filter
-    SET_PICKED (state, picked) {
-      state.picked = picked
     }
   }
 })

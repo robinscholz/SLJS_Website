@@ -22,7 +22,7 @@ Vue.use(VueProgressiveImage)
 const eventsHub = new Vue()
 Vue.use(IdleVue, {
   eventEmitter: eventsHub,
-  idleTime: 10000
+  idleTime: 30000
 })
 
 /* eslint-disable no-new */

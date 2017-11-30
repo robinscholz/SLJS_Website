@@ -4,7 +4,6 @@ import Index from '@/components/Index'
 import Image from '@/components/Image'
 import Home from '@/components/Home'
 import store from '../store'
-// import _ from 'underscore'
 
 Vue.use(Router)
 
@@ -34,19 +33,19 @@ const router = new Router({
       path: '/:index/:num(\\d+)',
       name: 'Image',
       component: Image,
-      props: true,
-      beforeEnter: (to, from, next) => {
-        store.dispatch('LOAD_DATASET').then(() => {
-          var index = to.params.index
-          var num = String(to.params.num)
-          var images = store.state.apidata['2-collections'][index]['images']
-          if (num in images) {
-            next()
-          } else {
-            router.push('/' + index)
-          }
-        })
-      }
+      props: true
+      // beforeEnter: (to, from, next) => {
+      //   store.dispatch('LOAD_DATASET').then(() => {
+      //     var index = to.params.index
+      //     var num = String(to.params.num)
+      //     var images = store.state.apidata['2-collections'][index]['images']
+      //     if (num in images) {
+      //       next()
+      //     } else {
+      //       router.push('/' + index)
+      //     }
+      //   })
+      // }
     },
     { path: '*', redirect: '/' }
   ],
