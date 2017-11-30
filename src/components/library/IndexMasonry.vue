@@ -4,8 +4,22 @@
   :cols="{default: 2, 768: 2, 600: 1}"
   :gutter="0"
   >
-    <router-link v-for="image in collections[index].images" class="collection_link" :to="index + '/' + image.num" :key="image.url">
-      <progressive-img class="collection_img" :src="image.url" v-on:click="log()"></progressive-img>
+    <router-link
+      v-for="image in collections[index].images" 
+      class="collection_link" 
+      :to="index + '/' + image.num" 
+      :key="image.url"
+    ><clazy-load :src="image.url">
+      <transition name="fade" slot="image">
+        <img :src="image.url" class="collection_img">
+      </transition>
+      <transition name="fade" slot="placeholder">
+        <div slot="placeholder">
+          Loading....
+        </div>
+      </transition>
+    </clazy-load>
+      <!-- <img class="collection_img" :src="image.url"></img> -->
     </router-link>
   </masonry>
 </template>
@@ -28,6 +42,9 @@
     methods: {
       log () {
         console.log('clicked')
+      },
+      imageProgress (instance, image) {
+        console.log('image')
       }
     }
   }

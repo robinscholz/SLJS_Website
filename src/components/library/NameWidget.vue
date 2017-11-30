@@ -1,5 +1,5 @@
 <template>
-    <span v-on:click="log()">{{ fullname }}</span>
+    <span>{{ fullname }}</span>
 </template>
 
 <script>
@@ -13,9 +13,6 @@
     methods: {
       updateName () {
         this.index = (this.index + 1) % (this.fullname.length)
-      },
-      log () {
-        console.log('clicked')
       }
     }
   }
