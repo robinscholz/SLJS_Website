@@ -23,14 +23,20 @@
       collections () {
         return this.apidata['2-collections']
       },
+      collectionsArray () {
+        return Object.values(this.collections)
+      },
       misc () {
         return this.apidata['3-misc']
+      },
+      id () {
+        return this.collections.number
       }
     },
     data () {
       return {
         idleStatus: 'idleActive',
-        pageNumber: 0
+        pageNumber: -1
       }
     },
     onIdle () {
@@ -41,7 +47,13 @@
     },
     methods: {
       start: function () {
-        this.interval = setInterval(function () { this.pageNumber++ }.bind(this), 2000)
+        this.interval = setInterval(function () {
+          if (this.pageNumber === this.misc.total - 1) {
+            this.pageNumber = 0
+          } else {
+            this.pageNumber++
+          }
+        }.bind(this), 7500)
       },
       stop: function () {
         clearInterval(this.interval)
@@ -56,7 +68,9 @@
         }
       },
       pageNumber: function () {
-        console.log('redirect funtion here')
+        var collectionsArray = Object.values(this.collections)
+        var currentUid = collectionsArray[this.pageNumber].uid
+        this.$router.push(currentUid)
       }
     }
   }
