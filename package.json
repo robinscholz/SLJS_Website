@@ -22,6 +22,7 @@
     "vue-awesome-swiper": "^2.6.7",
     "vue-enhanced-check": "^1.5.1",
     "vue-images-loaded": "^1.1.2",
+    "vue-interval": "^0.2.0",
     "vue-lazyload": "^1.1.4",
     "vue-lazyload-img": "^2.0.3",
     "vue-masonry-css": "^1.0.0",

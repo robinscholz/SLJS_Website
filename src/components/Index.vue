@@ -29,11 +29,35 @@
     },
     data () {
       return {
-        idleStatus: 'idleActive'
+        idleStatus: 'idleActive',
+        pageNumber: 0
       }
     },
     onIdle () {
-      console.log('idle')
+      this.idleStatus = 'idle'
+    },
+    onActive () {
+      this.idleStatus = 'idleActive'
+    },
+    methods: {
+      start: function () {
+        this.interval = setInterval(function () { this.pageNumber++ }.bind(this), 2000)
+      },
+      stop: function () {
+        clearInterval(this.interval)
+      }
+    },
+    watch: {
+      idleStatus: function () {
+        if (this.idleStatus === 'idle') {
+          this.start()
+        } else {
+          this.stop()
+        }
+      },
+      pageNumber: function () {
+        console.log('redirect funtion here')
+      }
     }
   }
 </script>
