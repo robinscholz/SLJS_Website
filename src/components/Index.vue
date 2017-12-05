@@ -29,8 +29,10 @@
       misc () {
         return this.apidata['3-misc']
       },
-      id () {
-        return this.collections.number
+      id: function () {
+        for (var i = 0; i < 5; i++) {
+          console.log(this.collections)
+        }
       }
     },
     data () {

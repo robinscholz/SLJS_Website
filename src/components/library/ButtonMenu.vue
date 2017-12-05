@@ -71,6 +71,7 @@
       &:first-child {
         margin-left: @mp-b;
         background: @tertiary;
+        padding: 2px;
       }
       &:last-child {
         margin-right: @mp-b;
@@ -79,7 +80,7 @@
     &_input {
       display: inline-block;
       cursor: pointer;
-      padding: 10px 10px 10px 10px;
+      padding: 12px;
       .fs-m;
       color: @primary;
       text-decoration: none;
