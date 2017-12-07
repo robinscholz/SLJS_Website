@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from '@/components/Index'
 import Image from '@/components/Image'
 import Home from '@/components/Home'
+import Contact from '@/components/Contact'
 import store from '../store'
 
 Vue.use(Router)
@@ -13,6 +14,10 @@ const router = new Router({
       path: '/',
       name: 'Home',
       component: Home
+    }, {
+      path: '/contact',
+      name: 'Contact',
+      component: Contact
     }, {
       path: '/:index',
       name: 'Index',

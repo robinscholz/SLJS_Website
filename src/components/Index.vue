@@ -8,6 +8,7 @@
 <script>
   import ButtonMenu from './library/ButtonMenu.vue'
   import IndexMasonry from './library/IndexMasonry.vue'
+  import _ from 'underscore'
 
   export default {
     name: 'Index',
@@ -21,18 +22,10 @@
         return this.$store.state.apidata
       },
       collections () {
-        return this.apidata['2-collections']
-      },
-      collectionsArray () {
-        return Object.values(this.collections)
+        return _.values(this.apidata['2-collections'])
       },
       misc () {
         return this.apidata['3-misc']
-      },
-      id: function () {
-        for (var i = 0; i < 5; i++) {
-          console.log(this.collections)
-        }
       }
     },
     data () {
@@ -70,8 +63,7 @@
         }
       },
       pageNumber: function () {
-        var collectionsArray = Object.values(this.collections)
-        var currentUid = collectionsArray[this.pageNumber].uid
+        var currentUid = this.collections[this.pageNumber].uid
         this.$router.push(currentUid)
       }
     }

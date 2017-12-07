@@ -8,6 +8,9 @@
         {{ collection.title }}
       </router-link>
     </swiper-slide>
+    <swiper-slide class="menu_btn">
+      <router-link to="contact" class="menu_input">Contact & CV</router-link>    
+    </swiper-slide>
   </swiper>
 </template>
 
@@ -64,6 +67,18 @@
       font-size: 0;
       z-index: 90;
     }
+    &_input {
+      display: inline-block;
+      cursor: pointer;
+      padding: 12px;
+      .fs-m;
+      text-decoration: none;
+      color: @black;
+      &.router-link-active {
+        background: @secondary;
+        border-radius: 3px;
+      }
+    }
     &_btn {
       display: inline-block;
       margin: 0 @mp-a;
@@ -76,19 +91,11 @@
       }
       &:last-child {
         margin-right: @mp-b;
-      }
-    }
-    &_input {
-      display: inline-block;
-      cursor: pointer;
-      padding: 12px;
-      .fs-m;
-      color: @black;
-      text-decoration: none;
-      &.router-link-active {
-        color: @black;
-        background: @secondary;
-        border-radius: 3px;
+        background: @black;
+        // padding: 2px;
+        .menu_input {
+          .white;
+        }
       }
     }
   }

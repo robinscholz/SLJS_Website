@@ -19,6 +19,6 @@
   span {
     padding: 10px 10px 10px 10px;
     text-transform: uppercase; 
-    color: @white;
+    .white;
   }
 </style>
