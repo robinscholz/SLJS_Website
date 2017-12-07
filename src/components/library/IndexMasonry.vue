@@ -70,14 +70,15 @@
       position: relative;
       width: 100%;
       font-size: 0;
+      padding: 1px;
     }
     &_link {
       cursor: pointer;
     }
     &_img {
       display: block;
-      width: 100%;
-      padding: 0;
+      width: calc(~"100% - 1px");
+      padding: 1px 0px 0px 1px;
       margin: 0;
     }
   }

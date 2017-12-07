@@ -23,17 +23,57 @@
       collections () {
         return this.apidata['2-collections']
       },
+      collectionsArray () {
+        return Object.values(this.collections)
+      },
       misc () {
         return this.apidata['3-misc']
+      },
+      id: function () {
+        for (var i = 0; i < 5; i++) {
+          console.log(this.collections)
+        }
       }
     },
     data () {
       return {
-        idleStatus: 'idleActive'
+        idleStatus: 'idleActive',
+        pageNumber: -1
       }
     },
     onIdle () {
-      console.log('idle')
+      this.idleStatus = 'idle'
+    },
+    onActive () {
+      this.idleStatus = 'idleActive'
+    },
+    methods: {
+      start: function () {
+        this.interval = setInterval(function () {
+          if (this.pageNumber === this.misc.total - 1) {
+            this.pageNumber = 0
+          } else {
+            this.pageNumber++
+          }
+        }.bind(this), 7500)
+      },
+      stop: function () {
+        clearInterval(this.interval)
+      }
+    },
+    watch: {
+      idleStatus: function () {
+        if (this.idleStatus === 'idle') {
+          this.start()
+        } else {
+          this.stop()
+        }
+      },
+      pageNumber: function () {
+        var collectionsArray = Object.values(this.collections)
+        var currentUid = collectionsArray[this.pageNumber].uid
+        this.$router.push(currentUid)
+      }
     }
   }
 </script>

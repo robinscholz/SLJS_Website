@@ -22,7 +22,7 @@ Vue.use(VueClazyLoad)
 const eventsHub = new Vue()
 Vue.use(IdleVue, {
   eventEmitter: eventsHub,
-  idleTime: 30000
+  idleTime: 10000
 })
 
 /* eslint-disable no-new */
