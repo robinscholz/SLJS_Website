@@ -62,7 +62,7 @@
   }
 
   .fade-enter-active, .fade-leave-active {
-    transition: opacity .0s
+    transition: opacity .5s
   }
 
   .collection {
@@ -78,7 +78,7 @@
     &_img {
       display: block;
       width: calc(~"100% - 1px");
-      padding: 1px 0px 0px 1px;
+      padding: 1px 0px 1px 1px;
       margin: 0;
     }
   }

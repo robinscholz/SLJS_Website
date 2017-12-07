@@ -66,11 +66,11 @@
     &_btn {
       display: inline-block;
       margin: 0 @mp-a;
-      background: @secondary;
+      background: @primary;
       border-radius: 3px;
       &:first-child {
         margin-left: @mp-b;
-        background: @tertiary;
+        background: @black;
         padding: 2px;
       }
       &:last-child {
@@ -82,11 +82,11 @@
       cursor: pointer;
       padding: 12px;
       .fs-m;
-      color: @primary;
+      color: @black;
       text-decoration: none;
       &.router-link-active {
         color: @black;
-        background: @primary;
+        background: @secondary;
         border-radius: 3px;
       }
     }
