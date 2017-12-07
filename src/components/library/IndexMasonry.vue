@@ -15,12 +15,12 @@
         element=".main_wrapper"
         margin="100%"
       >
-        <transition name="fade" slot="image">
-          <img :src="image.url" class="collection_img">
-        </transition>
-        <transition name="fade" slot="placeholder">
-          <div></div>
-        </transition>
+        <!-- <transition name="fade" slot="image"> -->
+        <img :src="image.url" class="collection_img" slot="image">
+        <!-- </transition> -->
+        <!-- <transition name="fade" slot="placeholder"> -->
+        <div class="collection_placeholder" :style="{ height: 'calc(' + 50 / image.ratio + 'vw - ' + 2 * image.ratio + 'px)' }" slot="placeholder"></div>
+        <!-- </transition> -->
       </clazy-load>
     </router-link>
   </masonry>
@@ -80,6 +80,12 @@
       width: calc(~"100% - 1px");
       padding: 1px 0px 1px 1px;
       margin: 0;
+    }
+    &_placeholder {
+      display: block;
+      width: calc(~"100% - 2px");
+      margin: 2px 0px 1px 1px;
+      background: @black;
     }
   }
 </style>

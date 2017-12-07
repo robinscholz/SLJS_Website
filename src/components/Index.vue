@@ -48,7 +48,7 @@
           } else {
             this.pageNumber++
           }
-        }.bind(this), 7500)
+        }.bind(this), 7500000)
       },
       stop: function () {
         clearInterval(this.interval)

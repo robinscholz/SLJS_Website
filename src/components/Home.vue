@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <ButtonMenu></ButtonMenu>
-  </div>
+  <ButtonMenu></ButtonMenu>
 </template>
 
 <script>
@@ -11,17 +9,6 @@
     name: 'Home',
     components: {
       ButtonMenu
-    },
-    computed: {
-      apidata () {
-        return this.$store.state.apidata
-      },
-      collections () {
-        return this.apidata['2-collections']
-      },
-      misc () {
-        return this.apidata['3-misc']
-      }
     }
   }
 </script>

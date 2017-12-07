@@ -17,7 +17,7 @@
   @import "../../less/global.less";
 
   span {
-    padding: 10px 10px 10px 10px;
+    padding: 12px;
     text-transform: uppercase; 
     .white;
   }

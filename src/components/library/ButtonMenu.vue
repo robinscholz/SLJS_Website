@@ -87,7 +87,6 @@
       &:first-child {
         margin-left: @mp-b;
         background: @black;
-        padding: 2px;
       }
       &:last-child {
         margin-right: @mp-b;

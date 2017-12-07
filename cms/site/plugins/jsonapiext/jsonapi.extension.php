@@ -30,6 +30,7 @@ jsonapi()->register([
 							"num" => (string)$n,
 							"uri" => $image->uri(),
 							"orientation" => $image->orientation(),
+							"ratio" => $image->ratio(),
 							"imgtitle" => (string)$image->imgtitle(),
 							"caption" => (string)$image->caption()
 						);
