@@ -9,21 +9,25 @@
       class="collection_link" 
       :to="index + '/' + image.num" 
       :key="image.url"
-    ><clazy-load :src="image.url">
-      <transition name="fade" slot="image">
-        <img :src="image.url" class="collection_img">
-      </transition>
-      <transition name="fade" slot="placeholder">
-        <div slot="placeholder">
-          Loading....
-        </div>
-      </transition>
-    </clazy-load>
-      <!-- <img class="collection_img" :src="image.url"></img> -->
+    >
+      <clazy-load 
+        :src="image.url"
+        element=".main_wrapper"
+        margin="100%"
+      >
+        <transition name="fade" slot="image">
+          <img :src="image.url" class="collection_img">
+        </transition>
+        <transition name="fade" slot="placeholder">
+          <div></div>
+        </transition>
+      </clazy-load>
     </router-link>
   </masonry>
 </template>
 
+<!-- Polyfill for older browsers -->
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
 <script>
   export default {
     name: 'IndexMasonry',
@@ -52,6 +56,14 @@
 
 <style lang="less">
   @import "../../less/global.less";
+
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .0s
+  }
 
   .collection {
     &_wrapper {
