@@ -13,6 +13,7 @@
 
 <script>
   import NameWidget from '../library/NameWidget.vue'
+  import _ from 'underscore'
 
   export default {
     name: 'ButtonMenu',
@@ -39,7 +40,7 @@
         return this.$store.state.apidata
       },
       collections () {
-        return this.apidata['2-collections']
+        return _.sortBy(this.apidata['2-collections'], 'number')
       },
       initialSlideNumber () {
         return parseInt(this.collections[this.index].number)
