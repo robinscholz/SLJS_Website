@@ -1,11 +1,9 @@
 <template>
-    <div class='caption' v-bind:class="{ caption_active: isActive }" v-on:click="toggleTitle">
-      <span v-if="this.isActive === false">
-        {{placeHolder}}
-      </span>
-      <span v-if="this.isActive === true">
+    <div class='caption' v-bind:class="{ caption_active: $store.state.caption }">
+      <!-- <span v-if="!$store.state.caption">?</span> -->
+      <span v-if="$store.state.caption">
         <p class='caption_title' v-if="title">{{title}}</p>
-        <p class='caption_caption' v-if="caption">{{caption}}</p>
+        <!-- <p class='caption_caption' v-if="caption">{{caption}}</p> -->
       </span>
     </div>
 </template>
@@ -15,35 +13,11 @@
     name: 'ImageCaption',
     props: ['index', 'imageTitle', 'imageCaption'],
     computed: {
-      apidata () {
-        return this.$store.state.apidata
-      },
-      collections () {
-        return this.apidata['2-collections']
-      },
-      misc () {
-        return this.apidata['3-misc']
-      },
-      placeHolder () {
-        return 'i'
-      },
       title () {
         return this.imageTitle
       },
       caption () {
         return this.imageCaption
-      }
-    },
-    data () {
-      return {
-        isActive: false
-      }
-    },
-    methods: {
-      toggleTitle: function () {
-        event.preventDefault()
-        console.log(this.isActive)
-        this.isActive = !this.isActive
       }
     }
   }
@@ -53,23 +27,17 @@
   @import "../../less/global.less";
 
   .caption {
+    .fs-xs;
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
     margin: @mp-b;
-    padding: 12px 20px 12px 20px;
-    max-width: calc(~"100% - 30px");
-    background: @white; 
-    box-shadow: inset 0 0 2px #b0b0b0;
+    padding: @mp-a @mp-a @mp-a @mp-a;
+    background: @primary; 
+    border-radius: 5px;
+    visibility: hidden;
     .black;
-    .fs-m;
-    border-radius: 50%;
-    &_caption {
-      .fs-xs;
-    }
     &_active {
-      border-radius: 18px;
+      visibility: visible;
     }
   }
 </style>

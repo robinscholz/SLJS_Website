@@ -49,7 +49,8 @@
     },
     methods: {
       ...mapMutations([
-        'SAVE_SCROLL'
+        'SAVE_SCROLL',
+        'SHOW_CAPTIONS'
       ]),
       start () {
         this.interval = setInterval(function () {
@@ -89,10 +90,10 @@
     },
     destroyed () {
       window.removeEventListener('scroll', this.scrollWatch)
+    },
+    beforeUpdate () {
+      // this.SHOW_CAPTIONS(false)
     }
-    // beforeDestroy () {
-    //   this.SAVE_SCROLL(this.topScroll)
-    // }
   }
 </script>
 

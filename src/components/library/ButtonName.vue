@@ -4,7 +4,7 @@
 
 <script>
   export default {
-    name: 'NameWidget',
+    name: 'ButtonName',
     data () {
       return {
         fullname: 'Simon Skatka Lindell'
@@ -17,9 +17,13 @@
   @import "../../less/global.less";
 
   span {
-    padding: 12px;
-    // text-transform: uppercase; 
+    padding: @mp-a;
+    text-transform: uppercase; 
     .white;
+    background: @black;
     cursor: default;
+    &:hover {
+      background: @black;
+    }
   }
 </style>

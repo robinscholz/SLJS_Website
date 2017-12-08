@@ -1,7 +1,10 @@
 <template>
   <swiper class="menu_slider" :options="swiperOption" ref="mySwiper">
     <swiper-slide class="menu_btn">
-      <NameWidget class="menu_input"></NameWidget>    
+      <ButtonName class="menu_input"></ButtonName>    
+    </swiper-slide>
+    <swiper-slide class="menu_btn">
+      <ButtonCaption></ButtonCaption>  
     </swiper-slide>
     <swiper-slide class="menu_btn" v-for="collection in collections" :key="collection.uid">
       <router-link :to="{ path: collection.uid }" class="menu_input">
@@ -9,14 +12,17 @@
       </router-link>
     </swiper-slide>
     <swiper-slide class="menu_btn">
-      <router-link to="contact" class="menu_input">Contact & CV</router-link>    
+      <router-link to="contact" class="menu_input menu_contact">Contact & CV</router-link>    
     </swiper-slide>
   </swiper>
 </template>
 
 <script>
-  import NameWidget from '../library/NameWidget.vue'
+  import ButtonName from '../library/ButtonName.vue'
+  import ButtonCaption from '../library/ButtonCaption.vue'
+
   import _ from 'underscore'
+  import { mapMutations } from 'vuex'
 
   export default {
     name: 'ButtonMenu',
@@ -33,7 +39,8 @@
       }
     },
     components: {
-      NameWidget
+      ButtonName,
+      ButtonCaption
     },
     computed: {
       apidata () {
@@ -45,6 +52,11 @@
       initialSlideNumber () {
         return parseInt(this.collections[this.index].number)
       }
+    },
+    methods: {
+      ...mapMutations([
+        'SHOW_CAPTIONS'
+      ])
     }
   }
 </script>
@@ -64,40 +76,39 @@
       font-size: 0;
       z-index: 90;
     }
-    &_input {
-      display: inline-block;
-      cursor: pointer;
-      padding: 10px 12px 11px 12px;
-      .fs-m;
-      text-decoration: none;
-      color: @black;
-      &.router-link-active {
-        // background: @secondary;
-        // color: @secondary;
-        // text-transform: uppercase;
-        letter-spacing: 7px;
-        padding-right: 7px;
-      }
-    }
     &_btn {
       display: inline-block;
       margin: 0 @mp-a;
-      background: @white;
-      border-radius: 20px;
-      box-shadow: inset 0 0 2px #b0b0b0;
+      letter-spacing: 0.35px;
       &:first-child {
         margin-left: @mp-b;
-        background: @primary;
         cursor: default;
-        span {
-          padding: 10px 12px 11px 12px;
-          color: @black;
-        }
       }
-      &:last-child {
-        .menu_input {
-          color: @black;
-        }
+    }
+    &_input {
+      display: inline-block;
+      cursor: pointer;
+      padding: @mp-a;
+      .fs-m;
+      .black;
+      background: @primary;
+      text-decoration: none;
+      border-radius: 5px;
+      &:hover {
+        background: @white;
+      }
+      &.router-link-active {
+        background: @secondary;
+      }
+    }
+    &_contact {
+      background: @black;
+      .white;
+      &:hover {
+        background: @black;
+      }
+      &.router-link-active {
+        background: @black;
       }
     }
   }

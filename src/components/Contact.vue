@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="contact_wrapper">
     <ButtonMenu></ButtonMenu>
   </div>
 </template>
@@ -28,4 +28,12 @@
 
 <style lang="less">
   @import "../less/global.less";
+
+  .contact {
+    &_wrapper {
+      width: 100vw;
+      min-height: 100vh;
+      background: @secondary;
+    }
+  }
 </style>
