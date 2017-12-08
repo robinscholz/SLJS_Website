@@ -28,10 +28,7 @@
           slidesPerView: 'auto',
           initialSlide: this.initialSlideNumber,
           grabCursor: true,
-          mousewheelControl: true,
-          onTransitionStart (swiper) {
-            console.log(swiper)
-          }
+          mousewheelControl: false
         }
       }
     },

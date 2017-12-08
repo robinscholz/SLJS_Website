@@ -1,31 +1,33 @@
 <template>
-  <masonry
-  class="collection_wrapper"
-  :cols="{default: 2, 768: 2, 600: 1}"
-  :gutter="0"
-  >
-    <router-link
-      v-for="image in collections[index].images" 
-      class="collection_link" 
-      :to="index + '/' + image.num" 
-      :key="image.url"
+  <keep-alive>
+    <masonry
+    class="collection_wrapper"
+    :cols="{default: 2, 768: 2, 600: 1}"
+    :gutter="0"
     >
-      <clazy-load 
-        :src="image.url"
-        element=".main_wrapper"
-        margin="100%"
-        class='collection_imgWrapper'
+      <router-link
+        v-for="image in collections[index].images" 
+        class="collection_link" 
+        :to="index + '/' + image.num" 
+        :key="image.url"
       >
-        <!-- <transition name="fade" slot="image"> -->
-        <img :src="image.url" class="collection_img" slot="image">
-        <!-- </transition> -->
-        <!-- <transition name="fade" slot="placeholder"> -->
-        <div class="collection_placeholder" :style="{ height: 'calc(' + 50 / image.ratio + 'vw - ' + 2 * image.ratio + 'px)' }" slot="placeholder"></div>
-        <!-- </transition> -->
-        <ImageCaption :imageTitle="image.imgtitle" :imageCaption="image.caption" :index=index slot="image" v-if="image.imgtitle || image.caption"></ImageCaption>
-      </clazy-load>
-    </router-link>
-  </masonry>
+        <clazy-load 
+          :src="image.url"
+          element=".main_wrapper"
+          margin="100%"
+          class='collection_imgWrapper'
+        >
+          <!-- <transition name="fade" slot="image"> -->
+          <img :src="image.url" class="collection_img" slot="image">
+          <!-- </transition> -->
+          <!-- <transition name="fade" slot="placeholder"> -->
+          <div class="collection_placeholder" :style="imageHeight(image)" slot="placeholder"></div>
+          <!-- </transition> -->
+          <ImageCaption :imageTitle="image.imgtitle" :imageCaption="image.caption" :index=index slot="image" v-if="image.imgtitle || image.caption"></ImageCaption>
+        </clazy-load>
+      </router-link>
+    </masonry>
+  </keep-alive>
 </template>
 
 <!-- Polyfill for older browsers -->
@@ -51,11 +53,11 @@
       }
     },
     methods: {
-      log () {
-        console.log('clicked')
-      },
-      imageProgress (instance, image) {
-        console.log('image')
+      imageHeight (image) {
+        var height = (window.innerWidth > 600) ? 50 / image.ratio : 100 / image.ratio
+        var pixels = (window.innerWidth > 600) ? 2 * image.ratio : 3 * image.ratio
+        var string = 'height: calc(' + height + 'vw - ' + pixels + 'px)'
+        return string
       }
     }
   }

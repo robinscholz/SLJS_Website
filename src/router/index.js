@@ -58,6 +58,8 @@ const router = new Router({
   scrollBehavior (to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition
+    } else if (store.state.topScroll !== 0 && store.state.route.from.name === 'Image') {
+      return { x: 0, y: store.state.topScroll }
     } else {
       return { x: 0, y: 0 }
     }

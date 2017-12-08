@@ -5,7 +5,8 @@ import axios from 'axios'
 Vue.use(Vuex)
 export const store = new Vuex.Store({
   state: {
-    apidata: []
+    apidata: [],
+    topScroll: 0
   },
   actions: {
     // Get API Data
@@ -21,6 +22,9 @@ export const store = new Vuex.Store({
   mutations: {
     SET_DATASET: (state, { list }) => {
       state.apidata = list
+    },
+    SAVE_SCROLL (state, topScroll) {
+      state.topScroll = topScroll
     }
   }
 })
