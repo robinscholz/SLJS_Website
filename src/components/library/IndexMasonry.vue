@@ -1,29 +1,31 @@
 <template>
-  <masonry
-  class="collection_wrapper"
-  :cols="{default: 2, 768: 2, 600: 1}"
-  :gutter="0"
-  >
-    <router-link
-      v-for="image in collections[index].images" 
-      class="collection_link" 
-      :to="index + '/' + image.num" 
-      :key="image.url"
+  <keep-alive>
+    <masonry
+    class="collection_wrapper"
+    :cols="{default: 2, 768: 2, 600: 1}"
+    :gutter="0"
     >
-      <clazy-load 
-        :src="image.url"
-        element=".main_wrapper"
-        margin="100%"
+      <router-link
+        v-for="image in collections[index].images" 
+        class="collection_link" 
+        :to="index + '/' + image.num" 
+        :key="image.url"
       >
-        <!-- <transition name="fade" slot="image"> -->
-        <img :src="image.url" class="collection_img" slot="placeholder">
-        <!-- </transition> -->
-        <!-- <transition name="fade" slot="placeholder"> -->
-        <div class="collection_placeholder" :style="imageHeight(image)" slot="image"></div>
-        <!-- </transition> -->
-      </clazy-load>
-    </router-link>
-  </masonry>
+        <clazy-load 
+          :src="image.url"
+          element=".main_wrapper"
+          margin="100%"
+        >
+          <!-- <transition name="fade" slot="image"> -->
+          <img :src="image.url" class="collection_img" slot="image">
+          <!-- </transition> -->
+          <!-- <transition name="fade" slot="placeholder"> -->
+          <div class="collection_placeholder" :style="imageHeight(image)" slot="placeholder"></div>
+          <!-- </transition> -->
+        </clazy-load>
+      </router-link>
+    </masonry>
+  </keep-alive>
 </template>
 
 <!-- Polyfill for older browsers -->

@@ -8,6 +8,7 @@
 <script>
   import ButtonMenu from './library/ButtonMenu.vue'
   import IndexMasonry from './library/IndexMasonry.vue'
+  import { mapMutations } from 'vuex'
   import _ from 'underscore'
 
   export default {
@@ -31,7 +32,8 @@
     data () {
       return {
         idleStatus: 'idleActive',
-        pageNumber: -1
+        pageNumber: -1,
+        topScroll: 0
       }
     },
     onIdle () {
@@ -41,7 +43,10 @@
       this.idleStatus = 'idleActive'
     },
     methods: {
-      start: function () {
+      ...mapMutations([
+        'SAVE_SCROLL'
+      ]),
+      start () {
         this.interval = setInterval(function () {
           if (this.pageNumber === this.misc.total - 1) {
             this.pageNumber = 0
@@ -50,23 +55,37 @@
           }
         }.bind(this), 7500000)
       },
-      stop: function () {
+      stop () {
         clearInterval(this.interval)
+      },
+      scrollWatch () {
+        this.topScroll = window.pageYOffset || document.documentElement.scrollTop
+        console.log(this.topScroll)
+        this.SAVE_SCROLL(this.topScroll)
       }
     },
     watch: {
-      idleStatus: function () {
+      idleStatus () {
         if (this.idleStatus === 'idle') {
           this.start()
         } else {
           this.stop()
         }
       },
-      pageNumber: function () {
+      pageNumber () {
         var currentUid = this.collections[this.pageNumber].uid
         this.$router.push(currentUid)
       }
+    },
+    mounted () {
+      window.addEventListener('scroll', this.scrollWatch)
+    },
+    destroyed () {
+      window.removeEventListener('scroll', this.scrollWatch)
     }
+    // beforeDestroy () {
+    //   this.SAVE_SCROLL(this.topScroll)
+    // }
   }
 </script>
 
