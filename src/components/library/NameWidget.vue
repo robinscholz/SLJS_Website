@@ -20,5 +20,6 @@
     padding: 12px;
     text-transform: uppercase; 
     .white;
+    cursor: default;
   }
 </style>

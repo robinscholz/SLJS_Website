@@ -16,10 +16,10 @@
         margin="100%"
       >
         <!-- <transition name="fade" slot="image"> -->
-        <img :src="image.url" class="collection_img" slot="image">
+        <img :src="image.url" class="collection_img" slot="placeholder">
         <!-- </transition> -->
         <!-- <transition name="fade" slot="placeholder"> -->
-        <div class="collection_placeholder" :style="{ height: 'calc(' + 50 / image.ratio + 'vw - ' + 2 * image.ratio + 'px)' }" slot="placeholder"></div>
+        <div class="collection_placeholder" :style="imageHeight(image)" slot="image"></div>
         <!-- </transition> -->
       </clazy-load>
     </router-link>
@@ -44,11 +44,11 @@
       }
     },
     methods: {
-      log () {
-        console.log('clicked')
-      },
-      imageProgress (instance, image) {
-        console.log('image')
+      imageHeight (image) {
+        var height = (window.innerWidth > 600) ? 50 / image.ratio : 100 / image.ratio
+        var pixels = (window.innerWidth > 600) ? 2 * image.ratio : 3 * image.ratio
+        var string = 'height: calc(' + height + 'vw - ' + pixels + 'px)'
+        return string
       }
     }
   }
