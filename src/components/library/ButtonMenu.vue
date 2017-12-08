@@ -105,7 +105,7 @@
       background: @black;
       .white;
       &:hover {
-        background: @black;
+        background: @blacklight;
       }
       &.router-link-active {
         background: @black;

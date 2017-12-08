@@ -24,7 +24,7 @@
         text-align: center;
         background: @tertiary;
         &:hover {
-          background: @tertiary;
+          background: @tertiarylight;
         }
       }
 </style>
