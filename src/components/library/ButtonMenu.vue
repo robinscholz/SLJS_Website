@@ -1,8 +1,8 @@
 <template>
   <swiper class="menu_slider" :options="swiperOption" ref="mySwiper">
-    <swiper-slide class="menu_btn">
+    <!-- <swiper-slide class="menu_btn">
       <ButtonName class="menu_input"></ButtonName>    
-    </swiper-slide>
+    </swiper-slide> -->
     <swiper-slide class="menu_btn">
       <ButtonCaption></ButtonCaption>  
     </swiper-slide>

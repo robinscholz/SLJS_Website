@@ -1,5 +1,8 @@
 <template>
-  <span class="menu_input menu_cpt" v-on:click="SHOW_CAPTIONS($store.state.captions = !$store.state.captions)">i</span>  
+  <span 
+    class="menu_input menu_cpt"
+    v-on:click="SHOW_CAPTIONS($store.state.captions = !$store.state.captions)"
+  >i</span>  
 </template>
 
 <script>
