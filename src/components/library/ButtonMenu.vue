@@ -70,30 +70,36 @@
     &_input {
       display: inline-block;
       cursor: pointer;
-      padding: 12px;
+      padding: 10px 12px 11px 12px;
       .fs-m;
       text-decoration: none;
       color: @black;
       &.router-link-active {
-        background: @secondary;
-        border-radius: 3px;
+        // background: @secondary;
+        // color: @secondary;
+        // text-transform: uppercase;
+        letter-spacing: 7px;
+        padding-right: 7px;
       }
     }
     &_btn {
       display: inline-block;
       margin: 0 @mp-a;
-      background: @primary;
-      border-radius: 3px;
+      background: @white;
+      border-radius: 20px;
+      box-shadow: inset 0 0 2px #b0b0b0;
       &:first-child {
         margin-left: @mp-b;
-        background: @black;
+        background: @primary;
+        cursor: default;
+        span {
+          padding: 10px 12px 11px 12px;
+          color: @black;
+        }
       }
       &:last-child {
-        margin-right: @mp-b;
-        background: @black;
-        // padding: 2px;
         .menu_input {
-          .white;
+          color: @black;
         }
       }
     }

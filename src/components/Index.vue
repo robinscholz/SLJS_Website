@@ -26,6 +26,11 @@
       },
       misc () {
         return this.apidata['3-misc']
+      },
+      id: function () {
+        for (var i = 0; i < this.collectionsArray; i++) {
+          console.log(this.collections)
+        }
       }
     },
     data () {
@@ -48,7 +53,7 @@
           } else {
             this.pageNumber++
           }
-        }.bind(this), 7500000)
+        }.bind(this), 100000)
       },
       stop: function () {
         clearInterval(this.interval)
@@ -61,10 +66,12 @@
         } else {
           this.stop()
         }
+        console.log(this.idleStatus)
       },
       pageNumber: function () {
         var currentUid = this.collections[this.pageNumber].uid
         this.$router.push(currentUid)
+        console.log(this.pageNumber)
       }
     }
   }

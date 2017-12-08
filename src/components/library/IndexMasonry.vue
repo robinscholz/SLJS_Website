@@ -14,6 +14,7 @@
         :src="image.url"
         element=".main_wrapper"
         margin="100%"
+        class='collection_imgWrapper'
       >
         <!-- <transition name="fade" slot="image"> -->
         <img :src="image.url" class="collection_img" slot="image">
@@ -21,6 +22,7 @@
         <!-- <transition name="fade" slot="placeholder"> -->
         <div class="collection_placeholder" :style="{ height: 'calc(' + 50 / image.ratio + 'vw - ' + 2 * image.ratio + 'px)' }" slot="placeholder"></div>
         <!-- </transition> -->
+        <ImageCaption :imageTitle="image.imgtitle" :imageCaption="image.caption" :index=index slot="image" v-if="image.imgtitle || image.caption"></ImageCaption>
       </clazy-load>
     </router-link>
   </masonry>
@@ -29,9 +31,14 @@
 <!-- Polyfill for older browsers -->
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
 <script>
+  import ImageCaption from '../library/ImageCaption.vue'
+
   export default {
     name: 'IndexMasonry',
-    props: ['index'],
+    components: {
+      ImageCaption
+    },
+    props: ['index', 'imageTitle', 'imageCaption'],
     computed: {
       apidata () {
         return this.$store.state.apidata
@@ -75,6 +82,9 @@
     &_link {
       cursor: pointer;
     }
+    &_imgWrapper {
+      position: relative;
+    }
     &_img {
       display: block;
       width: calc(~"100% - 1px");
@@ -85,7 +95,7 @@
       display: block;
       width: calc(~"100% - 2px");
       margin: 2px 0px 1px 1px;
-      background: @black;
+      background: @white;
     }
   }
 </style>
