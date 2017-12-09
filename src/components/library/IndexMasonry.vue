@@ -2,7 +2,7 @@
   <keep-alive>
     <masonry
     class="collection_wrapper"
-    :cols="{default: 2, 768: 2, 600: 1}"
+    :cols="{default: 2, 768: 1}"
     :gutter="0"
     >
       <router-link
@@ -15,7 +15,7 @@
           :src="image.url"
           element=".main_wrapper"
           margin="100%"
-          class='collection_imgWrapper'
+          class='collection_img_wrapper'
         >
           <!-- <transition name="fade" slot="image"> -->
           <img :src="image.url" class="collection_img" slot="image">
@@ -54,8 +54,8 @@
     },
     methods: {
       imageHeight (image) {
-        var height = (window.innerWidth > 600) ? 50 / image.ratio : 100 / image.ratio
-        var pixels = (window.innerWidth > 600) ? 2 * image.ratio : 3 * image.ratio
+        var height = (window.innerWidth > 768) ? 50 / image.ratio : 100 / image.ratio
+        var pixels = (window.innerWidth > 768) ? 2 * image.ratio : 3 * image.ratio
         var string = 'height: calc(' + height + 'vw - ' + pixels + 'px)'
         return string
       }
@@ -84,7 +84,7 @@
     &_link {
       cursor: pointer;
     }
-    &_imgWrapper {
+    &_img_wrapper {
       position: relative;
     }
     &_img {

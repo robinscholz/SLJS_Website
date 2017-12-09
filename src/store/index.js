@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
   state: {
     apidata: [],
-    topScroll: 0
+    topScroll: 0,
+    caption: false
   },
   actions: {
     // Get API Data
@@ -25,6 +26,9 @@ export const store = new Vuex.Store({
     },
     SAVE_SCROLL (state, topScroll) {
       state.topScroll = topScroll
+    },
+    SHOW_CAPTIONS (state, caption) {
+      state.caption = caption
     }
   }
 })
