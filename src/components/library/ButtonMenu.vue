@@ -75,8 +75,8 @@
         // background: @secondary;
         // color: @secondary;
         // text-transform: uppercase;
-        letter-spacing: 6px;
-        padding-right: 6px;
+        letter-spacing: 4px;
+        padding-right: 7px;
       }
     }
     &_btn {

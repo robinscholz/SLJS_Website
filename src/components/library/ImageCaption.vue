@@ -1,6 +1,6 @@
 <template>
     <div class='caption' v-bind:class="{ caption_active: isActive }" v-on:click="toggleTitle">
-      <span v-if="this.isActive === false">
+      <span class='caption_placeholder' v-if="this.isActive === false">
         {{placeHolder}}
       </span>
       <span v-if="this.isActive === true">
@@ -59,17 +59,19 @@
     transform: translateX(-50%);
     margin: @mp-b;
     padding: 12px 20px 12px 20px;
-    max-width: calc(~"100% - 30px");
     background: @white; 
     box-shadow: inset 0 0 2px #b0b0b0;
     .black;
     .fs-m;
     border-radius: 50%;
+    &_placeholder {
+    }
     &_caption {
       .fs-xs;
     }
     &_active {
-      border-radius: 18px;
+      border-radius: 12px;
+      max-width: 100%;
     }
   }
 </style>
