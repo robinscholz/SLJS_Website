@@ -1,10 +1,10 @@
 <template>
-    <div class='caption' v-bind:class="{ caption_active: $store.state.caption }">
+    <div class='caption_wrapper' v-bind:class="{ caption_active: $store.state.caption }">
       <!-- <span v-if="!$store.state.caption">?</span> -->
-      <span v-if="$store.state.caption">
-        <p class='caption_title' v-if="title">{{title}}</p>
-        <!-- <p class='caption_caption' v-if="caption">{{caption}}</p> -->
-      </span>
+      <template v-if="$store.state.caption">
+        <span class='caption_title' v-if="title">{{title}}</span><br><br>
+        <span class='caption_caption' v-if="caption">{{caption}}</span>
+      </template>
     </div>
 </template>
 
@@ -27,17 +27,26 @@
   @import "../../less/global.less";
 
   .caption {
-    .fs-xs;
-    position: absolute;
-    bottom: 0;
-    margin: @mp-b;
-    padding: @mp-a @mp-a @mp-a @mp-a;
-    background: @primary; 
-    border-radius: 5px;
-    visibility: hidden;
-    .black;
+    &_wrapper {
+      .fs-s;
+      .black;
+      // .white;
+      position: absolute;
+      bottom: 0;
+      margin: @mp-b;
+      border-radius: 5px;
+      visibility: hidden;
+    }
     &_active {
       visibility: visible;
+    }
+    &_title {
+      background: @tertiary;
+    }
+    &_caption {
+      display: inline;
+      background: @tertiary;
+      margin-top: @mp-b;
     }
   }
 </style>

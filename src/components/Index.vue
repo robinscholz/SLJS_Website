@@ -66,7 +66,6 @@
       },
       scrollWatch () {
         this.topScroll = window.pageYOffset || document.documentElement.scrollTop
-        console.log(this.topScroll)
         this.SAVE_SCROLL(this.topScroll)
       }
     },
