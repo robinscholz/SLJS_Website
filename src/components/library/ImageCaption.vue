@@ -46,7 +46,6 @@
     border-radius: 5px;
     visibility: visible;
     }
-<<<<<<< HEAD
     &_title {
       background: @primary;
       padding: 8px @mp-a;
@@ -63,7 +62,4 @@
       .fs-s;
     }
   }
-=======
-  }  
->>>>>>> origin/master
 </style>
