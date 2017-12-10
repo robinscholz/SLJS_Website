@@ -1,17 +1,10 @@
 <template>
     <div class='caption_wrapper' v-bind:class="{ caption_active: $store.state.caption }">
       <!-- <span v-if="!$store.state.caption">?</span> -->
-<<<<<<< HEAD
       <template v-if="$store.state.caption">
         <span class='caption_title' v-if="title">{{title}}</span>
         <span class='caption_caption' v-if="caption">{{caption}}</span>
       </template>
-=======
-      <span v-if="$store.state.caption">
-        <p class='caption_title' v-if="title">{{title}}</p>
-        <p class='caption_caption' v-if="caption">{{caption}}</p>
-      </span>
->>>>>>> origin/master
     </div>
 </template>
 
