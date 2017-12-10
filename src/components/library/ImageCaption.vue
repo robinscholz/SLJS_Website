@@ -3,7 +3,7 @@
       <!-- <span v-if="!$store.state.caption">?</span> -->
       <template v-if="$store.state.caption">
         <span class='caption_title' v-if="title">{{title}}</span>
-        <span class='caption_caption' v-if="caption">{{caption}}</span>
+        <!-- <span class='caption_caption' v-if="caption">{{caption}}</span> -->
       </template>
     </div>
 </template>
@@ -30,7 +30,7 @@
     &_wrapper {
       .black;
       position: absolute;
-      bottom: @mp-a;
+      bottom: 0;
       margin: @mp-b;
       visibility: hidden;
     }

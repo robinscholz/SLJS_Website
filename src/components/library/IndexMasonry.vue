@@ -17,13 +17,9 @@
           margin="100%"
           class='collection_img_wrapper'
         >
-          <!-- <transition name="fade" slot="image"> -->
           <img :src="image.url" class="collection_img" slot="image">
-          <!-- </transition> -->
-          <!-- <transition name="fade" slot="placeholder"> -->
+          <ImageCaption :imageTitle="image.imgtitle" :imageCaption="image.caption" slot="image" v-if="image.imgtitle || image.caption"></ImageCaption>
           <div class="collection_placeholder" :style="imageHeight(image)" slot="placeholder"></div>
-          <!-- </transition> -->
-          <ImageCaption :imageTitle="image.imgtitle" :imageCaption="image.caption" :index=index slot="image" v-if="image.imgtitle || image.caption"></ImageCaption>
         </clazy-load>
       </router-link>
     </masonry>
@@ -79,7 +75,7 @@
       position: relative;
       width: 100%;
       font-size: 0;
-      padding: 1px;
+      padding: 1px 2px;
     }
     &_link {
       cursor: pointer;

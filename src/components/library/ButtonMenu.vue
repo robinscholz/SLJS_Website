@@ -98,11 +98,6 @@
         background: @white;
       }
       &.router-link-active {
-        // background: @secondary;
-        // color: @secondary;
-        // text-transform: uppercase;
-        // letter-spacing: 4px;
-        // padding-right: 7px;
         background: @secondary;
       }
     }
