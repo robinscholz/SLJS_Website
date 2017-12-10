@@ -93,7 +93,7 @@
       .black;
       background: @primary;
       text-decoration: none;
-      border-radius: 5px;
+      .br;
       &:hover {
         background: @white;
       }

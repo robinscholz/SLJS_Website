@@ -33,10 +33,11 @@
   @import "../../less/global.less";
   .menu_cpt {
         padding: @mp-a;
-        border-radius: 5px;
         // min-width: 155.16px;
         text-align: right;
         background: @tertiary;
+        .white;
+        .br;
         &:hover {
           background: @tertiarylight;
         }

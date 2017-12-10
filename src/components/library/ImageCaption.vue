@@ -2,7 +2,7 @@
     <div class='caption_wrapper' v-bind:class="{ caption_active: $store.state.caption }">
       <!-- <span v-if="!$store.state.caption">?</span> -->
       <template v-if="$store.state.caption">
-        <span class='caption_title' v-if="title">{{title}}</span><br><br>
+        <span class='caption_title' v-if="title">{{title}}</span>
         <span class='caption_caption' v-if="caption">{{caption}}</span>
       </template>
     </div>
@@ -28,25 +28,29 @@
 
   .caption {
     &_wrapper {
-      .fs-s;
       .black;
-      // .white;
       position: absolute;
-      bottom: 0;
+      bottom: @mp-a;
       margin: @mp-b;
-      border-radius: 5px;
       visibility: hidden;
     }
     &_active {
       visibility: visible;
     }
     &_title {
-      background: @tertiary;
+      background: @primary;
+      padding: 8px @mp-a;
+      display: inline-block;
+      .br;
+      .fs-s;
     }
     &_caption {
-      display: inline;
-      background: @tertiary;
-      margin-top: @mp-b;
+      display: inline-block;
+      background: @primary;
+      margin-top: 2px;
+      padding: 8px @mp-a;
+      .br;
+      .fs-s;
     }
   }
 </style>
