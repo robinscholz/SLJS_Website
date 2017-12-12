@@ -2,10 +2,19 @@
   <div class="menu_wrapper">
     <swiper class="menu_slider" :options="swiperOption" ref="mySwiper" v-if="apidata.length !== 0">
       <swiper-slide class="menu_btn">
-        <router-link to="contact" class="menu_input menu_contact"><ButtonName></ButtonName></router-link>    
+        <router-link to="contact" class="menu_input menu_contact">
+          <ButtonName></ButtonName>
+        </router-link>    
       </swiper-slide>
       <swiper-slide class="menu_btn">
-        <router-link :to="{ path: collection.uid }" class="menu_input" v-for="collection in collections" :key="collection.uid" v-if="collection.uid === index || $store.state.showCollection || $route.name === 'Contact'">
+        <router-link 
+          :to="{ path: collection.uid }" 
+          class="menu_input" 
+          v-for="collection in collections"
+          :key="collection.uid" 
+          v-if="collection.uid === index || $store.state.showCollection || $route.name === 'Contact'"
+          v-on:click.native="SHOW_COLLECTIONS(false)"
+        >
           {{ collection.title }}
         </router-link>
       </swiper-slide>
@@ -59,7 +68,8 @@
     },
     methods: {
       ...mapMutations([
-        'SHOW_CAPTIONS'
+        'SHOW_CAPTIONS',
+        'SHOW_COLLECTIONS'
       ])
     }
   }

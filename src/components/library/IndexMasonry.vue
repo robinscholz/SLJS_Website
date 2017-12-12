@@ -1,29 +1,27 @@
 <template>
-  <keep-alive>
-    <masonry
-    class="collection_wrapper"
-    :cols="{default: 2, 768: 1}"
-    :gutter="0"
+  <masonry
+  class="collection_wrapper"
+  :cols="{default: 2, 768: 1}"
+  :gutter="0"
+  >
+    <router-link
+      v-for="image in collections[index].images" 
+      class="collection_link" 
+      :to="index + '/' + image.num" 
+      :key="image.url"
     >
-      <router-link
-        v-for="image in collections[index].images" 
-        class="collection_link" 
-        :to="index + '/' + image.num" 
-        :key="image.url"
+      <clazy-load 
+        :src="image.url"
+        element=".main_wrapper"
+        margin="100%"
+        class='collection_img_wrapper'
       >
-        <clazy-load 
-          :src="image.url"
-          element=".main_wrapper"
-          margin="100%"
-          class='collection_img_wrapper'
-        >
-          <img :src="image.url" class="collection_img" v-bind:class="{ collection_img_active: $store.state.showCollection }" slot="image">
-          <ImageCaption :imageTitle="image.imgtitle" :imageCaption="image.caption" slot="image" v-if="image.imgtitle || image.caption"></ImageCaption>
-          <div class="collection_placeholder" :style="imageHeight(image)" slot="placeholder"></div>
-        </clazy-load>
-      </router-link>
-    </masonry>
-  </keep-alive>
+        <img :src="image.url" class="collection_img" :class="{ collection_img_active: $store.state.showCollection }" slot="image">
+        <ImageCaption :imageTitle="image.imgtitle" :imageCaption="image.caption" slot="image" v-if="image.imgtitle || image.caption"></ImageCaption>
+        <div class="collection_placeholder" :style="imageHeight(image)" slot="placeholder"></div>
+      </clazy-load>
+    </router-link>
+  </masonry>
 </template>
 
 <!-- Polyfill for older browsers -->
@@ -91,6 +89,9 @@
       margin: 0;
       transition: .5;
       &_active {
+        opacity: 0.1;
+        // filter: blur(3px);
+        // transform: scale(1.5)
       }
     }
     &_placeholder {
