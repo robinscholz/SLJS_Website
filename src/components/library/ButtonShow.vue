@@ -29,7 +29,7 @@
   @import "../../less/global.less";
 
   .menu_showall {
-      padding: @mp-a;
+      padding: 3px;
       text-align: center;
       background: @tertiary;
       .white;

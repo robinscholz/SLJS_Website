@@ -17,10 +17,10 @@
       }
     },
     mounted () {
-      this.reCalculate()
-      if (window) {
-        window.addEventListener('resize', this.reCalculate)
-      }
+      // this.reCalculate()
+      // if (window) {
+      //   window.addEventListener('resize', this.reCalculate)
+      // }
     }
   }
 </script>

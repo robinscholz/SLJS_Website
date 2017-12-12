@@ -22,18 +22,18 @@ const router = new Router({
       path: '/:index',
       name: 'Index',
       component: Index,
-      props: true,
-      beforeEnter: (to, from, next) => {
-        store.dispatch('LOAD_DATASET').then(() => {
-          var index = to.params.index
-          var collections = store.state.apidata['2-collections']
-          if (index in collections) {
-            next()
-          } else {
-            router.push('/')
-          }
-        })
-      }
+      props: true
+      // beforeEnter: (to, from, next) => {
+      //   store.dispatch('LOAD_DATASET').then(() => {
+      //     var index = to.params.index
+      //     var collections = store.state.apidata['2-collections']
+      //     if (index in collections) {
+      //       next()
+      //     } else {
+      //       router.push('/')
+      //     }
+      //   })
+      // }
     }, {
       path: '/:index/:num(\\d+)',
       name: 'Image',

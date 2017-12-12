@@ -110,7 +110,6 @@
     &_btn {
       display: inline-block;
       margin: 0 @mp-a/1.5;
-      letter-spacing: 0.4px;
       &:first-child {
         margin-left: @mp-b*0.75;
         cursor: default;
@@ -132,7 +131,7 @@
     &_input {
       display: inline-block;
       cursor: pointer;
-      padding: @mp-a;
+      padding: 3px;
       .fs-m;
       .black;
       background: @primary;
@@ -165,10 +164,6 @@
         background: @black;
       }
     }
-  }
-
-  .swiper-container {
-    height: 100px;
   }
 
 </style>
