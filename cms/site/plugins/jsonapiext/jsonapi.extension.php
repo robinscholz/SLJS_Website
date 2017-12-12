@@ -32,7 +32,7 @@ jsonapi()->register([
 							"orientation" => $image->orientation(),
 							"ratio" => $image->ratio(),
 							"imgtitle" => (string)$image->imgtitle(),
-							"caption" => (string)$image->caption()
+							"caption" => (string)$image->caption()->kirbytext()
 						);
 					};
 				};
