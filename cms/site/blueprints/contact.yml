@@ -1,0 +1,59 @@
+title: Contact & CV
+pages: false
+files: false
+fields:
+  title:
+    label: Title
+    type:  text
+    readonly: true
+  phone:
+    label: Phone
+    type: tel
+    width: 1/2
+  mail:
+    label: e-Mail
+    type: email
+    width: 1/2
+  city:
+    label: City, Country
+    type: text
+  education:
+    label: Education
+    type: structure
+    style: table
+    fields:
+      from:
+        label: From
+        type: number
+      until:
+        label: Until
+        type: number
+      school:
+        label: School
+        type: text
+      city:
+        label: City, Country
+  groupshows:
+    label: Selected Groupshows
+    type: structure
+    help: Please make sure to spell and capitalize everything correctly!
+    style: table
+    fields:
+      year:
+        label: Year
+        type: number
+      showtitle:
+        label: Title
+        type: text
+      gallery:
+        label: Gallery/Institution
+        type: text
+      city:
+        label: City, Country
+        type: text
+options:
+  template: false
+  url: false
+  preview: false
+  delete: false
+  status: false

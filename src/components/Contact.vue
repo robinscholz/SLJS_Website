@@ -21,6 +21,9 @@
       },
       misc () {
         return this.apidata['3-misc']
+      },
+      contact () {
+        return this.apidata['2-contact']
       }
     }
   }

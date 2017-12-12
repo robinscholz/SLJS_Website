@@ -9,7 +9,7 @@ jsonapi()->register([
 			$collections = page("collections");
 			$inventory = page("inventory");
 			$data = $collections->children()->visible();
-			$studio = page("studio");
+			$contact = page("contact");
 			$json = array();
 
 			// About
@@ -62,6 +62,40 @@ jsonapi()->register([
 					'thumbs' => $thumbs				
 				);
 			};
+
+
+			//Education
+			$n = 0;
+			$education = array();
+			foreach($contact->education()->toStructure() as $entry) {
+				$n++;
+				$education[$n] = array(
+					"from" => (string)$entry->from(), 
+					"until" => (string)$entry->until(),
+					"school" => (string)$entry->school(),
+					"city" => (string)$entry->city(),
+				);
+			};
+
+			//Groupshows
+			$n = 0;
+			$groupshows = array();
+			foreach($contact->groupshows()->toStructure() as $entry) {
+				$n++;
+				$groupshows[$n] = array(
+					"year" => (string)$entry->year(), 
+					"showtitle" => (string)$entry->showtitle(),
+					"gallery" => (string)$entry->gallery(),
+					"city" => (string)$entry->city(),
+				);
+			};
+
+			$json['2-contact'] = array(
+				'phone' => (string)$contact->phone(),
+				'email' => (string)$contact->mail(),
+				'education' => $education,
+				'groupshows' => $groupshows
+			);
 
 			$json['3-misc']["total"] = $data->count();
 
