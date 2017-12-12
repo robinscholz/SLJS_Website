@@ -1,25 +1,31 @@
 <template>
-  <swiper class="menu_slider" :options="swiperOption" ref="mySwiper">
-    <!-- <swiper-slide class="menu_btn">
-      <ButtonName class="menu_input"></ButtonName>    
-    </swiper-slide> -->
-    <swiper-slide class="menu_btn">
-      <ButtonCaption></ButtonCaption>  
-    </swiper-slide>
-    <swiper-slide class="menu_btn" v-for="collection in collections" :key="collection.uid">
+  <ul class="menu_slider" :options="swiperOption" ref="mySwiper">
+    <li class="menu_btn" v-for="collection in collections" :key="collection.uid" v-if="collection.uid === index">
+      <span :to="{ path: collection.uid }" class="menu_input">
+        {{ collection.title }}
+      </span>
+    </li>
+    <li class="menu_btn" v-for="collection in collections" :key="collection.uid" v-if="collection.uid !== index && $store.state.showCollection">
       <router-link :to="{ path: collection.uid }" class="menu_input">
         {{ collection.title }}
       </router-link>
-    </swiper-slide>
-    <swiper-slide class="menu_btn">
+    </li>
+    <li class="menu_btn">
+      <ButtonShow></ButtonShow>  
+    </li>
+    <li class="menu_btn">
+      <ButtonCaption></ButtonCaption>  
+    </li>
+    <li class="menu_btn">
       <router-link to="contact" class="menu_input menu_contact">Contact & CV</router-link>    
-    </swiper-slide>
-  </swiper>
+    </li>
+  </ul>
 </template>
 
 <script>
   import ButtonName from '../library/ButtonName.vue'
   import ButtonCaption from '../library/ButtonCaption.vue'
+  import ButtonShow from '../library/ButtonShow.vue'
 
   import _ from 'underscore'
   import { mapMutations } from 'vuex'
@@ -40,7 +46,8 @@
     },
     components: {
       ButtonName,
-      ButtonCaption
+      ButtonCaption,
+      ButtonShow
     },
     computed: {
       apidata () {
@@ -79,7 +86,7 @@
     &_btn {
       display: inline-block;
       margin: 0 @mp-a;
-      letter-spacing: 0.35px;
+      letter-spacing: 0.4px;
       &:first-child {
         margin-left: @mp-b;
         cursor: default;
@@ -89,7 +96,7 @@
       display: inline-block;
       cursor: pointer;
       padding: @mp-a;
-      .fs-m;
+      .fs-s;
       .black;
       background: @primary;
       text-decoration: none;

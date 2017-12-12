@@ -29,19 +29,21 @@
   .caption {
     &_wrapper {
       .black;
-      position: absolute;
+      // position: absolute;
       bottom: 0;
-      margin: @mp-b;
+      margin: @mp-a;
       visibility: hidden;
+      display: none;
     }
     &_active {
     background: @primary; 
-    border-radius: 5px;
+    .br;
     visibility: visible;
+    display: block;
     }
     &_title {
       background: @primary;
-      padding: 8px @mp-a;
+      padding: @mp-a;
       display: inline-block;
       .br;
       .fs-s;

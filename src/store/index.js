@@ -8,7 +8,8 @@ export const store = new Vuex.Store({
   state: {
     apidata: [],
     topScroll: 0,
-    caption: false
+    caption: false,
+    showCollection: false
   },
   actions: {
     // Get API Data
@@ -30,6 +31,9 @@ export const store = new Vuex.Store({
     },
     SHOW_CAPTIONS (state, caption) {
       state.caption = caption
+    },
+    SHOW_COLLECTIONS (state, showCollection) {
+      state.showCollection = showCollection
     }
   }
 })
