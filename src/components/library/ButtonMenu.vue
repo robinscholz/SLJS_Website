@@ -1,8 +1,8 @@
 <template>
   <div class="menu_wrapper">
     <swiper class="menu_slider" :options="swiperOption" ref="mySwiper" v-if="apidata.length !== 0">
-      <swiper-slide v-if="isVisibleRight === 'true' && isVisibleLeft " v-observe-visibility="visibilityChangedLeft" class="menu_btn">
-        <span class="menu_input menu_contact">
+      <swiper-slide v-if="isVisibleLeft || isVisibleRight" class="menu_btn" v-observe-visibility="visibilityChangedLeft">
+        <span class="menu_input menu_arrow">
           Scroll to see more &rarr; 
         </span>    
       </swiper-slide>
@@ -29,7 +29,6 @@
         <ButtonCaption></ButtonCaption>  
       </swiper-slide>
     </swiper>
-    <!-- <span class="mobile_arrow">Drag →</span> -->
     </div>
 </template>
 
@@ -52,7 +51,7 @@
           grabCursor: true,
           mousewheelControl: true
         },
-        isVisibleLeft: true,
+        isVisibleLeft: false,
         isVisibleRight: false
       }
     },
@@ -77,11 +76,13 @@
         'SHOW_CAPTIONS',
         'SHOW_COLLECTIONS'
       ]),
-      visibilityChangedLeft (isVisible, entry) {
-        this.isVisibleLeft = entry.isIntersecting === false ? 'false' : 'true'
-      },
       visibilityChangedRight (isVisible, entry) {
-        this.isVisibleRight = entry.isIntersecting === true ? 'false' : 'true'
+        this.isVisibleRight = !entry.isIntersecting
+        console.log(this.isVisibleRight)
+      },
+      visibilityChangedLeft (isVisible, entry) {
+        this.isVisibleLeft = !entry.isIntersecting
+        console.log(this.isVisibleRight)
       }
     }
   }
@@ -151,6 +152,13 @@
         background: @blue;
         .black;
         color: @yellow;
+      }
+    }
+    &_arrow {
+      background: @black;
+      .white;
+      &:hover {
+        background: @black;
       }
     }
   }
