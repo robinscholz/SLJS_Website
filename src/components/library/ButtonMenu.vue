@@ -3,11 +3,7 @@
     <swiper class="menu_slider" :options="swiperOption" ref="mySwiper" v-if="apidata.length !== 0">
       <swiper-slide v-if="isVisibleLeft || isVisibleRight" class="menu_btn" v-observe-visibility="visibilityChangedLeft">
         <span class="menu_input menu_arrow">
-<<<<<<< HEAD
           Scroll &rarr; to see more  
-=======
-          Scroll &rarr; 
->>>>>>> origin/master
         </span>    
       </swiper-slide>
       <swiper-slide class="menu_btn">
@@ -173,7 +169,7 @@
   }
 
   .swiper-container {
-    height: 100px;
+    height: 80px;
   }
 
 </style>
