@@ -30,22 +30,20 @@
     &_wrapper {
       .black;
       // position: absolute;
-      bottom: 0;
-      margin: @mp-a;
+      // bottom: 0;
+      // margin: @mp-a;
       visibility: hidden;
       display: none;
     }
     &_active {
-    background: @primary; 
-    .br;
+    // .br;
     visibility: visible;
     display: block;
     }
     &_title {
-      background: @primary;
-      padding: @mp-a;
+      padding: @mp-a @mp-b;
       display: inline-block;
-      .br;
+      // .br;
       .fs-s;
     }
     &_caption {

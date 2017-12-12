@@ -1,16 +1,15 @@
 <template>
-  <keep-alive>
-    <masonry
-    class="collection_wrapper"
-    :cols="{default: 2, 768: 1}"
-    :gutter="0"
+  <masonry
+  class="collection_wrapper"
+  :cols="{default: 2, 768: 1}"
+  :gutter="0"
+  >
+    <router-link
+      v-for="image in collections[index].images" 
+      class="collection_link" 
+      :to="index + '/' + image.num" 
+      :key="image.url"
     >
-      <router-link
-        v-for="image in collections[index].images" 
-        class="collection_link" 
-        :to="index + '/' + image.num" 
-        :key="image.url"
-      >
         <clazy-load 
           :src="image.url"
           element=".main_wrapper"
@@ -83,14 +82,19 @@
     }
     &_img_wrapper {
       position: relative;
+      overflow: hidden;
     }
     &_img {
       display: block;
       width: calc(~"100% - 1px");
       padding: 1px 0px 1px 1px;
       margin: 0;
+      transition: .5;
       &_active {
-        // .spin;
+        // opacity: 0.1;
+        // filter: saturate(500%) blur(30px);
+        // filter: blur(3px);
+        // transform: scale(1.5)
       }
     }
     &_placeholder {
