@@ -78,14 +78,18 @@
     }
     &_btn {
       display: inline-block;
-      margin: 0 @mp-a/2;
+      margin: 0 @mp-a;
       letter-spacing: 0.4px;
       &:first-child {
-        margin-left: @mp-a;
+        margin-left: @mp-b;
+        cursor: default;
+      }
+      &:last-child {
+        margin-right: @mp-b;
         cursor: default;
       }
       a {
-        margin: 0 @mp-a/2;
+        margin: 0 @mp-a;
         &:first-child {
           margin-left: 0;
         }
@@ -107,7 +111,8 @@
         background: @white;
       }
       &.router-link-active {
-        background: @secondary;
+        background: @blue;
+        color: @yellow;
       }
     }
     &_contact {
@@ -117,7 +122,8 @@
         background: @blacklight;
       }
       &.router-link-active {
-        background: @black;
+        background: @blue;
+        color: @yellow;
       }
     }
   }

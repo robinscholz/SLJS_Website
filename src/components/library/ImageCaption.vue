@@ -29,7 +29,7 @@
   .caption {
     &_wrapper {
       .black;
-      // position: absolute;
+      position: absolute;
       bottom: 0;
       margin: @mp-a;
       visibility: hidden;
