@@ -89,7 +89,8 @@
       margin: 0;
       transition: .5;
       &_active {
-        opacity: 0.1;
+        // opacity: 0.1;
+        // filter: saturate(500%) blur(30px);
         // filter: blur(3px);
         // transform: scale(1.5)
       }
