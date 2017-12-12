@@ -26,8 +26,7 @@
   </keep-alive>
 </template>
 
-<!-- <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script> -->
-
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
 <script>
   import ImageCaption from '../library/ImageCaption.vue'
 
@@ -61,14 +60,6 @@
 
 <style lang="less">
   @import "../../less/global.less";
-
-  .fade-enter, .fade-leave-to {
-    opacity: 0;
-  }
-
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s
-  }
 
   .collection {
     &_wrapper {

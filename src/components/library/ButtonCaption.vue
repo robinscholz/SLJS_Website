@@ -29,11 +29,11 @@
   .menu_cpt {
         padding: 3px;
         text-align: center;
-        background: @tertiary;
-        .white;
+        background: @primary;
+        .black;
         .br;
         &:hover {
-          background: @tertiarylight;
+          background: @white;
         }
       }
 </style>

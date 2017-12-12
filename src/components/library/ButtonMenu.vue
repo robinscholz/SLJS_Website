@@ -18,7 +18,6 @@
           v-for="collection in collections"
           :key="collection.uid" 
           v-if="collection.uid === index || $store.state.showCollection || $route.name === 'Contact'"
-          v-on:click.native="SHOW_COLLECTIONS()"
         >
           {{ collection.title }}
         </router-link>
@@ -147,10 +146,10 @@
       }
     }
     &_contact {
-      background: @black;
-      .white;
+      background: @primary;
+      .black;
       &:hover {
-        background: @blacklight;
+        background: @white;
       }
       &.router-link-active {
         background: @blue;
@@ -159,10 +158,10 @@
       }
     }
     &_arrow {
-      background: @black;
-      .white;
+      background: @primary;
+      .black;
       &:hover {
-        background: @black;
+        background: @white;
       }
     }
   }
