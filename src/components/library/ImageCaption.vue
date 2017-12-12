@@ -45,17 +45,17 @@
     }
     &_title {
       display: inline;
-      // padding: 2px;
+      padding: @mp-a;
       margin: 0 @mp-a;
       // margin: @mp-a @mp-a 0 @mp-a;
       white-space: nowrap;
-      background: rgba(255,255,255,0.35);
+      background: rgba(255,255,255,1);
     }
     &_caption {
       // display: inline;
       margin: 0 @mp-a;
-      // padding: 2px;
-      background: rgba(255,255,255,0.35);
+      padding: @mp-a;
+      background: rgba(255,255,255,1);
 
     }
   }
