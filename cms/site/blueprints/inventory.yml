@@ -5,7 +5,7 @@ files:
   fields:
     imgtitle: 
       type: text
-      label: Title
+      label: Artwork Title, Year
     caption:
       type: textarea
       label: Additional Info

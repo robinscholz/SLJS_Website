@@ -77,6 +77,8 @@
     }
     &_link {
       cursor: pointer;
+      text-decoration: none;
+      .black;
     }
     &_img_wrapper {
       position: relative;

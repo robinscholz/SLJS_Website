@@ -149,7 +149,7 @@
     color: @black;
     text-align: right;
     z-index: 99;
-    .fs-xs;
+    .fs-s;
   }
 
 </style>
