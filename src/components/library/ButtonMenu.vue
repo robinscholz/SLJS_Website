@@ -1,26 +1,29 @@
 <template>
-  <swiper class="menu_slider" :options="swiperOption" ref="mySwiper" v-if="apidata.length !== 0">
-    <swiper-slide class="menu_btn">
-      <router-link to="contact" class="menu_input menu_contact">Simon Skatka Lindell</router-link>    
-    </swiper-slide>
-    <swiper-slide class="menu_btn">
-      <router-link :to="{ path: collection.uid }" class="menu_input" v-for="collection in collections" :key="collection.uid" v-if="collection.uid === index || $store.state.showCollection || $route.name === 'Contact'">
-        {{ collection.title }}
-      </router-link>
-    </swiper-slide>
-    <swiper-slide class="menu_btn">
-      <ButtonShow></ButtonShow>  
-    </swiper-slide>
-    <swiper-slide class="menu_btn">
-      <ButtonCaption></ButtonCaption>  
-    </swiper-slide>
-  </swiper>
+  <div class="menu_wrapper">
+    <swiper class="menu_slider" :options="swiperOption" ref="mySwiper" v-if="apidata.length !== 0">
+      <swiper-slide class="menu_btn">
+        <router-link to="contact" class="menu_input menu_contact"><ButtonName></ButtonName></router-link>    
+      </swiper-slide>
+      <swiper-slide class="menu_btn">
+        <router-link :to="{ path: collection.uid }" class="menu_input" v-for="collection in collections" :key="collection.uid" v-if="collection.uid === index || $store.state.showCollection || $route.name === 'Contact'">
+          {{ collection.title }}
+        </router-link>
+      </swiper-slide>
+      <swiper-slide class="menu_btn">
+        <ButtonShow></ButtonShow>  
+      </swiper-slide>
+      <swiper-slide class="menu_btn">
+        <ButtonCaption></ButtonCaption>  
+      </swiper-slide>
+    </swiper>
+    <!-- <span class="mobile_arrow">Drag →</span> -->
+    </div>
 </template>
 
 <script>
   import ButtonCaption from '../library/ButtonCaption.vue'
   import ButtonShow from '../library/ButtonShow.vue'
-
+  import ButtonName from '../library/ButtonName.vue'
   import _ from 'underscore'
   import { mapMutations } from 'vuex'
 
@@ -40,7 +43,8 @@
     },
     components: {
       ButtonCaption,
-      ButtonShow
+      ButtonShow,
+      ButtonName
     },
     computed: {
       apidata () {
@@ -78,18 +82,18 @@
     }
     &_btn {
       display: inline-block;
-      margin: 0 @mp-a;
+      margin: 0 @mp-a/1.5;
       letter-spacing: 0.4px;
       &:first-child {
-        margin-left: @mp-b;
+        margin-left: @mp-b*0.75;
         cursor: default;
       }
       &:last-child {
-        margin-right: @mp-b;
+        margin-right: @mp-b*0.75;
         cursor: default;
       }
       a {
-        margin: 0 @mp-a;
+        margin: 0 @mp-a/1.5;
         &:first-child {
           margin-left: 0;
         }
@@ -123,8 +127,20 @@
       }
       &.router-link-active {
         background: @blue;
+        .black;
         color: @yellow;
       }
     }
   }
+
+  .mobile_arrow {
+    position: fixed;
+    top: 76px;
+    right: @mp-a;
+    color: @black;
+    text-align: right;
+    z-index: 99;
+    .fs-xs;
+  }
+
 </style>
