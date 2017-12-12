@@ -18,6 +18,7 @@
           v-for="collection in collections"
           :key="collection.uid" 
           v-if="collection.uid === index || $store.state.showCollection || $route.name === 'Contact'"
+          v-on:click.native="SHOW_COLLECTIONS()"
         >
           {{ collection.title }}
         </router-link>
@@ -134,11 +135,11 @@
       padding: 3px;
       .fs-m;
       .black;
-      background: @primary;
+      background: @secondary;
       text-decoration: none;
       .br;
       &:hover {
-        background: @white;
+        background: @secondarylight;
       }
       &.router-link-active {
         background: @blue;
