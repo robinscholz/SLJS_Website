@@ -5,6 +5,8 @@
   </div>
 </template>
 
+<!-- Polyfill for older browsers -->
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
 <script>
 // import SiteHead from './components/library/SiteHead.vue'
 import _ from 'underscore'

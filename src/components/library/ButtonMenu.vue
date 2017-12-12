@@ -3,7 +3,11 @@
     <swiper class="menu_slider" :options="swiperOption" ref="mySwiper" v-if="apidata.length !== 0">
       <swiper-slide v-if="isVisibleLeft || isVisibleRight" class="menu_btn" v-observe-visibility="visibilityChangedLeft">
         <span class="menu_input menu_arrow">
+<<<<<<< HEAD
           Scroll &rarr; to see more  
+=======
+          Scroll &rarr; 
+>>>>>>> origin/master
         </span>    
       </swiper-slide>
       <swiper-slide class="menu_btn">
@@ -26,9 +30,11 @@
       <swiper-slide class="menu_btn">
         <ButtonShow></ButtonShow>  
       </swiper-slide>
-      <swiper-slide class="menu_btn" v-observe-visibility="visibilityChangedRight">
-        <ButtonCaption></ButtonCaption>  
-      </swiper-slide>
+      <Intersect @leave="isVisibleRight">
+        <swiper-slide class="menu_btn" v-observe-visibility="visibilityChangedRight">
+          <ButtonCaption></ButtonCaption>  
+        </swiper-slide>
+      </Intersect>
     </swiper>
     </div>
 </template>
@@ -37,6 +43,7 @@
   import ButtonCaption from '../library/ButtonCaption.vue'
   import ButtonShow from '../library/ButtonShow.vue'
   import ButtonName from '../library/ButtonName.vue'
+  import Intersect from 'vue-intersect'
   import _ from 'underscore'
   import { mapMutations } from 'vuex'
 
@@ -59,7 +66,8 @@
     components: {
       ButtonCaption,
       ButtonShow,
-      ButtonName
+      ButtonName,
+      Intersect
     },
     computed: {
       apidata () {
@@ -83,7 +91,7 @@
       },
       visibilityChangedLeft (isVisible, entry) {
         this.isVisibleLeft = !entry.isIntersecting
-        console.log(this.isVisibleRight)
+        console.log(this.isVisibleLeft)
       }
     }
   }
@@ -164,14 +172,8 @@
     }
   }
 
-  .mobile_arrow {
-    position: fixed;
-    top: 76px;
-    right: @mp-a;
-    color: @black;
-    text-align: right;
-    z-index: 99;
-    .fs-s;
+  .swiper-container {
+    height: 100px;
   }
 
 </style>

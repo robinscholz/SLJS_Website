@@ -23,6 +23,7 @@
     "vue-awesome-swiper": "^2.6.7",
     "vue-clazy-load": "^0.2.0",
     "vue-images-loaded": "^1.1.2",
+    "vue-intersect": "^1.1.2",
     "vue-interval": "^0.2.0",
     "vue-masonry-css": "^1.0.0",
     "vue-meta": "^1.0.5",

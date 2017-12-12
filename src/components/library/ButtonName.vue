@@ -13,7 +13,7 @@
     methods: {
       reCalculate: function () {
         const windowWidth = (window ? window.innerWidth : null)
-        this.name = windowWidth <= 768 ? '?' : 'Simon Skatka Lindell'
+        this.name = windowWidth <= 768 ? 'Contact & CV' : 'Simon Skatka Lindell'
       }
     },
     mounted () {

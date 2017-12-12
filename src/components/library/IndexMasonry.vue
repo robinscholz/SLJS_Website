@@ -26,8 +26,8 @@
   </keep-alive>
 </template>
 
-<!-- Polyfill for older browsers -->
-<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<!-- <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script> -->
+
 <script>
   import ImageCaption from '../library/ImageCaption.vue'
 
