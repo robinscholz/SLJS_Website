@@ -90,7 +90,7 @@ jsonapi()->register([
 				);
 			};
 
-			$json['2-contact'] = array(
+			$json['1-contact'] = array(
 				'phone' => (string)$contact->phone(),
 				'email' => (string)$contact->mail(),
 				'education' => $education,

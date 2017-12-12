@@ -37,7 +37,7 @@
           background: @tertiarylight;
         }
         &.active {
-          margin-left: 8.66px;
+          // margin-left: 8.66px;
           // background: red;
           // word-spacing: 8px;
           // letter-spacing: 0.75px;

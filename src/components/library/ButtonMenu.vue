@@ -1,29 +1,23 @@
 <template>
-  <ul class="menu_slider" :options="swiperOption" ref="mySwiper">
-    <li class="menu_btn" v-for="collection in collections" :key="collection.uid" v-if="collection.uid === index">
-      <span :to="{ path: collection.uid }" class="menu_input">
-        {{ collection.title }}
-      </span>
-    </li>
-    <li class="menu_btn" v-for="collection in collections" :key="collection.uid" v-if="collection.uid !== index && $store.state.showCollection">
-      <router-link :to="{ path: collection.uid }" class="menu_input">
+  <swiper class="menu_slider" :options="swiperOption" ref="mySwiper" v-if="apidata.length !== 0">
+    <swiper-slide class="menu_btn">
+      <router-link to="contact" class="menu_input menu_contact">Simon Skatka Lindell</router-link>    
+    </swiper-slide>
+    <swiper-slide class="menu_btn">
+      <router-link :to="{ path: collection.uid }" class="menu_input" v-for="collection in collections" :key="collection.uid" v-if="collection.uid === index || $store.state.showCollection || $route.name === 'Contact'">
         {{ collection.title }}
       </router-link>
-    </li>
-    <li class="menu_btn">
+    </swiper-slide>
+    <swiper-slide class="menu_btn">
       <ButtonShow></ButtonShow>  
-    </li>
-    <li class="menu_btn">
+    </swiper-slide>
+    <swiper-slide class="menu_btn">
       <ButtonCaption></ButtonCaption>  
-    </li>
-    <li class="menu_btn">
-      <router-link to="contact" class="menu_input menu_contact">Contact & CV</router-link>    
-    </li>
-  </ul>
+    </swiper-slide>
+  </swiper>
 </template>
 
 <script>
-  import ButtonName from '../library/ButtonName.vue'
   import ButtonCaption from '../library/ButtonCaption.vue'
   import ButtonShow from '../library/ButtonShow.vue'
 
@@ -40,12 +34,11 @@
           slidesPerView: 'auto',
           initialSlide: this.initialSlideNumber,
           grabCursor: true,
-          mousewheelControl: false
+          mousewheelControl: true
         }
       }
     },
     components: {
-      ButtonName,
       ButtonCaption,
       ButtonShow
     },
@@ -85,11 +78,20 @@
     }
     &_btn {
       display: inline-block;
-      margin: 0 @mp-a;
+      margin: 0 @mp-a/2;
       letter-spacing: 0.4px;
       &:first-child {
-        margin-left: @mp-b;
+        margin-left: @mp-a;
         cursor: default;
+      }
+      a {
+        margin: 0 @mp-a/2;
+        &:first-child {
+          margin-left: 0;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
     &_input {
@@ -118,9 +120,5 @@
         background: @black;
       }
     }
-  }
-
-  .swipper-wrapper {
-    width: 100%;
   }
 </style>
