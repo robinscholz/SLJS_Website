@@ -3,7 +3,7 @@
     <swiper class="menu_slider" :options="swiperOption" ref="mySwiper" v-if="apidata.length !== 0">
       <swiper-slide v-if="isVisibleLeft || isVisibleRight" class="menu_btn" v-observe-visibility="visibilityChangedLeft">
         <span class="menu_input menu_arrow">
-          Scroll &rarr; 
+          Scroll &rarr; to see more  
         </span>    
       </swiper-slide>
       <swiper-slide class="menu_btn">
@@ -18,6 +18,7 @@
           v-for="collection in collections"
           :key="collection.uid" 
           v-if="collection.uid === index || $store.state.showCollection || $route.name === 'Contact'"
+          v-on:click.native="SHOW_COLLECTIONS()"
         >
           {{ collection.title }}
         </router-link>
@@ -165,5 +166,4 @@
       }
     }
   }
-
 </style>

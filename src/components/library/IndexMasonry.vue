@@ -15,8 +15,9 @@
           element=".main_wrapper"
           margin="100%"
           class='collection_img_wrapper'
+          v-bind:class="{ shake : $store.state.showCollection }"
         >
-          <img :src="image.url" class="collection_img" v-bind:class="{ collection_img_active: $store.state.showCollection }" slot="image">
+          <img :src="image.url" class="collection_img" slot="image">
           <ImageCaption :imageTitle="image.imgtitle" :imageCaption="image.caption" slot="image" v-if="image.imgtitle || image.caption"></ImageCaption>
           <div class="collection_placeholder" :style="imageHeight(image)" slot="placeholder"></div>
         </clazy-load>
