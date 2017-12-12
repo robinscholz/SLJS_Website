@@ -10,6 +10,7 @@ import VueMasonry from 'vue-masonry-css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import IdleVue from 'idle-vue'
 import VueClazyLoad from 'vue-clazy-load'
+import VueObserveVisibility from 'vue-observe-visibility'
 
 Vue.config.productionTip = false
 sync(store, router) // router sync
@@ -17,6 +18,7 @@ Vue.use(Meta)
 Vue.use(VueMasonry)
 Vue.use(VueAwesomeSwiper)
 Vue.use(VueClazyLoad)
+Vue.use(VueObserveVisibility)
 
 // Idle
 const eventsHub = new Vue()

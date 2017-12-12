@@ -17,7 +17,7 @@
           margin="100%"
           class='collection_img_wrapper'
         >
-          <img :src="image.url" class="collection_img" slot="image">
+          <img :src="image.url" class="collection_img" v-bind:class="{ collection_img_active: $store.state.showCollection }" slot="image">
           <ImageCaption :imageTitle="image.imgtitle" :imageCaption="image.caption" slot="image" v-if="image.imgtitle || image.caption"></ImageCaption>
           <div class="collection_placeholder" :style="imageHeight(image)" slot="placeholder"></div>
         </clazy-load>
@@ -73,6 +73,7 @@
   .collection {
     &_wrapper {
       position: relative;
+      overflow: hidden;
       width: 100%;
       font-size: 0;
       padding: 1px 2px;
@@ -88,6 +89,9 @@
       width: calc(~"100% - 1px");
       padding: 1px 0px 1px 1px;
       margin: 0;
+      &_active {
+        // .spin;
+      }
     }
     &_placeholder {
       display: block;

@@ -26,6 +26,7 @@
     "vue-masonry-css": "^1.0.0",
     "vue-meta": "^1.0.5",
     "vue-multiselect": "^2.0.2",
+    "vue-observe-visibility": "^0.3.1",
     "vue-router": "^2.3.1",
     "vue-tables-2": "^1.0.10",
     "vuex": "^2.3.1",

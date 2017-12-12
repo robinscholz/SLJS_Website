@@ -3,7 +3,7 @@
     class="menu_input menu_showall"
     :class="{noclick: $route.name === 'Contact', active: $store.state.showCollection}"
     v-on:click="SHOW_COLLECTIONS($store.state.showCollection = !$store.state.showCollection)"
-  >Show {{ showhide }}</span>  
+  >{{ showhide }} Index</span>  
 </template>
 
 <script>
@@ -14,7 +14,7 @@
     name: 'ButtonShow',
     computed: {
       showhide () {
-        return this.$store.state.showCollection ? 'Less' : 'All'
+        return this.$store.state.showCollection ? 'Hide' : 'Show'
       }
     },
     methods: {

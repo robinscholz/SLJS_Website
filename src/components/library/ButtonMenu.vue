@@ -1,5 +1,8 @@
 <template>
   <swiper class="menu_slider" :options="swiperOption" ref="mySwiper" v-if="apidata.length !== 0">
+    <swiper-slide v-if="isVisibleRight === 'true' && isVisibleLeft " class="menu_btn" v-observe-visibility="visibilityChangedLeft">
+      <span class="menu_input menu_contact">Drag to see all &rarr;</span>    
+    </swiper-slide>
     <swiper-slide class="menu_btn">
       <router-link to="contact" class="menu_input menu_contact">Simon Skatka Lindell</router-link>    
     </swiper-slide>
@@ -11,7 +14,7 @@
     <swiper-slide class="menu_btn">
       <ButtonShow></ButtonShow>  
     </swiper-slide>
-    <swiper-slide class="menu_btn">
+    <swiper-slide class="menu_btn" v-observe-visibility="visibilityChangedRight">
       <ButtonCaption></ButtonCaption>  
     </swiper-slide>
   </swiper>
@@ -35,7 +38,9 @@
           initialSlide: this.initialSlideNumber,
           grabCursor: true,
           mousewheelControl: true
-        }
+        },
+        isVisibleLeft: true,
+        isVisibleRight: false
       }
     },
     components: {
@@ -56,7 +61,13 @@
     methods: {
       ...mapMutations([
         'SHOW_CAPTIONS'
-      ])
+      ]),
+      visibilityChangedLeft (isVisible, entry) {
+        this.isVisibleLeft = entry.isIntersecting === false ? 'false' : 'true'
+      },
+      visibilityChangedRight (isVisible, entry) {
+        this.isVisibleRight = entry.isIntersecting === true ? 'false' : 'true'
+      }
     }
   }
 </script>
@@ -107,7 +118,7 @@
         background: @white;
       }
       &.router-link-active {
-        background: @secondary;
+        background: @white;
       }
     }
     &_contact {
