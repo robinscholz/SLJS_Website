@@ -27,13 +27,13 @@
 <style lang="less">
   @import "../../less/global.less";
   .menu_cpt {
-        padding: @mp-a;
+        padding: 3px;
         text-align: center;
-        background: @tertiary;
-        .white;
+        background: @primary;
+        .black;
         .br;
         &:hover {
-          background: @tertiarylight;
+          background: @white;
         }
       }
 </style>

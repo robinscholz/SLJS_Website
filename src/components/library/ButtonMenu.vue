@@ -111,7 +111,6 @@
     &_btn {
       display: inline-block;
       margin: 0 @mp-a/1.5;
-      letter-spacing: 0.4px;
       &:first-child {
         margin-left: @mp-b*0.75;
         cursor: default;
@@ -133,14 +132,14 @@
     &_input {
       display: inline-block;
       cursor: pointer;
-      padding: @mp-a;
-      .fs-s;
+      padding: 3px;
+      .fs-m;
       .black;
-      background: @primary;
+      background: @secondary;
       text-decoration: none;
       .br;
       &:hover {
-        background: @white;
+        background: @secondarylight;
       }
       &.router-link-active {
         background: @blue;
@@ -148,10 +147,10 @@
       }
     }
     &_contact {
-      background: @black;
-      .white;
+      background: @primary;
+      .black;
       &:hover {
-        background: @blacklight;
+        background: @white;
       }
       &.router-link-active {
         background: @blue;
@@ -160,16 +159,11 @@
       }
     }
     &_arrow {
-      background: @black;
-      .white;
+      background: @primary;
+      .black;
       &:hover {
-        background: @black;
+        background: @white;
       }
     }
   }
-
-  .swiper-container {
-    height: 80px;
-  }
-
 </style>
