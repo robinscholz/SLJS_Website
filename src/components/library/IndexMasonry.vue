@@ -30,6 +30,7 @@
 
 <script>
   import ImageCaption from '../library/ImageCaption.vue'
+  import _ from 'underscore'
 
   export default {
     name: 'IndexMasonry',
@@ -46,6 +47,11 @@
       },
       misc () {
         return this.apidata['3-misc']
+      },
+      num () {
+        var imgCount = _.values(this.collections[this.index].images).length
+        var masonryCount = imgCount > 5 ? 3 : 2
+        return masonryCount
       }
     },
     methods: {
@@ -54,6 +60,12 @@
         var pixels = (window.innerWidth > 768) ? 2 * image.ratio : 3 * image.ratio
         var string = 'height: calc(' + height + 'vw - ' + pixels + 'px)'
         return string
+      }
+    },
+    watch: {
+      num: function () {
+        console.log(this.num)
+        this.$VueMasonry.reCalculate()
       }
     }
   }
