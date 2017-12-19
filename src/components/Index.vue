@@ -45,8 +45,7 @@
     methods: {
       ...mapMutations([
         'SAVE_SCROLL',
-        'SHOW_CAPTIONS',
-        'SHIVER'
+        'SHOW_CAPTIONS'
       ]),
       start () {
         this.interval = setInterval(function () {
@@ -55,7 +54,7 @@
           } else {
             this.pageNumber++
           }
-        }.bind(this), 100000)
+        }.bind(this), 10000)
       },
       stop () {
         clearInterval(this.interval)
@@ -85,15 +84,15 @@
     },
     destroyed () {
       window.removeEventListener('scroll', this.scrollWatch)
-    },
-    beforeRouteUpdate (to, from, next) {
-      this.SHIVER(false)
-      next()
-    },
-    beforeRouteLeave (to, from, next) {
-      this.SHIVER(false)
-      next()
     }
+    // beforeRouteUpdate (to, from, next) {
+    //   this.SHIVER(false)
+    //   next()
+    // },
+    // beforeRouteLeave (to, from, next) {
+    //   this.SHIVER(false)
+    //   next()
+    // }
   }
 </script>
 
