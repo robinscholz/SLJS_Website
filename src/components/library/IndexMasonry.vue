@@ -15,7 +15,7 @@
         element=".main_wrapper"
         margin="100%"
         class='collection_img_wrapper'
-        v-bind:class="shakeClass(i)"
+        :class="shakeClass(i)"
       >
         <img :src="image.url" class="collection_img" slot="image">
         <ImageCaption :imageTitle="image.imgtitle" :imageCaption="image.caption" slot="image" v-if="image.imgtitle || image.caption"></ImageCaption>
@@ -61,28 +61,22 @@
       },
       shakeClass (i) {
         const shiver = this.$store.state.shiver
-        if (shiver && i % 5 === 0) {
+        if (shiver && i % 7 === 0) {
           return 'shakeone'
-        } else if (shiver && i % 5 === 1) {
+        } else if (shiver && i % 7 === 1) {
           return 'shaketwo'
-        } else if (shiver && i % 5 === 2) {
+        } else if (shiver && i % 7 === 2) {
           return 'shakethree'
-        } else if (shiver && i % 5 === 3) {
+        } else if (shiver && i % 7 === 3) {
           return 'shakefour'
-        } else if (shiver && i % 5 === 4) {
+        } else if (shiver && i % 7 === 4) {
           return 'shakefive'
+        } else if (shiver && i % 7 === 5) {
+          return 'shakesix'
+        } else if (shiver && i % 7 === 6) {
+          return 'shakeseven'
         }
       }
-      // numUpdate () {
-      //   const imgCount = this.collections[this.index].imagecount
-      //   const masonryCount = imgCount > 5 ? '3' : '2'
-      //   console.log(imgCount)
-      //   return masonryCount
-      // }
-      // beforeRouteUpdate (to, from, next) {
-      //   this.reCalculate()
-      //   next()
-      // }
     }
   }
 </script>

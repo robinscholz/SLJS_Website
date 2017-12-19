@@ -1,7 +1,12 @@
 <template>
-  <div class="menu_wrapper">
-    <swiper class="menu_slider" :options="swiperOption" ref="mySwiper" v-if="apidata.length !== 0">
-      <swiper-slide v-if="isVisibleLeft || isVisibleRight" class="menu_btn" v-observe-visibility="visibilityChangedLeft">
+  <div class="menu_wrapper" v-if="apidata.length !== 0">
+    <swiper 
+      class="menu_slider" 
+      :options="swiperOption" 
+      ref="mySwiper" 
+      :class="{absolute: isContact}"
+    >
+      <swiper-slide v-if="(isVisibleLeft || isVisibleRight) && !isContact" class="menu_btn" v-observe-visibility="visibilityChangedLeft">
         <span class="menu_input menu_arrow">
           Menu &rarr; 
         </span>    
@@ -75,6 +80,9 @@
       },
       initialSlideNumber () {
         return parseInt(this.collections[this.index].number)
+      },
+      isContact () {
+        return this.$route.name === 'Contact'
       }
     },
     methods: {
@@ -109,6 +117,9 @@
       overflow: hidden;
       font-size: 0;
       z-index: 90;
+      &.absolute {
+        position: absolute;
+      }
     }
     &_btn {
       display: inline-block;
