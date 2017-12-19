@@ -112,7 +112,7 @@
     }
     &_btn {
       display: inline-block;
-      margin: 0 @mp-a;
+      margin: 0 @mp-a/2;
       &:first-child {
         margin-left: @mp-b;
         cursor: default;
@@ -122,7 +122,7 @@
         cursor: default;
       }
       a {
-        margin: 0 @mp-a;
+        margin: 0 @mp-a/2;
         &:first-child {
           margin-left: 0;
         }
@@ -134,7 +134,7 @@
     &_input {
       display: inline-block;
       cursor: pointer;
-      padding: 3px;
+      padding: 3px 5px;
       .fs-m;
       .black;
       background: @primary;
@@ -149,7 +149,7 @@
       }
     }
     &_links {
-      margin: 0 @mp-b;
+      padding: 0 @mp-b;
     }
     &_contact {
       background: @primary;

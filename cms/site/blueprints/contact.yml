@@ -51,6 +51,21 @@ fields:
       city:
         label: City, Country
         type: text
+  residencies:
+    label: Residencies
+    type: structure
+    help: Please make sure to spell and capitalize everything correctly!
+    style: table
+    fields:
+      year:
+        label: Year
+        type: number
+      gallery:
+        label: Gallery/Institution
+        type: text
+      city:
+        label: City, Country
+        type: text
 options:
   template: false
   url: false

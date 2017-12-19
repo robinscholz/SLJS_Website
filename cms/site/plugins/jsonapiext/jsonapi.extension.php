@@ -92,11 +92,24 @@ jsonapi()->register([
 				);
 			};
 
+			//Residencies
+			$n = 0;
+			$residencies = array();
+			foreach($contact->residencies()->toStructure() as $entry) {
+				$n++;
+				$residencies[$n] = array(
+					"year" => (string)$entry->year(), 
+					"gallery" => (string)$entry->gallery(),
+					"city" => (string)$entry->city(),
+				);
+			};
+
 			$json['1-contact'] = array(
 				'phone' => (string)$contact->phone(),
 				'email' => (string)$contact->mail(),
 				'education' => $education,
-				'groupshows' => $groupshows
+				'groupshows' => $groupshows,
+				'residencies' => $residencies
 			);
 
 			$json['3-misc']["total"] = $data->count();
