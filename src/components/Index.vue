@@ -27,30 +27,26 @@
       },
       misc () {
         return this.apidata['3-misc']
-      },
-      id: function () {
-        for (var i = 0; i < this.collectionsArray; i++) {
-          console.log(this.collections)
-        }
       }
     },
     data () {
       return {
-        idleStatus: 'idleActive',
+        idleStatus: false,
         pageNumber: -1,
         topScroll: 0
       }
     },
     onIdle () {
-      this.idleStatus = 'idle'
+      this.idleStatus = true
     },
     onActive () {
-      this.idleStatus = 'idleActive'
+      this.idleStatus = false
     },
     methods: {
       ...mapMutations([
         'SAVE_SCROLL',
-        'SHOW_CAPTIONS'
+        'SHOW_CAPTIONS',
+        'SHIVER'
       ]),
       start () {
         this.interval = setInterval(function () {
@@ -71,7 +67,7 @@
     },
     watch: {
       idleStatus () {
-        if (this.idleStatus === 'idle') {
+        if (this.idleStatus) {
           this.start()
         } else {
           this.stop()
@@ -79,7 +75,7 @@
         console.log(this.idleStatus)
       },
       pageNumber () {
-        var currentUid = this.collections[this.pageNumber].uid
+        const currentUid = this.collections[this.pageNumber].uid
         this.$router.push(currentUid)
         console.log(this.pageNumber)
       }
@@ -90,8 +86,13 @@
     destroyed () {
       window.removeEventListener('scroll', this.scrollWatch)
     },
-    beforeUpdate () {
-      // this.SHOW_CAPTIONS(false)
+    beforeRouteUpdate (to, from, next) {
+      this.SHIVER(false)
+      next()
+    },
+    beforeRouteLeave (to, from, next) {
+      this.SHIVER(false)
+      next()
     }
   }
 </script>

@@ -2,7 +2,7 @@
   <span 
     class="menu_input menu_showall"
     :class="{noclick: $route.name === 'Contact', active: $store.state.showCollection}"
-    v-on:click="SHOW_COLLECTIONS($store.state.showCollection = !$store.state.showCollection)"
+    v-on:click="SHOW_COLLECTIONS($store.state.showCollection = !$store.state.showCollection), SHIVER(shiverTrueFalse)"
   >{{ showhide }} Index</span>  
 </template>
 
@@ -15,11 +15,19 @@
     computed: {
       showhide () {
         return this.$store.state.showCollection ? 'Hide' : 'Show'
+      },
+      shiverTrueFalse () {
+        if (this.$store.state.showCollection) {
+          return true
+        } else {
+          return false
+        }
       }
     },
     methods: {
       ...mapMutations([
-        'SHOW_COLLECTIONS'
+        'SHOW_COLLECTIONS',
+        'SHIVER'
       ])
     }
   }

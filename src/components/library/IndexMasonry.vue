@@ -5,7 +5,7 @@
   :gutter="0"
   >
     <router-link
-      v-for="image in collections[index].images" 
+      v-for="(image, i) in collections[index].images" 
       class="collection_link" 
       :to="index + '/' + image.num" 
       :key="image.url"
@@ -15,7 +15,7 @@
           element=".main_wrapper"
           margin="100%"
           class='collection_img_wrapper'
-          v-bind:class="{ shake : $store.state.showCollection }"
+          v-bind:class="{ 'shakeone' : ($store.state.shiver && i % 2), 'shaketwo' : ($store.state.shiver && !(i % 2))  }"
         >
           <img :src="image.url" class="collection_img" slot="image">
           <ImageCaption :imageTitle="image.imgtitle" :imageCaption="image.caption" slot="image" v-if="image.imgtitle || image.caption"></ImageCaption>
@@ -55,9 +55,9 @@
     },
     methods: {
       imageHeight (image) {
-        var height = (window.innerWidth > 768) ? 50 / image.ratio : 100 / image.ratio
-        var pixels = (window.innerWidth > 768) ? 2 * image.ratio : 3 * image.ratio
-        var string = 'height: calc(' + height + 'vw - ' + pixels + 'px)'
+        const height = (window.innerWidth > 768) ? 50 / image.ratio : 100 / image.ratio
+        const pixels = (window.innerWidth > 768) ? 2 * image.ratio : 3 * image.ratio
+        const string = 'height: calc(' + height + 'vw - ' + pixels + 'px)'
         return string
       }
     },
@@ -96,12 +96,6 @@
       padding: 1px 0px 1px 1px;
       margin: 0;
       transition: .5;
-      &_active {
-        // opacity: 0.1;
-        // filter: saturate(500%) blur(30px);
-        // filter: blur(3px);
-        // transform: scale(1.5)
-      }
     }
     &_placeholder {
       display: block;

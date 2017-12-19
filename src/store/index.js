@@ -9,7 +9,8 @@ export const store = new Vuex.Store({
     apidata: [],
     topScroll: 0,
     caption: false,
-    showCollection: false
+    showCollection: false,
+    shiver: false
   },
   actions: {
     // Get API Data
@@ -34,6 +35,9 @@ export const store = new Vuex.Store({
     },
     SHOW_COLLECTIONS (state, showCollection) {
       state.showCollection = showCollection
+    },
+    SHIVER (state, shiver) {
+      state.shiver = shiver
     }
   }
 })
