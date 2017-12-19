@@ -35,7 +35,7 @@
     &_wrapper {
       width: 100vw;
       min-height: 100vh;
-      background: @secondary;
+      background: @yellow;
       padding: @mp-f @mp-b @mp-b @mp-b;
       .fs-s;
       a {
