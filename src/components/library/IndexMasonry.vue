@@ -3,6 +3,7 @@
   class="collection_wrapper"
   :cols="{default: 2, 768: 1}"
   :gutter="0"
+  :index=index
   >
     <router-link
       v-for="(image, i) in collections[index].images" 
@@ -120,6 +121,13 @@
       width: calc(~"100% - 2px");
       margin: 2px 0px 1px 1px;
       background: @white;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .collection_wrapper div { 
+      width: calc(~"100vw - 4px") !important;
+      height: auto !important;
     }
   }
 </style>

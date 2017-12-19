@@ -6,11 +6,12 @@ import router from './router'
 import store from './store'
 import { sync } from 'vuex-router-sync'
 import Meta from 'vue-meta'
-import VueMasonry from 'vue-masonry-css'
+// import VueMasonry from 'vue-masonry-css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import IdleVue from 'idle-vue'
 import VueClazyLoad from 'vue-clazy-load'
 import VueObserveVisibility from 'vue-observe-visibility'
+import VueMasonry from './plugins/masonry'
 
 Vue.config.productionTip = false
 sync(store, router) // router sync
