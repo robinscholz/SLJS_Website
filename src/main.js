@@ -14,6 +14,8 @@ import VueObserveVisibility from 'vue-observe-visibility'
 import VueMasonry from './plugins/masonry'
 import VueGoodTable from 'vue-good-table'
 
+require('intersection-observer')
+
 Vue.config.productionTip = false
 sync(store, router) // router sync
 Vue.use(Meta)

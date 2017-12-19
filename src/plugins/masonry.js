@@ -74,7 +74,7 @@ const MasonryComponent = {
   },
   watch: {
     imgLength: function () {
-      this.reCalculateColumnCount()
+      this.reCalculate()
     }
   },
   mounted: function () {

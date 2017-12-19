@@ -27,7 +27,7 @@
 <style lang="less">
   @import "../../less/global.less";
   .menu_cpt {
-        padding: 3px 5px;
+        padding: 5px 7px;
         text-align: center;
         background: @primary;
         .black;

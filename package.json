@@ -15,6 +15,7 @@
   "dependencies": {
     "axios": "^0.16.2",
     "idle-vue": "^2.0.5",
+    "intersection-observer": "^0.5.0",
     "less": "^2.7.2",
     "less-loader": "^4.0.4",
     "nuxt": "^1.0.0-rc11",

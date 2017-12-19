@@ -3,6 +3,7 @@
   class="collection_wrapper"
   :gutter="0"
   :index=index
+  v-if="apidata.length !== 0"
   >
     <router-link
       v-for="(image, i) in collections[index].images" 
@@ -18,17 +19,21 @@
         :class="shakeClass(i)"
       >
         <img :src="image.url" class="collection_img" slot="image">
-        <ImageCaption :imageTitle="image.imgtitle" :imageCaption="image.caption" slot="image" v-if="image.imgtitle || image.caption"></ImageCaption>
+        <ImageCaption 
+          :imageTitle="image.imgtitle" 
+          :imageCaption="image.caption" 
+          :captionColor="image.captioncolor" 
+          slot="image" 
+          v-if="image.imgtitle || image.caption"
+        ></ImageCaption>
         <div class="collection_placeholder" :style="imageHeight(image)" slot="placeholder"></div>
       </clazy-load>
     </router-link>
   </masonry>
 </template>
 
-<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
 <script>
   import ImageCaption from '../library/ImageCaption.vue'
-  // import _ from 'underscore'
 
   export default {
     name: 'IndexMasonry',
@@ -104,11 +109,4 @@
       background: @white;
     }
   }
-
-  // @media screen and (max-width: 768px) {
-  //   .collection_wrapper div { 
-  //     width: calc(~"100vw - 4px") !important;
-  //     height: auto !important;
-  //   }
-  // }
 </style>

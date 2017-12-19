@@ -32,7 +32,9 @@ jsonapi()->register([
 							"orientation" => $image->orientation(),
 							"ratio" => $image->ratio(),
 							"imgtitle" => (string)$image->imgtitle(),
-							"caption" => (string)$image->caption()->kirbytext()
+							"caption" => (string)$image->caption()->kirbytext(),
+							"captioncolor" => (string)$image->captioncolor()
+
 						);
 					};
 					$imagecount = $n;

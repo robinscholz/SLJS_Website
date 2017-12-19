@@ -1,5 +1,5 @@
 <template>
-  <div class="contact_wrapper" v-if="apidata.length !== 0">
+  <div class="contact_wrapper" v-if="apidata.length !== 0" :style="{ backgroundImage: 'url(' + contact['image'] + ')'}">
     <ButtonMenu></ButtonMenu>
     <div class="contact_about">
       <span>Phone: <a :href="'tel:' + contact['phone']">{{ contact['phone'] }}</a></span>
@@ -47,16 +47,16 @@
       background: @primary;
       padding: @mp-e @mp-b @mp-c @mp-b;
       .fs-m;
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
     }
     &_about {
-      .black;
       margin: @mp-b 0;
       span {
         display: block;
+      }
+      a {
+        text-decoration: underline;
+        text-decoration-skip: ink;
+        color: inherit;
       }
     }
   }

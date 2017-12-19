@@ -6,7 +6,7 @@
       ref="mySwiper" 
       :class="{absolute: isContact}"
     >
-      <swiper-slide v-if="(isVisibleLeft || isVisibleRight) && !isContact" class="menu_btn" v-observe-visibility="visibilityChangedLeft">
+      <swiper-slide v-if="(isVisibleLeft || isVisibleRight)" class="menu_btn" v-observe-visibility="visibilityChangedLeft">
         <span class="menu_input menu_arrow">
           Menu &rarr; 
         </span>    
@@ -40,7 +40,6 @@
     </div>
 </template>
 
-<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
 <script>
   import ButtonCaption from '../library/ButtonCaption.vue'
   import ButtonShow from '../library/ButtonShow.vue'
@@ -123,7 +122,7 @@
     }
     &_btn {
       display: inline-block;
-      margin: 0 @mp-a/2;
+      margin: 0 @mp-a/1.5;
       &:first-child {
         margin-left: @mp-b;
         cursor: default;
@@ -133,7 +132,7 @@
         cursor: default;
       }
       a {
-        margin: 0 @mp-a/2;
+        margin: 0 @mp-a/1.5;
         &:first-child {
           margin-left: 0;
         }
@@ -145,9 +144,10 @@
     &_input {
       display: inline-block;
       cursor: pointer;
-      padding: 3px 5px;
+      padding: 5px 7px;
       .fs-m;
-      .black;
+      // .white;
+      color: @black;
       background: @primary;
       text-decoration: none;
       .br;
@@ -159,9 +159,6 @@
         color: @yellow;
       }
     }
-    &_links {
-      padding: 0 @mp-b;
-    }
     &_contact {
       background: @primary;
       .black;
@@ -169,9 +166,8 @@
         background: @white;
       }
       &.router-link-active {
-        background: @blue;
-        .black;
-        color: @yellow;
+        background: @white;
+        color: @black;
       }
     }
     &_arrow {

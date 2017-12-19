@@ -9,6 +9,13 @@ files:
     caption:
       type: textarea
       label: Additional Info
+    captioncolor:
+      label: Caption Color
+      type: radio
+      options:
+        white: White
+        black: Black
+      default: white
 fields:
   title:
     label: Title
