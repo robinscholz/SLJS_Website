@@ -11,7 +11,7 @@
           <ButtonName></ButtonName>
         </router-link>    
       </swiper-slide>
-      <swiper-slide class="menu_btn">
+      <swiper-slide class="menu_btn menu_links">
         <router-link 
           :to="{ path: collection.uid }" 
           class="menu_input" 
@@ -137,16 +137,19 @@
       padding: 3px;
       .fs-m;
       .black;
-      background: @secondary;
+      background: @primary;
       text-decoration: none;
       .br;
       &:hover {
-        background: @secondarylight;
+        background: @white;
       }
       &.router-link-active {
         background: @blue;
         color: @yellow;
       }
+    }
+    &_links {
+      margin: 0 @mp-c;
     }
     &_contact {
       background: @primary;

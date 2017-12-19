@@ -35,6 +35,7 @@ jsonapi()->register([
 							"caption" => (string)$image->caption()->kirbytext()
 						);
 					};
+					$imagecount = $n;
 				};
 
 				// Thumbs
@@ -58,6 +59,7 @@ jsonapi()->register([
 					'uid' => (string)$collection->uid(),
 					'number' => (string)$collection->num(),
 					'title' => (string)$collection->title(),
+					'imagecount' => $imagecount,
 					'images' => $images,
 					'thumbs' => $thumbs				
 				);

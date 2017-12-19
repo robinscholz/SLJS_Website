@@ -24,7 +24,7 @@ Vue.use(VueObserveVisibility)
 const eventsHub = new Vue()
 Vue.use(IdleVue, {
   eventEmitter: eventsHub,
-  idleTime: 5000
+  idleTime: 20000
 })
 
 /* eslint-disable no-new */

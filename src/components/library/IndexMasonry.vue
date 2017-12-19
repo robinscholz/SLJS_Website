@@ -29,7 +29,7 @@
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
 <script>
   import ImageCaption from '../library/ImageCaption.vue'
-  import _ from 'underscore'
+  // import _ from 'underscore'
 
   export default {
     name: 'IndexMasonry',
@@ -37,6 +37,11 @@
       ImageCaption
     },
     props: ['index', 'imageTitle', 'imageCaption'],
+    data () {
+      return {
+        num: '2'
+      }
+    },
     computed: {
       apidata () {
         return this.$store.state.apidata
@@ -46,11 +51,6 @@
       },
       misc () {
         return this.apidata['3-misc']
-      },
-      num () {
-        var imgCount = _.values(this.collections[this.index].images).length
-        var masonryCount = imgCount > 5 ? 3 : 2
-        return masonryCount
       }
     },
     methods: {
@@ -74,12 +74,16 @@
           return 'shakefive'
         }
       }
-    },
-    watch: {
-      num: function () {
-        console.log(this.num)
-        this.$VueMasonry.reCalculate()
-      }
+      // numUpdate () {
+      //   const imgCount = this.collections[this.index].imagecount
+      //   const masonryCount = imgCount > 5 ? '3' : '2'
+      //   console.log(imgCount)
+      //   return masonryCount
+      // }
+      // beforeRouteUpdate (to, from, next) {
+      //   this.reCalculate()
+      //   next()
+      // }
     }
   }
 </script>
