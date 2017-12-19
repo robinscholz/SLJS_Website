@@ -61,20 +61,9 @@
       },
       shakeClass (i) {
         const shiver = this.$store.state.shiver
-        if (shiver && i % 7 === 0) {
-          return 'shakeone'
-        } else if (shiver && i % 7 === 1) {
-          return 'shaketwo'
-        } else if (shiver && i % 7 === 2) {
-          return 'shakethree'
-        } else if (shiver && i % 7 === 3) {
-          return 'shakefour'
-        } else if (shiver && i % 7 === 4) {
-          return 'shakefive'
-        } else if (shiver && i % 7 === 5) {
-          return 'shakesix'
-        } else if (shiver && i % 7 === 6) {
-          return 'shakeseven'
+        const classes = ['shakeone', 'shaketwo', 'shakethree', 'shakefour', 'shakefive', 'shakesix', 'shakeseven', 'shakeeight']
+        if (shiver) {
+          return classes[i % 8]
         }
       }
     }
