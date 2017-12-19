@@ -15,7 +15,7 @@
           element=".main_wrapper"
           margin="100%"
           class='collection_img_wrapper'
-          v-bind:class="{ 'shakeone' : ($store.state.shiver && i % 2), 'shaketwo' : ($store.state.shiver && !(i % 2))  }"
+          v-bind:class="shakeClass(i)"
         >
           <img :src="image.url" class="collection_img" slot="image">
           <ImageCaption :imageTitle="image.imgtitle" :imageCaption="image.caption" slot="image" v-if="image.imgtitle || image.caption"></ImageCaption>
@@ -59,6 +59,14 @@
         const pixels = (window.innerWidth > 768) ? 2 * image.ratio : 3 * image.ratio
         const string = 'height: calc(' + height + 'vw - ' + pixels + 'px)'
         return string
+      },
+      shakeClass (i) {
+        const shiver = this.$store.state.shiver
+        if (shiver && i % 2 === 0) {
+          return 'shakeone'
+        } else if (shiver && i % 2 === 1) {
+          return 'shaketwo'
+        }
       }
     },
     watch: {
