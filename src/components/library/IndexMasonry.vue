@@ -1,7 +1,6 @@
 <template>
   <masonry
   class="collection_wrapper"
-  :cols="{default: 2, 768: 1}"
   :gutter="0"
   :index=index
   >
@@ -11,20 +10,19 @@
       :to="index + '/' + image.num" 
       :key="image.url"
     >
-        <clazy-load 
-          :src="image.url"
-          element=".main_wrapper"
-          margin="100%"
-          class='collection_img_wrapper'
-          v-bind:class="shakeClass(i)"
-        >
-          <img :src="image.url" class="collection_img" slot="image">
-          <ImageCaption :imageTitle="image.imgtitle" :imageCaption="image.caption" slot="image" v-if="image.imgtitle || image.caption"></ImageCaption>
-          <div class="collection_placeholder" :style="imageHeight(image)" slot="placeholder"></div>
-        </clazy-load>
-      </router-link>
-    </masonry>
-  </keep-alive>
+      <clazy-load 
+        :src="image.url"
+        element=".main_wrapper"
+        margin="100%"
+        class='collection_img_wrapper'
+        v-bind:class="shakeClass(i)"
+      >
+        <img :src="image.url" class="collection_img" slot="image">
+        <ImageCaption :imageTitle="image.imgtitle" :imageCaption="image.caption" slot="image" v-if="image.imgtitle || image.caption"></ImageCaption>
+        <div class="collection_placeholder" :style="imageHeight(image)" slot="placeholder"></div>
+      </clazy-load>
+    </router-link>
+  </masonry>
 </template>
 
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
@@ -124,10 +122,10 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
-    .collection_wrapper div { 
-      width: calc(~"100vw - 4px") !important;
-      height: auto !important;
-    }
-  }
+  // @media screen and (max-width: 768px) {
+  //   .collection_wrapper div { 
+  //     width: calc(~"100vw - 4px") !important;
+  //     height: auto !important;
+  //   }
+  // }
 </style>

@@ -18,7 +18,7 @@
           v-for="collection in collections"
           :key="collection.uid" 
           v-if="collection.uid === index || $store.state.showCollection || $route.name === 'Contact'"
-          v-on:click.native="SHIVER(false)"
+          v-on:click.native="SHIVER(true)"
         >
           {{ collection.title }}
         </router-link>

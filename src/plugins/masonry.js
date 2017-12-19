@@ -58,6 +58,25 @@ const MasonryComponent = {
       displayGutter: '0px'
     }
   },
+  computed: {
+    apidata () {
+      return this.$store.state.apidata
+    },
+    collections () {
+      return this.apidata['2-collections']
+    },
+    imgLength () {
+      const imgCount = this.collections[this.index].imagecount
+      const masonryCount = imgCount > 6 ? 3 : 2
+      const columns = {'1024': 2, '768': 1, 'default': masonryCount}
+      return columns
+    }
+  },
+  watch: {
+    imgLength: function () {
+      this.reCalculate()
+    }
+  },
   mounted: function () {
     this.reCalculate()
 
@@ -68,24 +87,6 @@ const MasonryComponent = {
   beforeDestroy: function () {
     if (window) {
       window.removeEventListener('resize', this.reCalculate)
-    }
-  },
-  computed: {
-    apidata () {
-      return this.$store.state.apidata
-    },
-    collections () {
-      return this.apidata['2-collections']
-    },
-    imgLenght () {
-      const imgCount = this.collections[this.index].imagecount
-      const masonryCount = imgCount > 6 ? '3' : '2'
-      return masonryCount
-    }
-  },
-  watch: {
-    imgLenght: function () {
-      this.reCalculateColumnCount()
     }
   },
   methods: {
@@ -100,7 +101,8 @@ const MasonryComponent = {
       this.displayGutter = MasonryBreakpointValue(this.gutter, windowWidth)
     },
     reCalculateColumnCount: function (windowWidth) {
-      let newColumns = windowWidth < 768 ? MasonryBreakpointValue(this.cols, windowWidth) : MasonryBreakpointValue(this.imgLenght, windowWidth)
+      let newColumns = MasonryBreakpointValue(this.imgLength, windowWidth)
+
       // final bit of making sure its a correct value
       newColumns = Math.max(1, newColumns * 1 || 0)
 
