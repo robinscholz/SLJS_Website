@@ -163,7 +163,7 @@
     &-title {
       font-weight: normal;
       .fs-m;
-      .white;
+      .black;
     }
     &-header {
       padding: @mp-a 0!important;

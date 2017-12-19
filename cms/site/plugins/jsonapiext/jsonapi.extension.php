@@ -107,6 +107,7 @@ jsonapi()->register([
 			$json['1-contact'] = array(
 				'phone' => (string)$contact->phone(),
 				'email' => (string)$contact->mail(),
+				'city' => (string)$contact->city(),
 				'education' => $education,
 				'groupshows' => $groupshows,
 				'residencies' => $residencies

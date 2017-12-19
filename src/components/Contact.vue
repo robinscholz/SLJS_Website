@@ -4,6 +4,7 @@
     <div class="contact_about">
       <span>Phone: <a :href="'tel:' + contact['phone']">{{ contact['phone'] }}</a></span>
       <span>e-Mail: <a :href="'mailto:' + contact['email']">{{contact['email']}}</a></span>
+      <span>Currently living and working in {{ contact['city'] }}</span>
     </div>
     <ContactTable></ContactTable>
   </div>
@@ -43,7 +44,7 @@
       display: block;
       width: 100%;
       min-height: 100vh; 
-      background: @black;
+      background: @primary;
       padding: @mp-e @mp-b @mp-c @mp-b;
       .fs-m;
       a {
@@ -52,7 +53,7 @@
       }
     }
     &_about {
-      .white;
+      .black;
       margin: @mp-b 0;
       span {
         display: block;
