@@ -112,17 +112,17 @@
     }
     &_btn {
       display: inline-block;
-      margin: 0 @mp-a/1.5;
+      margin: 0 @mp-a;
       &:first-child {
-        margin-left: @mp-b*0.75;
+        margin-left: @mp-b;
         cursor: default;
       }
       &:last-child {
-        margin-right: @mp-b*0.75;
+        margin-right: @mp-b;
         cursor: default;
       }
       a {
-        margin: 0 @mp-a/1.5;
+        margin: 0 @mp-a;
         &:first-child {
           margin-left: 0;
         }
@@ -149,7 +149,7 @@
       }
     }
     &_links {
-      margin: 0 @mp-c;
+      margin: 0 @mp-b;
     }
     &_contact {
       background: @primary;
