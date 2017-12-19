@@ -1,6 +1,7 @@
 title: Contact & CV
 pages: false
-files: false
+files: 
+  limit: 1
 fields:
   title:
     label: Title
