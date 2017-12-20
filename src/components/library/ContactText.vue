@@ -9,7 +9,7 @@
       <h2 class="contact_text_headline">Selected Groupshows</h2>
       <div class="contact_text_entry">
         <span v-for="article in groupshowData" class="contact_text_line">
-          {{article['year']}}: {{article['showtitle']}}, {{article['gallery']}} <span class="nobr">({{article['city']}})</span>
+          {{article['year']}}: <em>{{article['showtitle']}}</em>, {{article['gallery']}} <span class="nobr">({{article['city']}})</span>
       </span>
       </div>
       <h2 class="contact_text_headline">Residencies</h2>
@@ -66,6 +66,9 @@
         &:first-child {
           border-top: solid 1px @black;
         }
+      }
+      &:last-child {
+        padding-bottom: 0;
       }
     }
   }
