@@ -91,11 +91,9 @@
       ]),
       visibilityChangedRight (isVisible, entry) {
         this.isVisibleRight = !entry.isIntersecting
-        console.log(this.isVisibleRight)
       },
       visibilityChangedLeft (isVisible, entry) {
         this.isVisibleLeft = !entry.isIntersecting
-        console.log(this.isVisibleLeft)
       }
     }
   }

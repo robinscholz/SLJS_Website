@@ -6,7 +6,7 @@
   v-if="apidata.length !== 0"
   >
     <router-link
-      v-for="(image, i) in collections[index].images" 
+      v-for="(image, i) in images" 
       class="collection_link" 
       :to="index + '/' + image.num" 
       :key="image.url"
@@ -15,8 +15,8 @@
         :src="image.url"
         element=".main_wrapper"
         margin="100%"
-        class='collection_img_wrapper'
-        :class="shakeClass(i)"
+        class="collection_img_wrapper"
+        :class="[shakeClass(i), shakeIdle(i)]"
       >
         <img :src="image.url" class="collection_img" slot="image">
         <ImageCaption 
@@ -34,6 +34,7 @@
 
 <script>
   import ImageCaption from '../library/ImageCaption.vue'
+  import _ from 'underscore'
 
   export default {
     name: 'IndexMasonry',
@@ -43,7 +44,11 @@
     props: ['index', 'imageTitle', 'imageCaption'],
     data () {
       return {
-        num: '2'
+        idleStatus: false,
+        idleNumOne: 0,
+        idleNumTwo: 0,
+        num: '2',
+        classes: ['shakeone', 'shaketwo', 'shakethree', 'shakefour', 'shakefive', 'shakesix', 'shakeseven', 'shakeeight', 'shakenine']
       }
     },
     computed: {
@@ -53,9 +58,21 @@
       collections () {
         return this.apidata['2-collections']
       },
-      misc () {
-        return this.apidata['3-misc']
+      collection () {
+        return this.collections[this.index]
+      },
+      images () {
+        return this.collection['images']
+      },
+      imgnum () {
+        return _.size(this.images)
       }
+    },
+    onIdle () {
+      this.startIdle()
+    },
+    onActive () {
+      this.stopIdle()
     },
     methods: {
       imageHeight (image) {
@@ -64,11 +81,30 @@
         const string = 'height: calc(' + height + 'vw - ' + pixels + 'px)'
         return string
       },
+      startIdle () {
+        this.idleStatus = true
+        this.interval = setInterval(function () {
+          this.idleNumOne = Math.floor(Math.random() * this.imgnum) + 1
+          this.idleNumTwo = Math.floor(Math.random() * 8)
+        }.bind(this), 5000)
+      },
+      stopIdle () {
+        this.idleStatus = false
+        clearInterval(this.interval)
+      },
       shakeClass (i) {
         const shiver = this.$store.state.shiver
-        const classes = ['shakeone', 'shaketwo', 'shakethree', 'shakefour', 'shakefive', 'shakesix', 'shakeseven', 'shakeeight', 'shakenine']
         if (shiver) {
-          return classes[i % 9]
+          return this.classes[i % 9]
+        }
+      },
+      shakeIdle (i) {
+        if (this.idleStatus === true) {
+          console.log(parseInt(i))
+          console.log(this.idleNumOne)
+          if (parseInt(i) === this.idleNumOne) {
+            return this.classes[this.idleNumTwo]
+          }
         }
       }
     }
