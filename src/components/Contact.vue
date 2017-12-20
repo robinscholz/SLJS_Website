@@ -8,6 +8,8 @@
     </div>
     <ContactTable v-if="!smallWindow"></ContactTable>
     <ContactText v-else></ContactText>
+
+    <div v-bind:class="colophonClass" class="colophon">Website by <a href='http://robinscholz.com/' target='_blank'>Robin Scholz</a> and <a href='http://bramvandenberg.com/' target='_blank'>Bram van den Berg</a></div>
   </div>
 </template>
 
@@ -15,6 +17,7 @@
   import ButtonMenu from './library/ButtonMenu.vue'
   import ContactTable from './library/ContactTable.vue'
   import ContactText from './library/ContactText.vue'
+  import _ from 'underscore'
 
   export default {
     name: 'Contact',
@@ -25,7 +28,8 @@
     },
     data () {
       return {
-        smallWindow: false
+        smallWindow: false,
+        classes: ['shakeone', 'shaketwo', 'shakethree', 'shakefour', 'shakefive', 'shakesix', 'shakeeight', 'shakenine']
       }
     },
     computed: {
@@ -40,6 +44,10 @@
       },
       misc () {
         return this.apidata['3-misc']
+      },
+      colophonClass () {
+        const randClass = _.sample(this.classes)
+        return randClass
       }
     },
     methods: {
@@ -81,6 +89,17 @@
         text-decoration-skip: ink;
         color: inherit;
       }
+    }
+  }
+
+  .colophon {
+    padding-top: @mp-c;
+    .fs-xs;
+    a {
+      // text-decoration: none;
+      -webkit-text-decoration-skip: ink;
+      text-decoration-skip: ink;
+      color: inherit;
     }
   }
 </style>
