@@ -146,6 +146,7 @@
       cursor: pointer;
       padding: 5px 7px;
       .fs-m;
+      // border: solid 1px @black;
       // .white;
       color: @black;
       background: @primary;
@@ -166,8 +167,8 @@
         background: @white;
       }
       &.router-link-active {
-        background: @white;
-        color: @black;
+        background: @blue;
+        color: @yellow;
       }
     }
     &_arrow {

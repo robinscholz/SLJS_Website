@@ -161,7 +161,7 @@
   .table {
     &-title {
       font-weight: normal;
-      .fs-m;
+      .fs-s!important;
     }
     &-header {
       padding: @mp-a 0!important;
