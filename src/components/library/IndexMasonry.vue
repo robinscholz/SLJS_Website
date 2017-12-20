@@ -86,7 +86,7 @@
         this.interval = setInterval(function () {
           this.idleNumOne = this.idleNumOne === this.imgnum ? 1 : this.idleNumOne + 1
           this.idleNumTwo = Math.floor(Math.random() * 8)
-        }.bind(this), 4000)
+        }.bind(this), 2000)
       },
       stopIdle () {
         this.idleStatus = false
