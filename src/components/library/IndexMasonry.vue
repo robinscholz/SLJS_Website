@@ -46,9 +46,9 @@
       return {
         idleStatus: false,
         idleNumOne: 1,
-        idleNumTwo: Math.floor(Math.random() * 8),
+        idleNumTwo: _.random(0, 8),
         num: '2',
-        classes: ['shakeone', 'shaketwo', 'shakethree', 'shakefour', 'shakefive', 'shakesix', 'shakeseven', 'shakeeight', 'shakenine']
+        classes: _.shuffle(['shakeone', 'shaketwo', 'shakethree', 'shakefour', 'shakefive', 'shakesix', 'shakeseven', 'shakeeight', 'shakenine'])
       }
     },
     computed: {
@@ -91,7 +91,7 @@
       stopIdle () {
         this.idleStatus = false
         this.idleNumOne = 1
-        this.idleNumTwo = Math.floor(Math.random() * 8)
+        this.idleNumTwo = _.random(0, 8)
         clearInterval(this.interval)
       },
       shakeClass (i) {
