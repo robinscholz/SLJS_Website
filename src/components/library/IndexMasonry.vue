@@ -34,6 +34,7 @@
 
 <script>
   import ImageCaption from '../library/ImageCaption.vue'
+  // import { mapMutations } from 'vuex'
   import _ from 'underscore'
 
   export default {
@@ -47,8 +48,7 @@
         idleStatus: false,
         idleNumOne: 1,
         idleNumTwo: _.random(0, 8),
-        num: '2',
-        classes: _.shuffle(['shakeone', 'shaketwo', 'shakethree', 'shakefour', 'shakefive', 'shakesix', 'shakeseven', 'shakeeight', 'shakenine'])
+        num: '2'
       }
     },
     computed: {
@@ -66,6 +66,9 @@
       },
       imgnum () {
         return _.size(this.images)
+      },
+      classes () {
+        return this.$store.state.animations
       }
     },
     onIdle () {
@@ -75,6 +78,9 @@
       this.stopIdle()
     },
     methods: {
+      // ...mapMutations([
+      //   'SHUFFLE_ANIMATIONS'
+      // ]),
       imageHeight (image) {
         const height = (window.innerWidth > 768) ? 50 / image.ratio : 100 / image.ratio
         const pixels = (window.innerWidth > 768) ? 2 * image.ratio : 3 * image.ratio
@@ -92,6 +98,7 @@
         this.idleStatus = false
         this.idleNumOne = 1
         this.idleNumTwo = _.random(0, 8)
+        // this.SHUFFLE_ANIMATIONS()
         clearInterval(this.interval)
       },
       shakeClass (i) {

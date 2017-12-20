@@ -23,6 +23,7 @@
           v-for="collection in collections"
           :key="collection.uid" 
           v-if="collection.uid === index || $store.state.showCollection || $route.name === 'Contact'"
+          v-on:click.native="SHUFFLE_ANIMATIONS()"
         >
           {{ collection.title }}
         </router-link>
@@ -87,7 +88,8 @@
       ...mapMutations([
         'SHOW_CAPTIONS',
         'SHOW_COLLECTIONS',
-        'SHIVER'
+        'SHIVER',
+        'SHUFFLE_ANIMATIONS'
       ]),
       visibilityChangedRight (isVisible, entry) {
         this.isVisibleRight = !entry.isIntersecting

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
+import _ from 'underscore'
 
 Vue.use(Vuex)
 
@@ -10,7 +11,8 @@ export const store = new Vuex.Store({
     topScroll: 0,
     caption: false,
     showCollection: false,
-    shiver: false
+    shiver: false,
+    animations: _.shuffle(['shakeone', 'shaketwo', 'shakethree', 'shakefour', 'shakefive', 'shakesix', 'shakeseven', 'shakeeight', 'shakenine'])
   },
   actions: {
     // Get API Data
@@ -38,6 +40,9 @@ export const store = new Vuex.Store({
     },
     SHIVER (state, shiver) {
       state.shiver = shiver
+    },
+    SHUFFLE_ANIMATIONS (state) {
+      state.animations = _.shuffle(state.animations)
     }
   }
 })
