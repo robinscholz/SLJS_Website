@@ -178,8 +178,6 @@
         background: @white;
       }
       span {
-        margin-top: 2px;
-        margin-left: 5px;
         float: right;
       }
     }
