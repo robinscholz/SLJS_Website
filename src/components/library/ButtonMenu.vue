@@ -165,12 +165,11 @@
     &_input {
       display: inline-block;
       cursor: pointer;
+      text-transform: uppercase; 
       padding: 5px 7px 4px 7px;
       .fs-m;
-      .black;
       background: @primary;
       text-decoration: none;
-      .br;
       &:hover {
         background: @white;
       }
@@ -181,7 +180,6 @@
     }
     &_contact {
       background: @primary;
-      .black;
       &:hover {
         background: @white;
       }
@@ -192,7 +190,6 @@
     }
     &_arrow {
       background: @primary;
-      .black;
       cursor: inherit;
       &:hover {
         background: @primary;
