@@ -95,7 +95,7 @@
       menuWidth () {
         const menuItems = document.getElementsByClassName('menu_btn')
         const windowWidth = (window ? window.innerWidth : null)
-        let menuWidth = 0
+        let menuWidth = 20 // outside margin
         for (let i = 0; i < menuItems.length; i++) {
           menuWidth += (menuItems[i].offsetWidth + 20) // + margins
         }
