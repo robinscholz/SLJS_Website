@@ -112,7 +112,7 @@
       white-space: nowrap;
       overflow: hidden;
       font-size: 0;
-      z-index: 90;
+      z-index: 99;
       padding: @mp-b 0;
       &.absolute {
         position: absolute;

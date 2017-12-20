@@ -81,12 +81,15 @@
         const string = 'height: calc(' + height + 'vw - ' + pixels + 'px)'
         return string
       },
+      idleNumChange () {
+        this.idleNumOne = Math.floor(Math.random() * this.imgnum) + 1
+        this.idleNumTwo = Math.floor(Math.random() * 8)
+      },
       startIdle () {
         this.idleStatus = true
         this.interval = setInterval(function () {
-          this.idleNumOne = Math.floor(Math.random() * this.imgnum) + 1
-          this.idleNumTwo = Math.floor(Math.random() * 8)
-        }.bind(this), 5000)
+          this.idleNumChange()
+        }, 4000)
       },
       stopIdle () {
         this.idleStatus = false
