@@ -56,6 +56,7 @@
       .fs-m;
       font-weight: normal;
       padding: @mp-a 0;
+      text-transform: uppercase;
     }
     &_entry {
       padding-bottom: @mp-c;

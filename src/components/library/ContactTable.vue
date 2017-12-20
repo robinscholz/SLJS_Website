@@ -143,6 +143,7 @@
   .contact_table {
     width: 100%;
     max-width: 1440px;
+    border-bottom: solid 1px @black;
     &_wrapper {
       width: 100%;
       position: relative;
@@ -151,19 +152,19 @@
       background: @primary;
       font-weight: normal;
       padding: @mp-a/2;
-      border: 1px solid @black;
+      border-top: 1px solid @black;
       cursor: pointer;
       text-transform: uppercase;
     }
     &_entry {
       background: @primary;
       padding: @mp-a/2;
-      border: 1px solid @black;
+      border-top: 1px solid @black;
       min-width: 100px;
     }
     th.sorting-asc, th.sorting-desc {
       color: @black!important;
-      background: @white;
+      background: @primary;
     }
     th.sorting:hover:after, th.sorting-asc:after, th.sorting-desc:after, th.sorting-desc:hover:after {
       border: none!important;
@@ -173,7 +174,7 @@
     th.sorting:hover {
       text-decoration: underline;
       text-decoration-skip: ink;
-      background: @white;
+      // background: @white;
     }
     th.sorting-asc:after {
       content: "↓"!important;
@@ -187,6 +188,7 @@
     &-title {
       font-weight: normal;
       .fs-m!important;
+      text-transform: uppercase; 
     }
     &-header {
       padding: @mp-a 0!important;

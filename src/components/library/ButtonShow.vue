@@ -37,7 +37,7 @@
   @import "../../less/global.less";
 
   .menu_showall {
-      padding: 5px 7px 4px 7px;
+      padding: 8px 8px 6px 8px;
       text-align: center;
       background: @primary;
       .black;

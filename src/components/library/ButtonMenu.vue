@@ -13,7 +13,7 @@
       </swiper-slide>
       <swiper-slide v-if="showMenuButton" class="menu_btn_ext">
         <span class="menu_input menu_arrow">
-          Menu <span>&rarr;</span>
+          Scroll <span>&rarr;</span>
         </span>    
       </swiper-slide>
       <swiper-slide class="menu_btn menu_links">
@@ -166,8 +166,9 @@
       display: inline-block;
       cursor: pointer;
       text-transform: uppercase; 
-      padding: 5px 7px 4px 7px;
+      padding: 8px 8px 6px 8px;
       .fs-m;
+      .br;
       background: @primary;
       text-decoration: none;
       &:hover {
