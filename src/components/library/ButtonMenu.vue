@@ -179,6 +179,7 @@
       }
       span {
         float: right;
+        margin: 2px 0 -2px 5px;
       }
     }
   }
