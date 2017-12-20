@@ -108,13 +108,13 @@
     &_slider {
       position: fixed;
       width: 100vw;
-      top: @mp-b;
       left: 0;
       list-style-type: none;
       white-space: nowrap;
       overflow: hidden;
       font-size: 0;
       z-index: 90;
+      padding: @mp-b 0;
       &.absolute {
         position: absolute;
       }
@@ -177,8 +177,8 @@
         background: @white;
       }
       span {
-        margin-top: 2px;
-        margin-left: 5px;
+        // margin-top: 2px;
+        // margin-left: 5px;
         float: right;
       }
     }
