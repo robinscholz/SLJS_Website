@@ -19,7 +19,7 @@
 
   .caption {
     &_wrapper {
-      .fs-m;
+      .fs-s;
       position: absolute;
       bottom: 0px;
       margin: 17px @mp-b;
