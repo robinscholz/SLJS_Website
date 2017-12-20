@@ -11,7 +11,7 @@
           <ButtonName></ButtonName>
         </router-link>    
       </swiper-slide>
-      <swiper-slide v-if="showMenuButton" class="menu_btnException">
+      <swiper-slide v-if="showMenuButton" class="menu_btn_ext">
         <span class="menu_input menu_arrow">
           Menu <span>&rarr;</span>
         </span>    
@@ -42,7 +42,6 @@
   import ButtonCaption from '../library/ButtonCaption.vue'
   import ButtonShow from '../library/ButtonShow.vue'
   import ButtonName from '../library/ButtonName.vue'
-  import Intersect from 'vue-intersect'
   import _ from 'underscore'
   import { mapMutations } from 'vuex'
 
@@ -59,15 +58,12 @@
           mousewheelControl: true
         },
         showMenuButton: false
-        // isVisibleLeft: false,
-        // isVisibleRight: false
       }
     },
     components: {
       ButtonCaption,
       ButtonShow,
-      ButtonName,
-      Intersect
+      ButtonName
     },
     computed: {
       apidata () {
@@ -82,9 +78,6 @@
       isContact () {
         return this.$route.name === 'Contact'
       }
-      // ...mapGetters({
-      //   showCollection: 'showCollection'
-      // })
     },
     methods: {
       ...mapMutations([
@@ -102,12 +95,10 @@
       menuWidth () {
         const menuItems = document.getElementsByClassName('menu_btn')
         const windowWidth = (window ? window.innerWidth : null)
-        let menuWidth = 40 // margins
+        let menuWidth = 0
         for (let i = 0; i < menuItems.length; i++) {
-          menuWidth += menuItems[i].offsetWidth
+          menuWidth += (menuItems[i].offsetWidth + 20) // + margins
         }
-        console.log(menuWidth)
-        console.log(windowWidth)
         if (menuWidth > windowWidth) {
           this.showMenuButton = true
         } else {
@@ -115,11 +106,6 @@
         }
       }
     },
-    // watch: {
-    //   showCollection () {
-    //     this.menuWidth()
-    //   }
-    // },
     mounted () {
       this.menuWidth()
       if (window) {
@@ -172,7 +158,7 @@
         }
       }
     }
-    &_btnException {
+    &_btn_ext {
       display: inline-block;
       margin: 0 @mp-a/1.5;
     }

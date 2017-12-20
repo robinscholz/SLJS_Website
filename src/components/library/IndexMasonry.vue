@@ -3,7 +3,6 @@
   class="collection_wrapper"
   :gutter="0"
   :index=index
-  v-if="apidata.length !== 0"
   >
     <router-link
       v-for="(image, i) in images" 
@@ -32,6 +31,7 @@
   </masonry>
 </template>
 
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
 <script>
   import ImageCaption from '../library/ImageCaption.vue'
   import { mapMutations } from 'vuex'
