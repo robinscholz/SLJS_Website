@@ -21,6 +21,9 @@
       image () {
         return this.collection.images[this.num]
       },
+      contact () {
+        return this.apidata['1-contact']
+      },
       misc () {
         return this.apidata['3-misc']
       }
