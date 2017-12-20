@@ -4,21 +4,29 @@
     <div class="contact_about">
       <span>Phone: <a :href="'tel:' + contact['phone']">{{ contact['phone'] }}</a></span>
       <span>e-Mail: <a :href="'mailto:' + contact['email']">{{contact['email']}}</a></span>
-      <span>Currently living and working in {{ contact['city'] }}</span>
+      <span>Currently living and working in <span  class="nobr">{{ contact['city'] }}</span></span>
     </div>
-    <ContactTable></ContactTable>
+    <ContactTable v-if="!smallWindow"></ContactTable>
+    <ContactText v-else></ContactText>
   </div>
 </template>
 
 <script>
   import ButtonMenu from './library/ButtonMenu.vue'
   import ContactTable from './library/ContactTable.vue'
+  import ContactText from './library/ContactText.vue'
 
   export default {
     name: 'Contact',
     components: {
       ButtonMenu,
-      ContactTable
+      ContactTable,
+      ContactText
+    },
+    data () {
+      return {
+        smallWindow: false
+      }
     },
     computed: {
       apidata () {
@@ -32,6 +40,18 @@
       },
       misc () {
         return this.apidata['3-misc']
+      }
+    },
+    methods: {
+      reCalculate: function () {
+        const windowWidth = (window ? window.innerWidth : null)
+        this.smallWindow = windowWidth <= 768
+      }
+    },
+    mounted () {
+      this.reCalculate()
+      if (window) {
+        window.addEventListener('resize', this.reCalculate)
       }
     }
   }
@@ -52,6 +72,9 @@
       margin: @mp-b 0;
       span {
         display: block;
+        &.nobr {
+          display: inline;
+        }
       }
       a {
         text-decoration: underline;

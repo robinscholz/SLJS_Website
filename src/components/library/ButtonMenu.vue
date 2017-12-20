@@ -13,7 +13,7 @@
       </swiper-slide>
       <swiper-slide v-if="(isVisibleLeft || isVisibleRight)" class="menu_btn" v-observe-visibility="visibilityChangedLeft">
         <span class="menu_input menu_arrow">
-          Menu &rarr; 
+          Menu <span>&rarr;</span>
         </span>    
       </swiper-slide>
       <swiper-slide class="menu_btn menu_links">
@@ -23,7 +23,6 @@
           v-for="collection in collections"
           :key="collection.uid" 
           v-if="collection.uid === index || $store.state.showCollection || $route.name === 'Contact'"
-          v-on:click.native="SHIVER(true)"
         >
           {{ collection.title }}
         </router-link>
@@ -176,6 +175,11 @@
       .black;
       &:hover {
         background: @white;
+      }
+      span {
+        margin-top: 2px;
+        margin-left: 5px;
+        float: right;
       }
     }
   }
