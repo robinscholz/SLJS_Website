@@ -72,4 +72,15 @@
       }
     }
   }
+
+  @media screen and (max-width: 768px) {
+    .contact_about {
+      margin-bottom: @mp-c;
+    }
+
+    .contact_text_entry {
+      padding-bottom: @mp-d;
+    }
+  }
+  
 </style>
