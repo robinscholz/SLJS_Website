@@ -9,7 +9,17 @@
     <ContactTable v-if="!smallWindow"></ContactTable>
     <ContactText v-else></ContactText>
 
-    <div v-bind:class="colophonClass" class="colophon">Website by <a href='http://robinscholz.com/' target='_blank'>Robin Scholz</a> and <a href='http://bramvandenberg.com/' target='_blank'>Bram van den Berg</a></div>
+    <div class="colophon">
+      Website:  
+      <span v-bind:class="colophonClass[0]">
+        <a href='http://studioscholz.info/' target='_blank'>Robin Scholz</a> and <a href='http://bramvandenberg.com/' target='_blank'>Bram van den Berg</a>
+      </span> 
+
+      Font: 
+      <span v-bind:class="colophonClass[1]">
+        <a href='https://twitter.com/w__h_' target='_blank'>Wei Huang</a>
+      </span>
+    </div>
   </div>
 </template>
 
@@ -29,7 +39,7 @@
     data () {
       return {
         smallWindow: false,
-        classes: ['shakeone', 'shaketwo', 'shakethree', 'shakefour', 'shakefive', 'shakesix', 'shakeeight', 'shakenine']
+        classes: ['shakeone', 'shaketwo', 'shakefour', 'shakefive', 'shakesix', 'shakeeight', 'shakenine']
       }
     },
     computed: {
@@ -46,7 +56,7 @@
         return this.apidata['3-misc']
       },
       colophonClass () {
-        const randClass = _.sample(this.classes)
+        const randClass = _.sample(this.$store.state.animations, 2)
         return randClass
       }
     },
@@ -95,11 +105,14 @@
   .colophon {
     padding-top: @mp-c;
     .fs-xs;
-    a {
-      // text-decoration: none;
-      -webkit-text-decoration-skip: ink;
-      text-decoration-skip: ink;
-      color: inherit;
+    span {
+      display: inline-block;
+      margin-right: @mp-c;
+      a {
+        -webkit-text-decoration-skip: ink;
+        text-decoration-skip: ink;
+        color: inherit;
+      }
     }
   }
 </style>
