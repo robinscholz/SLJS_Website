@@ -11,7 +11,7 @@
           <ButtonName></ButtonName>
         </router-link>    
       </swiper-slide>
-      <swiper-slide v-if="showMenuButton" class="menu_btn">
+      <swiper-slide v-if="showMenuButton" class="menu_btnException">
         <span class="menu_input menu_arrow">
           Menu <span>&rarr;</span>
         </span>    
@@ -171,6 +171,10 @@
           margin-right: 0;
         }
       }
+    }
+    &_btnException {
+      display: inline-block;
+      margin: 0 @mp-a/1.5;
     }
     &_input {
       display: inline-block;
