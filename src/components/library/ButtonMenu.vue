@@ -201,7 +201,7 @@
       }
       span {
         float: right;
-        margin: 2px 0 -2px 5px;
+        margin: 1px 0 -1px 5px;
       }
     }
   }
