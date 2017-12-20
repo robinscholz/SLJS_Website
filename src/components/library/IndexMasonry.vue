@@ -45,8 +45,8 @@
     data () {
       return {
         idleStatus: false,
-        idleNumOne: 0,
-        idleNumTwo: 0,
+        idleNumOne: 1,
+        idleNumTwo: Math.floor(Math.random() * 8),
         num: '2',
         classes: ['shakeone', 'shaketwo', 'shakethree', 'shakefour', 'shakefive', 'shakesix', 'shakeseven', 'shakeeight', 'shakenine']
       }
@@ -85,11 +85,13 @@
         this.idleStatus = true
         this.interval = setInterval(function () {
           this.idleNumOne = this.idleNumOne === this.imgnum ? 1 : this.idleNumOne + 1
-          this.idleNumTwo = Math.floor(Math.random() * 8)
+          this.idleNumTwo = this.idleNumTwo === _.size(this.classes) - 1 ? 0 : this.idleNumTwo + 1
         }.bind(this), 4000)
       },
       stopIdle () {
         this.idleStatus = false
+        this.idleNumOne = 1
+        this.idleNumTwo = Math.floor(Math.random() * 8)
         clearInterval(this.interval)
       },
       shakeClass (i) {
