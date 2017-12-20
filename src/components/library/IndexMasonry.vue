@@ -66,9 +66,9 @@
       },
       shakeClass (i) {
         const shiver = this.$store.state.shiver
-        const classes = ['shakeone', 'shaketwo', 'shakethree', 'shakefour', 'shakefive', 'shakesix', 'shakeseven', 'shakeeight']
+        const classes = ['shakeone', 'shaketwo', 'shakethree', 'shakefour', 'shakefive', 'shakesix', 'shakeseven', 'shakeeight', 'shakenine']
         if (shiver) {
-          return classes[i % 8]
+          return classes[i % 9]
         }
       }
     }
