@@ -144,7 +144,7 @@
     &_input {
       display: inline-block;
       cursor: pointer;
-      padding: 5px 7px;
+      padding: 5px 7px 4px 7px;
       .fs-m;
       // border: solid 1px @black;
       // .white;
