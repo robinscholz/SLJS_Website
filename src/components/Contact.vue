@@ -10,14 +10,11 @@
     <ContactText v-else></ContactText>
 
     <div class="colophon">
-      Website:  
-      <span v-bind:class="colophonClass[0]">
-        <a href='http://studioscholz.info/' target='_blank'>Robin Scholz</a> and <a href='http://bramvandenberg.com/' target='_blank'>Bram van den Berg</a>
+      <span>
+        Website: <span :class="classes[0]"><a href='http://studioscholz.info/' target='_blank'>Robin Scholz</a></span><span :class="classes[1]"><a href='http://bramvandenberg.com/' target='_blank'>Bram van den Berg</a></span>
       </span> 
-
-      Font: 
-      <span v-bind:class="colophonClass[1]">
-        <a href='https://twitter.com/w__h_' target='_blank'>Wei Huang</a>
+      <span class="nobr">
+        Font: <span :class="classes[2]"><a href='https://twitter.com/w__h_' target='_blank' :class="classes[2]">Wei Huang</a></span>
       </span>
     </div>
   </div>
@@ -39,7 +36,7 @@
     data () {
       return {
         smallWindow: false,
-        classes: ['shakeone', 'shaketwo', 'shakefour', 'shakefive', 'shakesix', 'shakeeight', 'shakenine']
+        classes: _.shuffle(['shakeone', 'shakefour', 'shakesix'])
       }
     },
     computed: {
@@ -54,10 +51,6 @@
       },
       misc () {
         return this.apidata['3-misc']
-      },
-      colophonClass () {
-        const randClass = _.sample(this.$store.state.animations, 2)
-        return randClass
       }
     },
     methods: {
@@ -95,6 +88,7 @@
         }
       }
       a {
+        display: inline-block;
         text-decoration: underline;
         text-decoration-skip: ink;
         color: inherit;
@@ -107,7 +101,12 @@
     .fs-xs;
     span {
       display: inline-block;
-      margin-right: @mp-c;
+      margin-right: @mp-b;
+      span {
+        &:first-child {
+          margin: 0 @mp-c 0 @mp-a;
+        }
+      }
       a {
         -webkit-text-decoration-skip: ink;
         text-decoration-skip: ink;

@@ -112,7 +112,9 @@ jsonapi()->register([
 				'city' => (string)$contact->city(),
 				'education' => $education,
 				'groupshows' => $groupshows,
-				'residencies' => $residencies
+				'residencies' => $residencies,
+				'title' => (string)site()->title(),
+				'about' => (string)site()->text()
 			);
 
 			$json['3-misc']["total"] = $data->count();

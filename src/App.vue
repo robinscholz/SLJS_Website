@@ -1,19 +1,19 @@
 <template>
   <div id="app">
-    <!-- <SiteHead></SiteHead> -->
+    <SiteHead></SiteHead>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-// import SiteHead from './components/library/SiteHead.vue'
+import SiteHead from './components/library/SiteHead.vue'
 import _ from 'underscore'
 
 export default {
   name: 'App',
-    // components: {
-  //   SiteHead
-  // }
+  components: {
+    SiteHead
+  },
   created () {
     // Load API Data
     this.$store.dispatch('LOAD_DATASET').then(() => {

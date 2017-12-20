@@ -7,26 +7,29 @@ export default {
   name: 'SiteHead',
   computed: {
     apidata () {
-      return null
+      return this.$store.state.apidata
+    },
+    contact () {
+      return this.apidata['1-contact']
     }
   },
   metaInfo () {
     // Check if data is loaded
     if (this.apidata.length !== 0) {
       return {
-        title: null,
+        title: this.contact.title,
         meta: [
-          { name: 'application-name', content: null },
-          { name: 'description', content: null },
+          { name: 'application-name', content: this.contact.title },
+          { name: 'description', content: this.contact.about },
           { name: 'keywords', content: '' },
           { name: 'robots', content: 'index, follow' },
           // Google+ / Schema.org
-          { itemprop: 'name', content: null },
-          { itemprop: 'description', content: null },
+          { itemprop: 'name', content: this.contact.title },
+          { itemprop: 'description', content: this.contact.about },
           // Facebook / Open Graph
-          { property: 'og:title', content: null },
+          { property: 'og:title', content: this.contact.title },
           { property: 'og:image', content: null },
-          { property: 'og:description', content: null }
+          { property: 'og:description', content: this.contact.about }
         ],
         link: [
           { rel: 'image_src', href: null }
