@@ -1,5 +1,5 @@
 <template>
-  <div class="contact_wrapper" v-if="apidata.length !== 0" :style="{ backgroundImage: 'url(' + contact['image'] + ')'}">
+  <div class="contact_wrapper" v-if="apidata.length !== 0">
     <ButtonMenu></ButtonMenu>
     <div class="contact_about">
       <span>Phone: <a :href="'tel:' + contact['phone']">{{ contact['phone'] }}</a></span>
@@ -45,18 +45,12 @@
       },
       contact () {
         return this.apidata['1-contact']
-      },
-      collections () {
-        return this.apidata['2-collections']
-      },
-      misc () {
-        return this.apidata['3-misc']
       }
     },
     methods: {
       reCalculate: function () {
         const windowWidth = (window ? window.innerWidth : null)
-        this.smallWindow = windowWidth <= 768
+        this.smallWindow = windowWidth <= 1024
       }
     },
     mounted () {

@@ -25,6 +25,26 @@
         return this.apidata['3-misc']
       }
     },
+    metaInfo () {
+      // Check if data is loaded
+      if (this.apidata.length !== 0) {
+        return {
+          title: this.contact.title + ': ' + this.collection.title,
+          meta: [
+            // Facebook / Open Graph
+            { property: 'og:title', content: this.contact.title + ': ' + this.collection.title },
+            { property: 'og:image', content: this.image.url }
+          ],
+          link: [
+            { rel: 'image_src', href: this.image.url }
+          ]
+        }
+      } else {
+        return {
+          title: ''
+        }
+      }
+    },
     methods: {
       goBack: function () {
         this.$router.push('/' + this.index)

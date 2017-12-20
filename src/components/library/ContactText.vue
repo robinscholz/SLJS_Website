@@ -55,7 +55,7 @@
     &_headline {
       .fs-m;
       font-weight: normal;
-      padding-bottom: @mp-a;
+      padding: @mp-a 0;
     }
     &_entry {
       padding-bottom: @mp-c;
@@ -70,16 +70,6 @@
       &:last-child {
         padding-bottom: 0;
       }
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    .contact_about {
-      margin-bottom: @mp-c;
-    }
-
-    .contact_text_entry {
-      padding-bottom: @mp-d;
     }
   }
   

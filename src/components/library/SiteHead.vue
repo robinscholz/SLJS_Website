@@ -21,23 +21,18 @@ export default {
         meta: [
           { name: 'application-name', content: this.contact.title },
           { name: 'description', content: this.contact.about },
-          { name: 'keywords', content: '' },
           { name: 'robots', content: 'index, follow' },
           // Google+ / Schema.org
           { itemprop: 'name', content: this.contact.title },
           { itemprop: 'description', content: this.contact.about },
           // Facebook / Open Graph
           { property: 'og:title', content: this.contact.title },
-          { property: 'og:image', content: null },
+          { property: 'og:image', content: this.contact.image },
           { property: 'og:description', content: this.contact.about }
         ],
         link: [
-          { rel: 'image_src', href: null }
+          { rel: 'image_src', href: this.contact.image }
         ]
-      }
-    } else {
-      return {
-        title: ''
       }
     }
   }
