@@ -45,7 +45,7 @@
       width: 100%;
       min-height: 100vh; 
       background: @primary;
-      padding: @mp-e @mp-b @mp-c @mp-b;
+      padding: @mp-e + 5 @mp-b @mp-c @mp-b;
       .fs-s;
     }
     &_about {

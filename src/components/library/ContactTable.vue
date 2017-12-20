@@ -6,6 +6,7 @@
           :rows="educationData"
           :paginate="false"
           :lineNumbers="false"
+          styleClass="contact_table"
         >
         </vue-good-table>
         <vue-good-table
@@ -14,6 +15,7 @@
           :rows="groupshowData"
           :paginate="false"
           :lineNumbers="false"
+          styleClass="contact_table"
         >
         </vue-good-table>
         <vue-good-table
@@ -22,6 +24,7 @@
           :rows="residencyData"
           :paginate="false"
           :lineNumbers="false"
+          styleClass="contact_table"
         >
         </vue-good-table>
   </div>
@@ -138,23 +141,45 @@
 <style lang="less">
   @import "../../less/global.less";
   .contact_table {
+    width: 100%;
+    max-width: 1440px;
     &_wrapper {
       width: 100%;
       position: relative;
     }
     &_head {
-      background: @primary!important;
+      background: @primary;
       font-weight: normal;
-      padding: @mp-a/2!important;
-      border: 1px solid @black!important;
+      padding: @mp-a/2;
+      border: 1px solid @black;
       cursor: pointer;
       text-transform: uppercase;
     }
     &_entry {
       background: @primary;
-      padding: @mp-a/2!important;
-      border: 1px solid @black!important;
+      padding: @mp-a/2;
+      border: 1px solid @black;
       min-width: 100px;
+    }
+    th.sorting-asc, th.sorting-desc {
+      color: @black!important;
+      background: @white;
+    }
+    th.sorting:hover:after, th.sorting-asc:after, th.sorting-desc:after, th.sorting-desc:hover:after {
+      border: none!important;
+      margin-top: 0!important;
+      font-family: inherit!important;
+    }
+    th.sorting:hover {
+      text-decoration: underline;
+      text-decoration-skip: ink;
+      background: @white;
+    }
+    th.sorting-asc:after {
+      content: "↓"!important;
+    }
+    th.sorting-desc:after {
+      content: "↑"!important;
     }
   }
 
@@ -170,37 +195,9 @@
 
   .good-table {
     margin-bottom: @mp-c;
-    max-width: 1440px;
     &:last-child {
       margin-bottom: 0;
     }
-  }
-
-  table th.sorting-asc, table th.sorting-desc {
-    color: @black!important;
-    background: @white!important;
-  }
-
-  table th.sorting:hover:after, table th.sorting-asc:after, table th.sorting-desc:after, table th.sorting-desc:hover:after {
-    border: none!important;
-    margin-top: 0!important;
-    font-family: inherit!important;
-  }
-
-  table th.sorting:hover {
-    // background: @primary!important;
-    // color: @blue!important;
-    text-decoration: underline;
-    text-decoration-skip: ink;
-    background: @white!important;
-  }
-
-  table th.sorting-asc:after {
-    content: "↓"!important;
-  }
-
-  table th.sorting-desc:after {
-    content: "↑"!important;
   }
 
 </style>

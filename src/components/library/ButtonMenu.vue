@@ -6,15 +6,15 @@
       ref="mySwiper" 
       :class="{absolute: isContact}"
     >
-      <swiper-slide v-if="(isVisibleLeft || isVisibleRight)" class="menu_btn" v-observe-visibility="visibilityChangedLeft">
-        <span class="menu_input menu_arrow">
-          Menu &rarr; 
-        </span>    
-      </swiper-slide>
       <swiper-slide class="menu_btn">
         <router-link to="contact" class="menu_input menu_contact">
           <ButtonName></ButtonName>
         </router-link>    
+      </swiper-slide>
+      <swiper-slide v-if="(isVisibleLeft || isVisibleRight)" class="menu_btn" v-observe-visibility="visibilityChangedLeft">
+        <span class="menu_input menu_arrow">
+          Menu &rarr; 
+        </span>    
       </swiper-slide>
       <swiper-slide class="menu_btn menu_links">
         <router-link 
