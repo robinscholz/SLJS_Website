@@ -14,6 +14,9 @@ export const store = new Vuex.Store({
     shiver: false,
     animations: _.shuffle(['shakeone', 'shaketwo', 'shakethree', 'shakefour', 'shakefive', 'shakesix', 'shakeseven', 'shakeeight', 'shakenine'])
   },
+  getters: {
+    showCollection: state => state.showCollection
+  },
   actions: {
     // Get API Data
     LOAD_DATASET: function ({ commit }) {

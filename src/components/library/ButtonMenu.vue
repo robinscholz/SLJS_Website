@@ -11,7 +11,7 @@
           <ButtonName></ButtonName>
         </router-link>    
       </swiper-slide>
-      <swiper-slide v-if="(isVisibleLeft || isVisibleRight)" class="menu_btn" v-observe-visibility="visibilityChangedLeft">
+      <swiper-slide v-if="showMenuButton" class="menu_btn">
         <span class="menu_input menu_arrow">
           Menu <span>&rarr;</span>
         </span>    
@@ -31,11 +31,9 @@
       <swiper-slide class="menu_btn">
         <ButtonShow></ButtonShow>  
       </swiper-slide>
-      <Intersect @leave="isVisibleRight">
-        <swiper-slide class="menu_btn" v-observe-visibility="visibilityChangedRight">
-          <ButtonCaption></ButtonCaption>  
-        </swiper-slide>
-      </Intersect>
+      <swiper-slide class="menu_btn">
+        <ButtonCaption></ButtonCaption>  
+      </swiper-slide>
     </swiper>
     </div>
 </template>
@@ -60,8 +58,9 @@
           grabCursor: true,
           mousewheelControl: true
         },
-        isVisibleLeft: false,
-        isVisibleRight: false
+        showMenuButton: false
+        // isVisibleLeft: false,
+        // isVisibleRight: false
       }
     },
     components: {
@@ -83,6 +82,9 @@
       isContact () {
         return this.$route.name === 'Contact'
       }
+      // ...mapGetters({
+      //   showCollection: 'showCollection'
+      // })
     },
     methods: {
       ...mapMutations([
@@ -96,7 +98,36 @@
       },
       visibilityChangedLeft (isVisible, entry) {
         this.isVisibleLeft = !entry.isIntersecting
+      },
+      menuWidth () {
+        const menuItems = document.getElementsByClassName('menu_btn')
+        const windowWidth = (window ? window.innerWidth : null)
+        let menuWidth = 40 // margins
+        for (let i = 0; i < menuItems.length; i++) {
+          menuWidth += menuItems[i].offsetWidth
+        }
+        console.log(menuWidth)
+        console.log(windowWidth)
+        if (menuWidth > windowWidth) {
+          this.showMenuButton = true
+        } else {
+          this.showMenuButton = false
+        }
       }
+    },
+    // watch: {
+    //   showCollection () {
+    //     this.menuWidth()
+    //   }
+    // },
+    mounted () {
+      this.menuWidth()
+      if (window) {
+        window.addEventListener('resize', this.menuWidth)
+      }
+    },
+    updated () {
+      this.menuWidth()
     }
   }
 </script>
@@ -146,9 +177,7 @@
       cursor: pointer;
       padding: 5px 7px 4px 7px;
       .fs-m;
-      // border: solid 1px @black;
-      // .white;
-      color: @black;
+      .black;
       background: @primary;
       text-decoration: none;
       .br;
@@ -174,8 +203,9 @@
     &_arrow {
       background: @primary;
       .black;
+      cursor: inherit;
       &:hover {
-        background: @white;
+        background: @primary;
       }
       span {
         float: right;

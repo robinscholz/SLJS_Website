@@ -68,7 +68,7 @@ const MasonryComponent = {
     imgLength () {
       const imgCount = this.collections[this.index].imagecount
       const masonryCount = imgCount > 6 ? 3 : 2
-      const columns = {'1024': 2, '768': 1, 'default': masonryCount}
+      const columns = {'1024': 2, '600': 1, 'default': masonryCount}
       return columns
     }
   },

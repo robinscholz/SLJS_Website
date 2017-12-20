@@ -111,8 +111,6 @@
       },
       shakeIdle (i) {
         if (this.idleStatus && !this.$store.state.shiver) {
-          console.log(parseInt(i))
-          console.log(this.idleNumOne)
           if (parseInt(i) === this.idleNumOne) {
             return this.classes[this.idleNumTwo]
           }
