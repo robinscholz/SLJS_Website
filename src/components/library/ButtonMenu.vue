@@ -161,6 +161,7 @@
     &_btn_ext {
       display: inline-block;
       margin: 0 @mp-a/1.5;
+      background: none;
     }
     &_input {
       display: inline-block;
@@ -168,7 +169,7 @@
       text-transform: uppercase; 
       padding: 8px 8px 6px 8px;
       .fs-m;
-      .br;
+      // .br;
       background: @primary;
       text-decoration: none;
       &:hover {
@@ -181,6 +182,7 @@
     }
     &_contact {
       background: @primary;
+      .br;
       &:hover {
         background: @white;
       }
@@ -190,10 +192,12 @@
       }
     }
     &_arrow {
-      background: @primary;
+      background: orangered;
+      .white;
+      .br;
       cursor: inherit;
       &:hover {
-        background: @primary;
+        background: orangered;
       }
       span {
         float: right;
