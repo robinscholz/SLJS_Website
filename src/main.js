@@ -29,7 +29,7 @@ Vue.use(VueGoodTable)
 const eventsHub = new Vue()
 Vue.use(IdleVue, {
   eventEmitter: eventsHub,
-  idleTime: 1000
+  idleTime: 15000
 })
 
 /* eslint-disable no-new */
