@@ -109,6 +109,7 @@
       position: fixed;
       width: 100vw;
       left: 0;
+      top: 0;
       list-style-type: none;
       white-space: nowrap;
       overflow: hidden;
@@ -177,8 +178,8 @@
         background: @white;
       }
       span {
-        // margin-top: 2px;
-        // margin-left: 5px;
+        margin-top: 2px;
+        margin-left: 5px;
         float: right;
       }
     }
