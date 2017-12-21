@@ -14,7 +14,7 @@
         Website: <span :class="classes[0]"><a href='http://studioscholz.info/' target='_blank'>Robin Scholz</a></span><span :class="classes[1]"><a href='http://bramvandenberg.com/' target='_blank'>Bram van den Berg</a></span>
       </span> 
       <span class="nobr">
-        Typeface: <a href='https://twitter.com/w__h_' target='_blank' :class="classes[2]">Wei Huang</a>
+        Font: <a href='https://twitter.com/w__h_' target='_blank' :class="classes[2]">Wei Huang</a>
       </span>
       <span>
         Additional Photography by: {{ contact.photo.join(", ") }}
