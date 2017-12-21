@@ -201,7 +201,7 @@
       img {
         width: 18px;
         float: right;
-        margin: 5px 0 -5px 7px;
+        margin: 5px 0 -5px 6px;
       }
     }
   }
