@@ -128,7 +128,7 @@
       overflow: hidden;
       width: 100%;
       font-size: 0;
-      padding: 1px 2px;
+      padding: 2px;
     }
     &_link {
       cursor: pointer;
