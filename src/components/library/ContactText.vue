@@ -55,8 +55,7 @@
     &_headline {
       .fs-m;
       font-weight: normal;
-      padding: @mp-a 0;
-      text-transform: uppercase;
+      padding: @mp-a 0 @mp-a/2 0;
     }
     &_entry {
       padding-bottom: @mp-c;

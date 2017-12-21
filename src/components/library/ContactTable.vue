@@ -188,10 +188,9 @@
     &-title {
       font-weight: normal;
       .fs-m!important;
-      text-transform: uppercase; 
     }
     &-header {
-      padding: @mp-a 0!important;
+      padding: @mp-a 0 @mp-a/2 0!important;
     }
   }
 

@@ -74,7 +74,9 @@
       .fs-s;
     }
     &_about {
-      margin: @mp-b 0;
+      margin: @mp-c 0 25px 0;
+      .fs-m;
+      line-height: 28px;
       span {
         display: block;
         &.nobr {
@@ -106,6 +108,13 @@
         text-decoration-skip: ink;
         color: inherit;
       }
+    }
+  }
+
+  @media all and (max-width: 768px) {
+    .contact_about {
+      .fs-s;
+      margin: @mp-b 0 15px 0;
     }
   }
 </style>
