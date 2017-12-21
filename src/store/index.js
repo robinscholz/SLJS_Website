@@ -22,6 +22,7 @@ export const store = new Vuex.Store({
     LOAD_DATASET: function ({ commit }) {
       return axios.get('/cms/api/data').then((response) => {
         commit('SET_DATASET', { list: response.data })
+        document.dispatchEvent(new Event('render-now'))
       }, (err) => {
         console.log(err)
       })
