@@ -14,7 +14,10 @@
         Website: <span :class="classes[0]"><a href='http://studioscholz.info/' target='_blank'>Robin Scholz</a></span><span :class="classes[1]"><a href='http://bramvandenberg.com/' target='_blank'>Bram van den Berg</a></span>
       </span> 
       <span class="nobr">
-        Typeface: <span :class="classes[2]"><a href='https://twitter.com/w__h_' target='_blank' :class="classes[2]">Wei Huang</a></span>
+        Typeface: <a href='https://twitter.com/w__h_' target='_blank' :class="classes[2]">Wei Huang</a>
+      </span>
+      <span>
+        Additional Photography by: {{ contact.photo.join(", ") }}
       </span>
     </div>
   </div>
@@ -96,9 +99,10 @@
     padding-top: @mp-c;
     .fs-xs;
     span {
-      display: inline-block;
+      display: block;
       margin-right: @mp-a;
       span {
+        display: inline-block;
         &:first-child {
           margin: 0 @mp-b 0 @mp-a;
         }

@@ -67,6 +67,10 @@ fields:
       city:
         label: City, Country
         type: text
+  photography:
+    label: Additional Photography by
+    type: tags
+
 options:
   template: false
   url: false

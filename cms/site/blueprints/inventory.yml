@@ -17,7 +17,7 @@ files:
     contextdate:
       type: text
       label: Date of Context
-      help: Month, Year
+      help: Month Year (No Comma!)
     photo:
       type: text
       label: Photography by

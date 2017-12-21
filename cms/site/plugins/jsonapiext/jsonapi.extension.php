@@ -118,7 +118,8 @@ jsonapi()->register([
 				'residencies' => $residencies,
 				'title' => (string)site()->title(),
 				'about' => (string)site()->text(),
-				'image' => $inventory->images()->shuffle()->first()->url()
+				'image' => $inventory->images()->shuffle()->first()->url(),
+				'photo' => $contact->photography()->split(',')
 			);
 
 			$json['3-misc']["total"] = $data->count();
