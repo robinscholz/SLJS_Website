@@ -12,9 +12,6 @@ jsonapi()->register([
 			$contact = page("contact");
 			$json = array();
 
-			// About
-
-
 			// Collections
 			foreach($data as $collection) {
 
@@ -66,7 +63,6 @@ jsonapi()->register([
 					'thumbs' => $thumbs				
 				);
 			};
-
 
 			//Education
 			$n = 0;
