@@ -199,9 +199,9 @@
         background: orangered;
       }
       img {
-        width: 23px;
+        width: 18px;
         float: right;
-        margin: 2px 0 -2px 7px;
+        margin: 5px 0 -5px 7px;
       }
     }
   }
