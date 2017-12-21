@@ -1,10 +1,10 @@
 title: Site
 pages: true
-files: true
+files: false
 fields:
   title:
     label: Site Title
     type:  text
   text:
-    label: Short about text for Google etc
+    label: About
     type:  textarea

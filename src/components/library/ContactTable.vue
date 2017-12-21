@@ -174,7 +174,6 @@
     th.sorting:hover {
       text-decoration: underline;
       text-decoration-skip: ink;
-      // background: @white;
     }
     th.sorting-asc:after {
       content: "↓"!important;

@@ -115,6 +115,7 @@ jsonapi()->register([
 				'residencies' => $residencies,
 				'title' => (string)site()->title(),
 				'about' => (string)site()->text(),
+				'abouthtml' => (string)site()->text()->kirbytext(),
 				'image' => $inventory->images()->shuffle()->first()->url(),
 				'photo' => $contact->photography()->split(',')
 			);

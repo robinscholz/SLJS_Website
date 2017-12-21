@@ -2,9 +2,9 @@
   <div class="contact_wrapper" v-if="apidata.length !== 0">
     <ButtonMenu></ButtonMenu>
     <div class="contact_about">
+      <span v-html="contact['abouthtml']"></span>
       <span>Phone: <a :href="'tel:' + contact['phone']">{{ contact['phone'] }}</a></span>
       <span>e-Mail: <a :href="'mailto:' + contact['email']">{{contact['email']}}</a></span>
-      <span>Currently living and working in <span  class="nobr">{{ contact['city'] }}</span></span>
     </div>
     <ContactTable v-if="!smallWindow"></ContactTable>
     <ContactText v-else></ContactText>
@@ -79,10 +79,14 @@
       margin: @mp-c 0 25px 0;
       .fs-m;
       line-height: 28px;
+      max-width: 1000px;
       span {
         display: block;
         &.nobr {
           display: inline;
+        }
+        &:first-child {
+          padding-bottom: @mp-b;
         }
       }
       a {

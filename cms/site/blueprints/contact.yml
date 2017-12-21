@@ -15,9 +15,6 @@ fields:
     label: e-Mail
     type: email
     width: 1/2
-  city:
-    label: City, Country
-    type: text
   education:
     label: Education
     type: structure

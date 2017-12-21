@@ -13,7 +13,6 @@
     methods: {
       reCalculate: function () {
         const windowWidth = (window ? window.innerWidth : null)
-        // this.name = windowWidth <= 600 ? 'Simon Lindell' : 'Simon Skatka Lindell'
         this.name = windowWidth >= 3000 ? 'Simon Lars Julius Skatka Lindell' : 'Simon Skatka Lindell' // Bonus
       }
     },
