@@ -13,7 +13,7 @@
       </swiper-slide>
       <swiper-slide v-if="showMenuButton" class="menu_btn_ext">
         <span class="menu_input menu_arrow">
-          Scroll <span>&rarr;</span>
+          Scroll <img src="static/arrow.svg">
         </span>    
       </swiper-slide>
       <swiper-slide class="menu_btn menu_links">
@@ -198,9 +198,10 @@
       &:hover {
         background: orangered;
       }
-      span {
+      img {
+        width: 23px;
         float: right;
-        margin: 1px 0 -1px 5px;
+        margin: 2px 0 -2px 7px;
       }
     }
   }
