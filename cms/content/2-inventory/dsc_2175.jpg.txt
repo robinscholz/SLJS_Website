@@ -1,5 +1,9 @@
-Imgtitle: bench for my balcony, 2016
+Imgtitle: 
 
 ----
 
-Caption: 
+Caption: Bench for my balcony, 2016
+
+----
+
+Captioncolor: black

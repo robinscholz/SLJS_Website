@@ -1,8 +1,12 @@
 <template>
     <div class='caption_wrapper' :class="[{caption_active: $store.state.caption}, captionColor]">
       <template v-if="$store.state.caption">
-        <span class='caption_title' v-if="imageTitle">{{imageTitle}}</span>
-        <!-- <span class='caption_caption' v-if="imageCaption" v-html="imageCaption"></span> -->
+        <span class="caption_title" v-if="imageTitle">{{imageTitle}}</span>
+        <div class="caption_caption" v-if="imageContext || imageContextDate || imagePhoto">
+          <span class="caption_context" v-if="imageContext">Shown here at <em>{{imageContext }}</em></span>
+          <span class="caption_contextdate nobr" v-if="imageContext && imageContextDate">({{ imageContextDate }})</span>
+          <span class="caption_photo" v-if="imagePhoto">Photgraphy by {{ imagePhoto }}.</span>
+        </div>
       </template>
     </div>
 </template>
@@ -10,7 +14,7 @@
 <script>
   export default {
     name: 'ImageCaption',
-    props: ['index', 'imageTitle', 'imageCaption', 'captionColor']
+    props: ['index', 'imageTitle', 'imageContext', 'imageContextDate', 'imagePhoto', 'captionColor']
   }
 </script>
   
@@ -33,11 +37,16 @@
     visibility: visible;
     display: block;
     }
-    &_title {
+    &_caption {
+      .fs-xs;
+      margin-top: @mp-a;
       // display: block;
       // padding: 3px 5px;
       // background: @primary;
       // .br;
+    }
+    &_photo {
+      display: block;
     }
   }
 </style>

@@ -24,15 +24,18 @@ jsonapi()->register([
 				foreach($collection->imgselection()->yaml() as $img) {
 					$n++;
 					$image = $inventory->image($img);
+					$imageRes = $image->resize(3000, 3000, 80);
 					if($image) {
 						$images[$n] = array(
-							"url" => $image->url(), 
+							"url" => $imageRes->url(), 
 							"num" => (string)$n,
 							"uri" => $image->uri(),
 							"orientation" => $image->orientation(),
 							"ratio" => $image->ratio(),
 							"imgtitle" => (string)$image->imgtitle(),
-							"caption" => (string)$image->caption()->kirbytext(),
+							"context" => (string)$image->context(),
+							"contextdate" => (string)$image->contextdate(),
+							"photo" => (string)$image->photo(),
 							"captioncolor" => (string)$image->captioncolor()
 
 						);

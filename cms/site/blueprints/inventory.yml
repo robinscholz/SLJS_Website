@@ -2,6 +2,7 @@ title: Inventory
 pages: false
 files: 
   type: image
+  size: 1200000
   fields:
     imgtitle: 
       type: text
@@ -9,6 +10,17 @@ files:
     caption:
       type: textarea
       label: Additional Info
+    context: 
+      type: text
+      label: Context
+      help: Title of the show
+    contextdate:
+      type: text
+      label: Date of Context
+      help: Month, Year
+    photo:
+      type: text
+      label: Photography by
     captioncolor:
       label: Caption Color
       type: radio

@@ -1,1 +1,124 @@
 Title: Contact & CV
+
+----
+
+Phone: +31 613 981555
+
+----
+
+Mail: skatkasimon@gmail.com
+
+----
+
+City: Amsterdam, Netherlands
+
+----
+
+Education: 
+
+- 
+  from: "2008"
+  until: "2010"
+  school: University of Lund
+  city: Lund, Sweden
+- 
+  from: "2010"
+  until: "2012"
+  school: 'Österlenskolan för Konst & Design'
+  city: Simrishamn, Sweden
+- 
+  from: "2012"
+  until: "2015"
+  school: Gerrit Rietveld Academie
+  city: Amsterdam, Netherlands
+
+----
+
+Groupshows: 
+
+- 
+  year: "2012"
+  showtitle: …och historien skall fortsätt…
+  gallery: Ystad Konsthall
+  city: Ystad, Sweden
+- 
+  year: "2012"
+  showtitle: Sju uttryck, sju intryck, ett avtryck
+  gallery: Galleri Makeriet
+  city: Malmö, Sweden
+- 
+  year: "2012"
+  showtitle: andra sidor
+  gallery: Galleri Rostrum
+  city: Malmö, Sweden
+- 
+  year: "2013"
+  showtitle: Sweet Dreams
+  gallery: De Vishal
+  city: Harleem, Netherlands
+- 
+  year: "2013"
+  showtitle: rymd
+  gallery: Kulturgjuteriet
+  city: Borrby, Sweden
+- 
+  year: "2014"
+  showtitle: TURISTA
+  gallery: Kulturgjuteriet
+  city: Borrby, Sweden
+- 
+  year: "2014"
+  showtitle: Rites de passage
+  gallery: 14th International Architecture Biennial
+  city: Venice, Italy
+- 
+  year: "2014"
+  showtitle: "Because I'm Worthless"
+  gallery: Rietveld Pavillion
+  city: Amsterdam, Netherlands
+- 
+  year: "2015"
+  showtitle: >
+    Nightmare of the blue blood, revenge of
+    the maid
+  gallery: Gerrit Rietveld Academie
+  city: Amsterdam, Netherlands
+- 
+  year: "2015"
+  showtitle: Crumbles at Hotel De Hallen
+  gallery: De Hallen
+  city: Amsterdam, Netherlands
+- 
+  year: "2016"
+  showtitle: Extra Ordinary Life Centre
+  gallery: Kirsebergs Temporära Konsthal
+  city: Malmö, Sweden
+- 
+  year: "2016"
+  showtitle: Chroma Lives
+  gallery: Edition VI—Event and Duration
+  city: Amsterdam, Netherlands
+- 
+  year: "2017"
+  showtitle: Infinity Pool
+  gallery: V240
+  city: Amsterdam, Netherlands
+
+----
+
+Residencies: 
+
+- 
+  year: "2013"
+  gallery: Zentrum für Kunst und Urbanistik
+  city: Berlin, Germany
+- 
+  year: "2014"
+  gallery: >
+    “Feed Europe”, 14th International
+    Architecture Biennial
+  city: Venice, Italy
+- 
+  year: "2016"
+  gallery: PLX Extraordinary Life Center
+  city: Malmö, Sweden

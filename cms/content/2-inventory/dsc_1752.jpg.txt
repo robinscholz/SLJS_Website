@@ -3,3 +3,7 @@ Imgtitle: shivers, whiskers, 2017
 ----
 
 Caption: 
+
+----
+
+Captioncolor: black

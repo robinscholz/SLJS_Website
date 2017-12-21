@@ -1,5 +1,9 @@
-Imgtitle: ICARUS / the collapse isn’t a fall, 2017
+Imgtitle: 
 
 ----
 
 Caption: 
+
+----
+
+Captioncolor: white

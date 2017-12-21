@@ -3,3 +3,7 @@ Imgtitle: Collarbone Bench, 2016
 ----
 
 Caption: 
+
+----
+
+Captioncolor: white

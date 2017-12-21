@@ -3,3 +3,7 @@ Imgtitle: aleph, 2016
 ----
 
 Caption: 
+
+----
+
+Captioncolor: black
