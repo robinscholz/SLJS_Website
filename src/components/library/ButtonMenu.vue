@@ -169,7 +169,6 @@
       text-transform: uppercase; 
       padding: 8px 8px 6px 8px;
       .fs-m;
-      // .br;
       background: @primary;
       text-decoration: none;
       &:hover {

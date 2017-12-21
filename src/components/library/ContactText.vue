@@ -62,7 +62,7 @@
       padding-bottom: @mp-c;
       .contact_text_line {
         display: block;
-        padding: @mp-a 0;
+        padding: @mp-a/2 0;
         border-bottom: solid 1px @black;
         &:first-child {
           border-top: solid 1px @black;
