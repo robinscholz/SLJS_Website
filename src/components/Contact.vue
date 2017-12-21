@@ -27,7 +27,6 @@
   import ButtonMenu from './library/ButtonMenu.vue'
   import ContactTable from './library/ContactTable.vue'
   import ContactText from './library/ContactText.vue'
-  import _ from 'underscore'
 
   export default {
     name: 'Contact',
@@ -39,7 +38,7 @@
     data () {
       return {
         smallWindow: false,
-        classes: _.shuffle(['shakeone', 'shakefour', 'shakesix'])
+        classes: ['shakefour', 'shakesix']
       }
     },
     computed: {
