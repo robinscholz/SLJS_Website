@@ -72,5 +72,11 @@
       }
     }
   }
+
+  @media all and (max-width: 600px) {
+    .contact_text_headline {
+      .fs-s;
+    }
+  }
   
 </style>

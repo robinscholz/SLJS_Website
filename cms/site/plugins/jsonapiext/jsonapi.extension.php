@@ -33,9 +33,6 @@ jsonapi()->register([
 							"orientation" => $image->orientation(),
 							"ratio" => $image->ratio(),
 							"imgtitle" => (string)$image->imgtitle(),
-							"context" => (string)$image->context(),
-							"contextdate" => (string)$image->contextdate(),
-							"photo" => (string)$image->photo(),
 							"captioncolor" => (string)$image->captioncolor()
 
 						);

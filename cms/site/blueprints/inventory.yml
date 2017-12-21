@@ -7,20 +7,6 @@ files:
     imgtitle: 
       type: text
       label: Artwork Title, Year
-    caption:
-      type: textarea
-      label: Additional Info
-    context: 
-      type: text
-      label: Context
-      help: Title of the show
-    contextdate:
-      type: text
-      label: Date of Context
-      help: Month Year (No Comma!)
-    photo:
-      type: text
-      label: Photography by
     captioncolor:
       label: Caption Color
       type: radio

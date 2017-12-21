@@ -20,9 +20,6 @@
         <img :src="image.url" class="collection_img" slot="image">
         <ImageCaption 
           :imageTitle="image.imgtitle" 
-          :imageContext="image.context" 
-          :imageContextDate="image.contextdate"
-          :imagePhoto="image.photo"
           :captionColor="image.captioncolor" 
           slot="image" 
           v-if="image.imgtitle || image.caption"

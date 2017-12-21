@@ -111,6 +111,8 @@
       if (window) {
         window.addEventListener('resize', this.menuWidth)
       }
+      // Preload Arrow
+      (new Image()).src = 'static/arrow.svg'
     },
     updated () {
       this.menuWidth()
@@ -167,7 +169,7 @@
       display: inline-block;
       cursor: pointer;
       text-transform: uppercase; 
-      padding: 8px 8px 6px 8px;
+      padding: 9px 8px 6px 8px;
       .fs-m;
       background: @primary;
       text-decoration: none;
@@ -203,6 +205,12 @@
         float: right;
         margin: 5px 0 -5px 6px;
       }
+    }
+  }
+
+  @media all and (max-width: 600px) {
+    .menu_input {
+      .fs-s;
     }
   }
 </style>
