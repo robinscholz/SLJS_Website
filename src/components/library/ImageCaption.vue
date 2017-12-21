@@ -5,7 +5,7 @@
         <div class="caption_caption" v-if="imageContext || imageContextDate || imagePhoto">
           <span class="caption_context" v-if="imageContext">Shown here at <em>{{imageContext }}</em></span>
           <span class="caption_contextdate nobr" v-if="imageContext && imageContextDate">({{ imageContextDate }})</span>
-          <span class="caption_photo" v-if="imagePhoto">Photgraphy by {{ imagePhoto }}.</span>
+          <span class="caption_photo" v-if="imagePhoto">Photgraphy by {{ imagePhoto }}</span>
         </div>
       </template>
     </div>
