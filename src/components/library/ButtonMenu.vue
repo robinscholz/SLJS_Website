@@ -202,8 +202,11 @@
       }
       img {
         width: 18px;
-        float: right;
-        margin: 5px 0 -5px 6px;
+        display: inline-block;
+        vertical-align: top;
+        height: auto;
+        // float: right;
+        margin: 5px 0 -5px 0px;
       }
     }
   }
