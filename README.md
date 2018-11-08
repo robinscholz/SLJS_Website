@@ -1,27 +1,20 @@
-# SLJS Website
+# 🇸🇪 Website for Simon Skatka Lindell
 
-> Website for artist Simon Lars Julius Skatka Lindell 
+Frontend built with [Nuxt.js](https://github.com/nuxt/nuxt.js), backend built with [Kirby](https://getkirby.com/)
 
-## Build Setup
+## Setup
 
 ``` bash
 # install dependencies
-npm install
+yarn install # Or npm install
 
 # serve with hot reload at localhost:8080
-npm run dev
+yarn run dev
 
 # build for production with minification
-npm run build
+yarn run build
 
 # build for production and view the bundle analyzer report
-npm run build --report
+yarn run build --report
 
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
