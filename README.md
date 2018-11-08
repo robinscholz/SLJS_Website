@@ -1,6 +1,6 @@
 # 🇸🇪 Website for Simon Skatka Lindell
 
-Frontend built with [Nuxt.js](https://github.com/nuxt/nuxt.js), backend built with [Kirby](https://getkirby.com/)
+Frontend built with [Vue.js](https://vuejs.org/), backend built with [Kirby](https://getkirby.com/)
 
 ## Setup
 
